@@ -1,0 +1,2 @@
+# syspro
+Syspro Rails adapter
