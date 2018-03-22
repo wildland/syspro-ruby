@@ -1,0 +1,26 @@
+PATH
+  remote: .
+  specs:
+    syspro (0.1.0)
+      faraday (~> 0.10)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    faraday (0.14.0)
+      multipart-post (>= 1.2, < 3)
+    minitest (5.11.3)
+    multipart-post (2.0.0)
+    rake (10.5.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bundler (~> 1.16)
+  minitest (~> 5.0)
+  rake (~> 10.0)
+  syspro!
+
+BUNDLED WITH
+   1.16.1

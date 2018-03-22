@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Isaac Lewis"]
   spec.email         = ["ike@wild.land"]
 
-  spec.summary       = %q{Connection library for SYSPRO 7 API}
+  spec.summary       = %q{SYSPRO 7 Api Ruby adapter}
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
@@ -26,6 +26,8 @@ Gem::Specification.new do |spec|
   spec.bindir        = "exe"
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
+
+  spec.add_dependency("faraday", "~> 0.10")
 
   spec.add_development_dependency "bundler", "~> 1.16"
   spec.add_development_dependency "rake", "~> 10.0"
