@@ -14,8 +14,7 @@ module Syspro
         "/GetVersion"
       end
 
-      VersionObject = Struct.new(:version) do
-      end
+      VersionObject = Struct.new(:version)
     end
   end
 end

@@ -20,8 +20,7 @@ module Syspro
         "/Logon"
       end
 
-      UserIdObject = Struct.new(:guid) do
-      end
+      UserIdObject = Struct.new(:guid)
     end
   end
 end
