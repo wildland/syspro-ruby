@@ -125,6 +125,13 @@ module Syspro
       end
     end
 
+    def self.url_encode(key)
+      CGI.escape(key.to_s).
+        # Don't use strict form encoding by changing the square bracket control
+        # characters back to their literals. This is fine by the server, and
+        # makes these parameter strings easier to read.
+        gsub("%5B", "[").gsub("%5D", "]")
+    end
   end
 end
 

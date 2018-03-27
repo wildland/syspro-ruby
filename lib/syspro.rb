@@ -14,6 +14,7 @@ require "syspro/version"
 
 require "syspro/api_operations/get_version"
 require "syspro/api_operations/request"
+require "syspro/api_operations/logon"
 
 
 module Syspro

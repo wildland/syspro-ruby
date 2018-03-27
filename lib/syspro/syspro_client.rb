@@ -7,17 +7,22 @@ module Syspro
       @system_profiler = SystemProfiler.new
     end
 
+    def logon(username, password, company_id, company_password)
+      logon_getter = Syspro::ApiOperations::Logon.new
+      logon_getter.logon(username, password, company_id, company_password)
+    end
+
+    def get_syspro_version
+      version_getter = Syspro::ApiOperations::GetVersion.new
+      version_getter.get_version
+    end
+
     def self.active_client
       Thread.current[:syspro_client] || default_client
     end
 
     def self.default_client
       Thread.current[:syspro_client_default_client] ||= SysproClient.new(default_conn)
-    end
-
-    def get_syspro_version
-      version_getter = Syspro::ApiOperations::GetVersion.new
-      version_getter.request(:get, version_getter.resource_url)
     end
 
     # A default Faraday connection to be used when one isn't configured. This
