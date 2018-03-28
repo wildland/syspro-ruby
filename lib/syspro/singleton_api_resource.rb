@@ -6,7 +6,7 @@ module Syspro
       if self == SingletonAPIResource
         raise NotImplementedError, "SingletonAPIResource is an abstract class.  You should perform actions on its subclasses (Customer, etc.)"
       end
-      "/v1/#{CGI.escape(class_name.downcase)}"
+      "/#{CGI.escape(class_name.downcase)}"
     end
 
     def resource_url

@@ -58,8 +58,27 @@ module Syspro
       end
     end
 
-    def execute_request(method, path, api_base: nil, headers: {}, params: {})
+    # Executes the API call within the given block. Usage looks like:
+    #
+    #     client = StripeClient.new
+    #     charge, resp = client.request { Charge.create }
+    #
+    def request
+      @last_response = nil
+      old_stripe_client = Thread.current[:stripe_client]
+      Thread.current[:stripe_client] = self
+
+      begin
+        res = yield
+        [res, @last_response]
+      ensure
+        Thread.current[:stripe_client] = old_stripe_client
+      end
+    end
+
+    def execute_request(method, path, user_id: nil, api_base: nil, headers: {}, params: {})
       api_base ||= Syspro.api_base
+      user_id  ||= ""
 
       params = Util.objects_to_ids(params)
       url = api_url(path, api_base)
@@ -87,6 +106,7 @@ module Syspro
       context.body            = body
       context.method          = method
       context.path            = path
+      context.user_id         = user_id
       context.query_params    = query_params ? Util.encode_parameters(query_params) : nil
 
       http_resp = execute_request_with_rescues(api_base, context) do
@@ -243,6 +263,7 @@ module Syspro
       attr_accessor :path
       attr_accessor :query_params
       attr_accessor :request_id
+      attr_accessor :user_id
 
       # The idea with this method is that we might want to update some of
       # context information because a response that we've received from the API

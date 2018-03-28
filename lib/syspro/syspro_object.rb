@@ -1,101 +1,79 @@
 module Syspro
   class SysproObject
+    include Enumerable
 
-    # Re-initializes the object based on a hash of values (usually one that's
-    # come back from an API call). Adds or removes value accessors as necessary
-    # and updates the state of internal data.
-    #
-    # Protected on purpose! Please do not expose.
-    #
-    # ==== Options
-    #
-    # * +:values:+ Hash used to update accessors and values.
-    # * +:opts:+ Options for SysproObject like an API key.
-    # * +:partial:+ Indicates that the re-initialization should not attempt to
-    #   remove accessors.
-    def initialize_from(values, opts, partial = false)
+    def initialize(id = nil, opts = {})
       @opts = Util.normalize_opts(opts)
-
-      # the `#send` is here so that we can keep this method private
-      @original_values = self.class.send(:deep_copy, values)
-
-      removed = partial ? Set.new : Set.new(@values.keys - values.keys)
-      added = Set.new(values.keys - @values.keys)
-
-      # Wipe old state before setting new.  This is useful for e.g. updating a
-      # customer, where there is no persistent card parameter.  Mark those values
-      # which don't persist as transient
-
-      remove_accessors(removed)
-      add_accessors(added, values)
-
-      removed.each do |k|
-        @values.delete(k)
-        @transient_values.add(k)
-        @unsaved_values.delete(k)
-      end
-
-      update_attributes(values, opts, dirty: false)
-      values.each_key do |k|
-        @transient_values.delete(k)
-        @unsaved_values.delete(k)
-      end
-
-      self
     end
 
-    def remove_accessors(keys)
-      # not available in the #instance_eval below
-      protected_fields = self.class.protected_fields
+    # Determines the equality of two Syspro objects. Syspro objects are
+    # considered to be equal if they have the same set of values and each one
+    # of those values is the same.
+    def ==(other)
+      other.is_a?(SysproObject) && @values == other.instance_variable_get(:@values)
+    end
 
-      metaclass.instance_eval do
-        keys.each do |k|
-          next if protected_fields.include?(k)
-          next if @@permanent_attributes.include?(k)
+    def to_s(*_args)
+      JSON.pretty_generate(to_hash)
+    end
 
-          # Remove methods for the accessor's reader and writer.
-          [k, :"#{k}=", :"#{k}?"].each do |method_name|
-            remove_method(method_name) if method_defined?(method_name)
-          end
+    def inspect
+      id_string = respond_to?(:id) && !id.nil? ? " id=#{id}" : ""
+      "#<#{self.class}:0x#{object_id.to_s(16)}#{id_string}> JSON: " + JSON.pretty_generate(@values)
+    end
+
+    def keys
+      @values.keys
+    end
+
+    def values
+      @values.values
+    end
+
+    def to_hash
+      maybe_to_hash = lambda do |value|
+        value && value.respond_to?(:to_hash) ? value.to_hash : value
+      end
+
+      @values.each_with_object({}) do |(key, value), acc|
+        acc[key] = case value
+                   when Array
+                     value.map(&maybe_to_hash)
+                   else
+                     maybe_to_hash.call(value)
+                   end
+      end
+    end
+
+    def each(&blk)
+      @values.each(&blk)
+    end
+
+    private
+
+    # Produces a deep copy of the given object including support for arrays,
+    # hashes, and SysproObject.
+    def self.deep_copy(obj)
+      case obj
+      when Array
+        obj.map { |e| deep_copy(e) }
+      when Hash
+        obj.each_with_object({}) do |(k, v), copy|
+          copy[k] = deep_copy(v)
+          copy
         end
+      when SysproObject
+        obj.class.construct_from(
+          deep_copy(obj.instance_variable_get(:@values)),
+          obj.instance_variable_get(:@opts).select do |k, _v|
+            Util::OPTS_COPYABLE.include?(k)
+          end
+        )
+      else
+        obj
       end
     end
+    private_class_method :deep_copy
 
-    def add_accessors(keys, values)
-      # not available in the #instance_eval below
-      protected_fields = self.class.protected_fields
-
-      metaclass.instance_eval do
-        keys.each do |k|
-          next if protected_fields.include?(k)
-          next if @@permanent_attributes.include?(k)
-
-          if k == :method
-            # Object#method is a built-in Ruby method that accepts a symbol
-            # and returns the corresponding Method object. Because the API may
-            # also use `method` as a field name, we check the arity of *args
-            # to decide whether to act as a getter or call the parent method.
-            define_method(k) { |*args| args.empty? ? @values[k] : super(*args) }
-          else
-            define_method(k) { @values[k] }
-          end
-
-          define_method(:"#{k}=") do |v|
-            if v == ""
-              raise ArgumentError, "You cannot set #{k} to an empty string. " \
-                "We interpret empty strings as nil in requests. " \
-                "You may set (object).#{k} = nil to delete the property."
-            end
-            @values[k] = Util.convert_to_stripe_object(v, @opts)
-            dirty_value!(@values[k])
-            @unsaved_values.add(k)
-          end
-
-          if [FalseClass, TrueClass].include?(values[k].class)
-            define_method(:"#{k}?") { @values[k] }
-          end
-        end
-      end
-    end
   end
 end
