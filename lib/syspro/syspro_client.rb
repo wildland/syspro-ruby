@@ -60,19 +60,19 @@ module Syspro
 
     # Executes the API call within the given block. Usage looks like:
     #
-    #     client = StripeClient.new
+    #     client = SysproClient.new
     #     charge, resp = client.request { Charge.create }
     #
     def request
       @last_response = nil
-      old_stripe_client = Thread.current[:stripe_client]
-      Thread.current[:stripe_client] = self
+      old_syspro_client = Thread.current[:syspro_client]
+      Thread.current[:syspro_client] = self
 
       begin
         res = yield
         [res, @last_response]
       ensure
-        Thread.current[:stripe_client] = old_stripe_client
+        Thread.current[:syspro_client] = old_syspro_client
       end
     end
 
@@ -264,31 +264,6 @@ module Syspro
       attr_accessor :query_params
       attr_accessor :request_id
       attr_accessor :user_id
-
-      # The idea with this method is that we might want to update some of
-      # context information because a response that we've received from the API
-      # contains information that's more authoritative than what we started
-      # with for a request. For example, we should trust whatever came back in
-      # a `Stripe-Version` header beyond what configuration information that we
-      # might have had available.
-      def dup_from_response(resp)
-        return self if resp.nil?
-
-        # Faraday's API is a little unusual. Normally it'll produce a response
-        # object with a `headers` method, but on error what it puts into
-        # `e.response` is an untyped `Hash`.
-        headers = if resp.is_a?(Faraday::Response)
-                    resp.headers
-                  else
-                    resp[:headers]
-                  end
-
-        context = dup
-        context.account = headers["Stripe-Account"]
-        context.api_version = headers["Stripe-Version"]
-        context.request_id = headers["Request-Id"]
-        context
-      end
     end
 
     # SystemProfiler extracts information about the system that we're running

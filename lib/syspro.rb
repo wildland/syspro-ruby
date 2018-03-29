@@ -94,5 +94,5 @@ module Syspro
     @max_network_retries = val.to_i
   end
 
-  Stripe.log_level = ENV["STRIPE_LOG"] unless ENV["STRIPE_LOG"].nil?
+  Syspro.log_level = ENV["SYSPRO_LOG"] unless ENV["SYSPRO_LOG"].nil?
 end
