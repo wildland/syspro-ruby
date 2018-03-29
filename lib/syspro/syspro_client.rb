@@ -2,19 +2,19 @@ module Syspro
   class SysproClient
     attr_accessor :conn, :api_base
 
+    @verify_ssl_warned = false
+
     def initialize(conn = nil)
       self.conn = conn || self.class.default_conn
       @system_profiler = SystemProfiler.new
     end
 
     def logon(username, password, company_id, company_password)
-      logon_getter = Syspro::ApiOperations::Logon.new
-      logon_getter.logon(username, password, company_id, company_password)
+      Syspro::Logon.logon(username, password, company_id, company_password)
     end
 
     def get_syspro_version
-      version_getter = Syspro::ApiOperations::GetVersion.new
-      version_getter.get_version
+      Syspro::GetVersion.get_version
     end
 
     def self.active_client

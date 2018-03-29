@@ -8,7 +8,7 @@ module Syspro
         "CompanyPassword" => company_password
       }
       resp = self.request(:get, resource_url, params)
-      user_id = UserIdObject.new(resp[0].http_body)
+      UserIdObject.new(resp[0].http_body)
     end
 
     def resource_url

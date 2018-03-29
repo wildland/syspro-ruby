@@ -13,7 +13,7 @@ module Syspro
     def self.parse_response(resp)
       doc = resp.data
 
-      user_profile = UserProfile.new(
+      UserProfile.new(
         doc.xpath("//CompanyName").text,
         doc.xpath("//OperatorCode").text,
         doc.xpath("//OperatorGroup").text,

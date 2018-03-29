@@ -8,7 +8,7 @@ class LogonTest < Minitest::Test
     company_password = ""
     client = ::Syspro::SysproClient.new
 
-    assert_match /([A-Z0-9]{33})\w/, client.logon(username, password, company, company_password).guid
+    assert_match (/([A-Z0-9]{33})\w/), client.logon(username, password, company, company_password).guid
   end
 end
 

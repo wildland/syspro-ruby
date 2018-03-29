@@ -2,7 +2,7 @@ module Syspro
   class GetVersion < ApiResource
     def self.get_version
       resp = self.request(:get, resource_url)
-      version = VersionObject.new(resp[0].http_body)
+      VersionObject.new(resp[0].http_body)
     end
 
     def resource_url
