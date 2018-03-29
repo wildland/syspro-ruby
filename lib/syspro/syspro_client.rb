@@ -193,6 +193,8 @@ module Syspro
     end
 
     def self.should_retry?(e, num_retries)
+      return false if num_retries >= Syspro.max_network_retries
+
       # Retry on timeout-related problems (either on open or read).
       return true if e.is_a?(Faraday::TimeoutError)
 
