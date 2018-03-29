@@ -29,10 +29,10 @@ user_id = Syspro::Logon.logon(username, password, company_id, company_password)
 ```
 `user_id` will be a `UserId` object that contains the `guid` supplied by SYSPRO. You will use this guid to make further requests to SYSPRO.
 
-#### GetUserProfile
+#### GetLogonProfile
 
 ```rb
-user_profile = Syspro::GetUserProfile.get_user_profile(guid)
+user_profile = Syspro::GetLogonProfile.get_logon_profile(guid)
 ```
 `user_profile` will be a `UserProfile` object that contains the following:
   - `company_name`
