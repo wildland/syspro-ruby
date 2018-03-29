@@ -4,6 +4,14 @@ module Syspro
 
     def initialize(id = nil, opts = {})
       @opts = Util.normalize_opts(opts)
+      @original_values = {}
+      @values = {}
+
+      # This really belongs in APIResource, but not putting it there allows us
+      # to have a unified inspect method
+      @unsaved_values = Set.new
+      @transient_values = Set.new
+      @values[:id] = id if id
     end
 
     # Determines the equality of two Syspro objects. Syspro objects are
@@ -52,7 +60,7 @@ module Syspro
     private
 
     # Produces a deep copy of the given object including support for arrays,
-    # hashes, and SysproObject.
+    # hashes, and SysproObjects.
     def self.deep_copy(obj)
       case obj
       when Array

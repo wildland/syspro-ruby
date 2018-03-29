@@ -2,8 +2,20 @@ module Syspro
   class Util
     # Options that a user is allowed to specify.
     OPTS_USER_SPECIFIED = Set[
-      # :syspro_version
+      :user_id
     ].freeze
+
+    # Options that should be copyable from one StripeObject to another
+    # including options that may be internal.
+    OPTS_COPYABLE = (
+      OPTS_USER_SPECIFIED + Set[:api_base]
+    ).freeze
+
+    # Options that should be persisted between API requests. This includes
+    # client, which is an object containing an HTTP client to reuse.
+    OPTS_PERSISTABLE = (
+      OPTS_USER_SPECIFIED + Set[:client]
+    ).freeze
 
 
     def self.objects_to_ids(h)
@@ -45,8 +57,7 @@ module Syspro
       end
     end
 
-
-        # The secondary opts argument can either be a string or hash
+    # The secondary opts argument can either be a string or hash
     # Turn this value into an api_key and a set of headers
     def self.normalize_opts(opts)
       case opts

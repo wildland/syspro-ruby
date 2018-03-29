@@ -5,6 +5,7 @@ require "logger"
 require "openssl"
 
 require "syspro/api_resource"
+require "syspro/errors"
 require "syspro/get_logon_profile"
 require "syspro/get_version"
 require "syspro/logoff"

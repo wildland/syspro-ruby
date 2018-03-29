@@ -3,10 +3,10 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "syspro/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "syspro"
+  spec.name          = "syspro-ruby"
   spec.version       = Syspro::VERSION
   spec.authors       = ["Isaac Lewis"]
-  spec.email         = ["ike@wild.land"]
+  spec.email         = ["isaac@ike.io"]
 
   spec.summary       = %q{SYSPRO 7 Api Ruby adapter}
   spec.license       = "MIT"

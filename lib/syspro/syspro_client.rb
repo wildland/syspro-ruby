@@ -40,6 +40,7 @@ module Syspro
           c.adapter Faraday.default_adapter
         end
 
+        # For now, we're not verifying SSL certificates. The warning will appear.
         #if Syspro.verify_ssl_certs
           #conn.ssl.verify = true
           #conn.ssl.cert_store = Syspro.ca_store
@@ -129,7 +130,7 @@ module Syspro
     end
 
     def general_api_error(status, body)
-      APIError.new("Invalid response object from API: #{body.inspect} " \
+      ApiError.new("Invalid response object from API: #{body.inspect} " \
                    "(HTTP response code was #{status})",
                    http_status: status, http_body: body)
     end
