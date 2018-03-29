@@ -155,23 +155,17 @@ module Syspro
         request_start = Time.now
         log_request(context, num_retries)
         resp = yield
-        context = context.dup_from_response(resp)
         log_response(context, request_start, resp.status, resp.body)
 
       # We rescue all exceptions from a request so that we have an easy spot to
       # implement our retry logic across the board. We'll re-raise if it's a type
       # of exception that we didn't expect to handle.
       rescue StandardError => e
-        # If we modify context we copy it into a new variable so as not to
-        # taint the original on a retry.
-        error_context = context
-
         if e.respond_to?(:response) && e.response
-          error_context = context.dup_from_response(e.response)
-          log_response(error_context, request_start,
+          log_response(context, request_start,
                        e.response[:status], e.response[:body])
         else
-          log_response_error(error_context, request_start, e)
+          log_response_error(context, request_start, e)
         end
 
         if self.class.should_retry?(e, num_retries)
