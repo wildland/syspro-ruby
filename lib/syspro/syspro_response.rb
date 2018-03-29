@@ -26,8 +26,8 @@ module Syspro
     # This may throw JSON::ParserError if the response body is not valid JSON.
     def self.from_faraday_hash(http_resp)
       resp = SysproResponse.new
-      resp.data = Nokogiri::XML(http_resp[:body])
       resp.http_body = http_resp[:body]
+      resp.data = Nokogiri::XML(resp.http_body)
       resp.http_headers = http_resp[:headers]
       resp.http_status = http_resp[:status]
       resp.request_id = http_resp[:headers]["Request-Id"]
@@ -39,8 +39,8 @@ module Syspro
     # This may throw JSON::ParserError if the response body is not valid JSON.
     def self.from_faraday_response(http_resp)
       resp = SysproResponse.new
-      resp.data = Nokogiri::XML(http_resp[:body])
       resp.http_body = http_resp.body
+      resp.data = Nokogiri::XML(resp.http_body)
       resp.http_headers = http_resp.headers
       resp.http_status = http_resp.status
       resp.request_id = http_resp.headers["Request-Id"]
