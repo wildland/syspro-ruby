@@ -5,6 +5,10 @@ require "logger"
 require "openssl"
 
 require "syspro/api_resource"
+require "syspro/get_logon_profile"
+require "syspro/get_version"
+require "syspro/logoff"
+require "syspro/logon"
 require "syspro/syspro_client"
 require "syspro/singleton_api_resource"
 require "syspro/syspro_object"
@@ -12,9 +16,7 @@ require "syspro/syspro_response"
 require "syspro/util"
 require "syspro/version"
 
-require "syspro/api_operations/get_version"
 require "syspro/api_operations/request"
-
 
 module Syspro
   @api_base = "http://syspro.wildlandlabs.com:90/SYSPROWCFService/Rest"

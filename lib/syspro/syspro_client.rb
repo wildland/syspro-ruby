@@ -2,9 +2,19 @@ module Syspro
   class SysproClient
     attr_accessor :conn, :api_base
 
+    @verify_ssl_warned = false
+
     def initialize(conn = nil)
       self.conn = conn || self.class.default_conn
       @system_profiler = SystemProfiler.new
+    end
+
+    def logon(username, password, company_id, company_password)
+      Syspro::Logon.logon(username, password, company_id, company_password)
+    end
+
+    def get_syspro_version
+      Syspro::GetVersion.get_version
     end
 
     def self.active_client
@@ -13,11 +23,6 @@ module Syspro
 
     def self.default_client
       Thread.current[:syspro_client_default_client] ||= SysproClient.new(default_conn)
-    end
-
-    def get_syspro_version
-      version_getter = Syspro::ApiOperations::GetVersion.new
-      version_getter.request(:get, version_getter.resource_url)
     end
 
     # A default Faraday connection to be used when one isn't configured. This
@@ -53,8 +58,27 @@ module Syspro
       end
     end
 
-    def execute_request(method, path, api_base: nil, headers: {}, params: {})
+    # Executes the API call within the given block. Usage looks like:
+    #
+    #     client = StripeClient.new
+    #     charge, resp = client.request { Charge.create }
+    #
+    def request
+      @last_response = nil
+      old_stripe_client = Thread.current[:stripe_client]
+      Thread.current[:stripe_client] = self
+
+      begin
+        res = yield
+        [res, @last_response]
+      ensure
+        Thread.current[:stripe_client] = old_stripe_client
+      end
+    end
+
+    def execute_request(method, path, user_id: nil, api_base: nil, headers: {}, params: {})
       api_base ||= Syspro.api_base
+      user_id  ||= ""
 
       params = Util.objects_to_ids(params)
       url = api_url(path, api_base)
@@ -82,6 +106,7 @@ module Syspro
       context.body            = body
       context.method          = method
       context.path            = path
+      context.user_id         = user_id
       context.query_params    = query_params ? Util.encode_parameters(query_params) : nil
 
       http_resp = execute_request_with_rescues(api_base, context) do
@@ -238,6 +263,7 @@ module Syspro
       attr_accessor :path
       attr_accessor :query_params
       attr_accessor :request_id
+      attr_accessor :user_id
 
       # The idea with this method is that we might want to update some of
       # context information because a response that we've received from the API

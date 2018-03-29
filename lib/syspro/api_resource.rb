@@ -1,25 +1,26 @@
-require_relative "syspro_client"
-require_relative "api_operations/request"
+require "syspro/syspro_object"
+require "syspro/api_operations/request"
 
 module Syspro
-  class ApiResource < Syspro::SysproClient
+  class ApiResource < SysproObject
+    include Syspro::ApiOperations::Request
 
     def self.class_name
       name.split("::")[-1]
     end
 
     def self.resource_url
-      if self == APIResource
+      if self == ApiResource
         raise NotImplementedError, "APIResource is an abstract class.  You should perform actions on its subclasses (Charge, Customer, etc.)"
       end
-      "/v1/#{CGI.escape(class_name.downcase)}s"
+      "/#{CGI.escape(class_name.downcase)}"
     end
 
     def resource_url
-      unless (id = self["id"])
-        raise InvalidRequestError.new("Could not determine which URL to request: #{self.class} instance has invalid ID: #{id.inspect}", "id")
-      end
-      "#{self.class.resource_url}/#{CGI.escape(id)}"
+      #unless (id = self["id"])
+        #raise InvalidRequestError.new("Could not determine which URL to request: #{self.class} instance has invalid ID: #{id.inspect}", "id")
+      #end
+      #"#{self.class.resource_url}/#{CGI.escape(id)}"
     end
 
     def refresh
