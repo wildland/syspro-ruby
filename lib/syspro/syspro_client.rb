@@ -178,9 +178,9 @@ module Syspro
         case e
         when Faraday::ClientError
           if e.response
-            handle_error_response(e.response, error_context)
+            handle_error_response(e.response, context)
           else
-            handle_network_error(e, error_context, num_retries, api_base)
+            handle_network_error(e, context, num_retries, api_base)
           end
 
         # Only handle errors when we know we can do so, and re-raise otherwise.
@@ -191,6 +191,35 @@ module Syspro
       end
 
       resp
+    end
+
+    def handle_network_error(e, context, num_retries, api_base = nil)
+      Util.log_error("Syspro network error",
+                     error_message: e.message,
+                     request_id: context.request_id)
+
+      case e
+      when Faraday::ConnectionFailed
+        message = "Unexpected error communicating when trying to connect to Syspro."
+
+      when Faraday::SSLError
+        message = "Could not establish a secure connection to Syspro."
+
+      when Faraday::TimeoutError
+        api_base ||= Syspro.api_base
+        message = "Could not connect to Syspro (#{api_base}). " \
+          "Please check your internet connection and try again. " \
+          "If this problem persists, you should check your Syspro service status."
+
+      else
+        message = "Unexpected error communicating with Syspro. " \
+          "If this problem persists, talk to your Syspro implementation team."
+
+      end
+
+      message += " Request was retried #{num_retries} times." if num_retries > 0
+
+      raise ApiConnectionError, message + "\n\n(Network error: #{e.message})"
     end
 
     def self.should_retry?(e, num_retries)
@@ -248,6 +277,26 @@ module Syspro
                      path: context.path)
     end
     private :log_response_error
+
+    def handle_error_response(http_resp, context)
+      begin
+        resp = SysproResponse.from_faraday_hash(http_resp)
+        error_data = resp.data[:error]
+
+        raise SysproError, "Indeterminate error" unless error_data
+      rescue Nokogiri::XML::SyntaxError, SysproError
+        raise general_api_error(http_resp[:status], http_resp[:body])
+      end
+
+      error = if error_data.is_a?(String)
+                specific_oauth_error(resp, error_data, context)
+              else
+                specific_api_error(resp, error_data, context)
+              end
+
+      error.response = resp
+      raise(error)
+    end
 
     # RequestLogContext stores information about a request that's begin made so
     # that we can log certain information. It's useful because it means that we

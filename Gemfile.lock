@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    syspro (0.1.0)
+    syspro-ruby (0.1.0)
       faraday (~> 0.10)
 
 GEM
@@ -26,7 +26,7 @@ DEPENDENCIES
   minitest (~> 5.0)
   pry (~> 0.11)
   rake (~> 10.0)
-  syspro!
+  syspro-ruby!
 
 BUNDLED WITH
    1.16.1

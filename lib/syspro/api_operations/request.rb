@@ -37,13 +37,6 @@ module Syspro
       def self.included(base)
         base.extend(ClassMethods)
       end
-
-      protected
-
-      def request(method, url, params = {}, opts = {})
-        opts = @opts.merge(Util.normalize_opts(opts))
-        self.class.request(method, url, params, opts)
-      end
     end
   end
 end

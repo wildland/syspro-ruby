@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<!-- Copyright 1994-2014 SYSPRO Ltd.-->
+<!-- 
+     Sample XML for the Generic Browse Object
+-->
+<Browse xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" xsd:noNamespaceSchemaLocation="COMBRW.XSD">
+  <BrowseName><%= @browse_name %></BrowseName>
+  <StartAtKey/>
+  <StartCondition><%= @start_condition %></StartCondition>
+  <ReturnRows><%= @return_rows %></ReturnRows>
+  <% for @filter in @filters %>
+    <Filter>
+      <ColumnFilterName><%= @filter[:name] %></ColumnFilterName>
+      <ColumnFilterValue><%= @filter[:value] %></ColumnFilterValue>
+    </Filter> 
+  <% end %>
+  <BrowseDetails>
+    <TableName><%= @table_name %></TableName>
+    <Title><%= @title %></Title>
+    <% for @column in @columns %>
+      <Column>
+        <% unless @column[:name].nil? %><ColumnName><%= @column[:name] %></ColumnName><% end %>
+        <% unless @column[:description].nil? %><ColumnDescription><%= @column[:description] %></ColumnDescription><% end %>
+        <% unless @column[:key].nil? %><ColumnKey><%= @column[:key] %></ColumnKey><% end %>
+      </Column>
+    <% end %>
+  </BrowseDetails>
+</Browse>
+
