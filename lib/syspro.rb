@@ -21,8 +21,12 @@ require "syspro/api_operations/request"
 require "syspro/api_operations/query"
 
 require "syspro/business_objects/combrw"
+require "syspro/business_objects/comfch"
+require "syspro/business_objects/comfnd"
 
 require "syspro/business_objects/parsers/combrw_parser"
+require "syspro/business_objects/parsers/comfch_parser"
+require "syspro/business_objects/parsers/comfnd_parser"
 
 module Syspro
   @api_base = "http://syspro.wildlandlabs.com:90/SYSPROWCFService/Rest"

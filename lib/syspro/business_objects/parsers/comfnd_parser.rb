@@ -1,7 +1,7 @@
 module Syspro
   module BusinessObjects
     module Parsers
-      class ComBrwParser
+      class ComFndParser
         attr_reader :doc
 
         def initialize(doc)
@@ -9,17 +9,6 @@ module Syspro
         end
 
         def parse
-          next_prev_key = doc.first_element_child.xpath("NextPrevKey")
-          next_prev_key_obj = next_prev_key.children.map { |el|
-            if el.name == "text"
-              next
-            end
-            {
-              name: el.name,
-              text: el.text
-            }
-          }.compact
-
           header_details = doc.first_element_child.xpath("HeaderDetails")
           header_details_obj = header_details.children.map { |el|
             if el.name == "text"
@@ -36,21 +25,19 @@ module Syspro
             el.elements.map { |inner|
               {
                 name: inner.name,
-                value: inner.xpath('Value').text,
-                data_type: inner.xpath('DataType').text
+                value: inner.children.text
               }
             }
           }.flatten(1).compact
 
-          BrowseObject.new(
-            doc.first_element_child.xpath("Title").text,
+          FindObject.new(
+            header_details_obj,
             rows_obj,
-            next_prev_key_obj,
-            header_details_obj
+            doc.first_element_child.xpath('//RowsReturned').text.to_i
           )
         end
 
-        BrowseObject = Struct.new(:title, :rows, :next_prev_key, :header_details)
+        FindObject = Struct.new(:header_details, :rows, :row_count)
       end
     end
   end

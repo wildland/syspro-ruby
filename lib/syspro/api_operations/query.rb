@@ -8,10 +8,12 @@ module Syspro
           request(:get, "/Query/Browse", params)
         end
 
-        def fetch
+        def fetch(params)
+          request(:get, "/Query/Fetch", params)
         end
 
-        def query
+        def query(params)
+          request(:get, "/Query/Query", params)
         end
 
         def find
