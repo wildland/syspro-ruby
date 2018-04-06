@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Syspro
   module BusinessObjects
     module Parsers
@@ -11,9 +13,9 @@ module Syspro
         def parse
           table_name = doc.first_element_child.name
           columns = doc.first_element_child.elements
-          columns_obj = columns.map { |el|
+          columns_obj = columns.map do |el|
             { name: el.name, value: el.children.text }
-          }.compact
+          end.compact
 
           FetchObject.new(
             table_name,
@@ -26,4 +28,3 @@ module Syspro
     end
   end
 end
-

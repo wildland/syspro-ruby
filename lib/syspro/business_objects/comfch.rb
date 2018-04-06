@@ -1,5 +1,7 @@
-require "syspro/business_objects/parsers/comfch_parser"
-require "erb"
+# frozen_string_literal: true
+
+require 'syspro/business_objects/parsers/comfch_parser'
+require 'erb'
 
 module Syspro
   module BusinessObjects
@@ -12,13 +14,19 @@ module Syspro
 
       def call(user_id)
         xml_in = template.result(binding)
-        params = { "UserId" => user_id, "XmlIn" => xml_in }
+        params = { 'UserId' => user_id, 'XmlIn' => xml_in }
         resp = ComFch.fetch(params)
         parse_response(resp)
       end
 
       def template
-        ERB.new File.read(File.expand_path("schemas/comfch.xml.erb", File.dirname(__FILE__))), nil, "%"
+        ERB.new(
+          File.read(
+            File.expand_path('schemas/comfch.xml.erb', File.dirname(__FILE__))
+          ),
+          nil,
+          '%'
+        )
       end
 
       def parse_response(resp)
@@ -29,11 +37,8 @@ module Syspro
 
       def handle_errors(resp)
         body = resp[0].http_body
-        if body.match(/^(ERROR)/)
-          raise SysproError, body
-        end
+        raise SysproError, body if body =~ /^(ERROR)/
       end
     end
   end
 end
-

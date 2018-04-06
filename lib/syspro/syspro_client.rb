@@ -1,5 +1,8 @@
+# frozen_string_literal: true
+
 module Syspro
-  class SysproClient
+  # This class is the main syspro client
+  class SysproClient # rubocop:disable Metrics/ClassLength
     attr_accessor :conn, :api_base
 
     @verify_ssl_warned = false
@@ -13,7 +16,7 @@ module Syspro
       Syspro::Logon.logon(username, password, company_id, company_password)
     end
 
-    def get_syspro_version
+    def get_syspro_version # rubocop:disable Naming/AccessorMethodName
       Syspro::GetVersion.get_version
     end
 
@@ -22,13 +25,13 @@ module Syspro
     end
 
     def self.default_client
-      Thread.current[:syspro_client_default_client] ||= SysproClient.new(default_conn)
+      Thread.current[:syspro_client_default_client] ||= SysproClient.new(default_conn) # rubocop:disable Metrics/LineLength
     end
 
     # A default Faraday connection to be used when one isn't configured. This
     # object should never be mutated, and instead instantiating your own
     # connection and wrapping it in a SysproClient object should be preferred.
-    def self.default_conn
+    def self.default_conn # rubocop:disable Metrics/MethodLength
       # We're going to keep connections around so that we can take advantage
       # of connection re-use, so make sure that we have a separate connection
       # object per thread.
@@ -40,20 +43,21 @@ module Syspro
           c.adapter Faraday.default_adapter
         end
 
-        # For now, we're not verifying SSL certificates. The warning will appear.
-        #if Syspro.verify_ssl_certs
-          #conn.ssl.verify = true
-          #conn.ssl.cert_store = Syspro.ca_store
-        #else
+        # For now, we're not verifying SSL certificates.
+        # The warning will appear.
+        # if Syspro.verify_ssl_certs
+        # conn.ssl.verify = true
+        # conn.ssl.cert_store = Syspro.ca_store
+        # else
         conn.ssl.verify = false
 
         unless @verify_ssl_warned
           @verify_ssl_warned = true
-          $stderr.puts("WARNING: Running without SSL cert verification. " \
-            "You should never do this in production. " \
+          warn('WARNING: Running without SSL cert verification. ' \
+            'You should never do this in production. ' \
             "Execute 'Syspro.verify_ssl_certs = true' to enable verification.")
         end
-        #end
+        # end
 
         conn
       end
@@ -77,9 +81,9 @@ module Syspro
       end
     end
 
-    def execute_request(method, path, user_id: nil, api_base: nil, headers: {}, params: {})
+    def execute_request(method, path, user_id: nil, api_base: nil, headers: {}, params: {}) # rubocop:disable Metrics/LineLength, Metrics/MethodLength
       api_base ||= Syspro.api_base
-      user_id  ||= ""
+      user_id  ||= ''
 
       params = Util.objects_to_ids(params)
       url = api_url(path, api_base)
@@ -91,7 +95,7 @@ module Syspro
       when :get, :head, :delete
         query_params = params
       else
-        body = if headers[:content_type] && headers[:content_type] == "multipart/form-data"
+        body = if headers[:content_type] && headers[:content_type] == 'multipart/form-data' # rubocop:disable Metrics/LineLength
                  params
                else
                  Util.encode_parameters(params)
@@ -108,7 +112,7 @@ module Syspro
       context.method          = method
       context.path            = path
       context.user_id         = user_id
-      context.query_params    = query_params ? Util.encode_parameters(query_params) : nil
+      context.query_params    = query_params ? Util.encode_parameters(query_params) : nil # rubocop:disable Metrics/LineLength
 
       http_resp = execute_request_with_rescues(api_base, context) do
         conn.run_request(method, url, body, headers) do |req|
@@ -135,22 +139,22 @@ module Syspro
                    http_status: status, http_body: body)
     end
 
-    def api_url(url = "", api_base = nil)
+    def api_url(url = '', api_base = nil)
       (api_base || Syspro.api_base) + url
     end
 
-    def request_headers(method)
+    def request_headers(_method)
       user_agent = "Syspro/7 RubyBindings/#{Syspro::VERSION}"
 
       headers = {
-        "User-Agent" => user_agent,
-        "Content-Type" => "application/x-www-form-urlencoded",
+        'User-Agent' => user_agent,
+        'Content-Type' => 'application/x-www-form-urlencoded'
       }
 
       headers
     end
 
-    def execute_request_with_rescues(api_base, context)
+    def execute_request_with_rescues(api_base, context) # rubocop:disable Metrics/LineLength, Metrics/MethodLength
       num_retries = 0
       begin
         request_start = Time.now
@@ -159,8 +163,8 @@ module Syspro
         log_response(context, request_start, resp.status, resp.body)
 
       # We rescue all exceptions from a request so that we have an easy spot to
-      # implement our retry logic across the board. We'll re-raise if it's a type
-      # of exception that we didn't expect to handle.
+      # implement our retry logic across the board. We'll re-raise if it's a
+      # type of exception that we didn't expect to handle.
       rescue StandardError => e
         if e.respond_to?(:response) && e.response
           log_response(context, request_start,
@@ -193,36 +197,36 @@ module Syspro
       resp
     end
 
-    def handle_network_error(e, context, num_retries, api_base = nil)
-      Util.log_error("Syspro network error",
+    def handle_network_error(e, context, num_retries, api_base = nil) # rubocop:disable Metrics/LineLength, Metrics/MethodLength, Naming/UncommunicativeMethodParamName
+      Util.log_error('Syspro network error',
                      error_message: e.message,
                      request_id: context.request_id)
 
       case e
       when Faraday::ConnectionFailed
-        message = "Unexpected error communicating when trying to connect to Syspro."
+        message = 'Unexpected error communicating when trying to connect to Syspro.' # rubocop:disable Metrics/LineLength
 
       when Faraday::SSLError
-        message = "Could not establish a secure connection to Syspro."
+        message = 'Could not establish a secure connection to Syspro.'
 
       when Faraday::TimeoutError
         api_base ||= Syspro.api_base
         message = "Could not connect to Syspro (#{api_base}). " \
-          "Please check your internet connection and try again. " \
-          "If this problem persists, you should check your Syspro service status."
+          'Please check your internet connection and try again. ' \
+          'If this problem persists, you should check your Syspro service status.' # rubocop:disable Metrics/LineLength
 
       else
-        message = "Unexpected error communicating with Syspro. " \
-          "If this problem persists, talk to your Syspro implementation team."
+        message = 'Unexpected error communicating with Syspro. ' \
+          'If this problem persists, talk to your Syspro implementation team.'
 
       end
 
-      message += " Request was retried #{num_retries} times." if num_retries > 0
+      message += " Request was retried #{num_retries} times." if num_retries.positive? # rubocop:disable Metrics/LineLength
 
       raise ApiConnectionError, message + "\n\n(Network error: #{e.message})"
     end
 
-    def self.should_retry?(e, num_retries)
+    def self.should_retry?(e, num_retries) # rubocop:disable Metrics/LineLength, Naming/UncommunicativeMethodParamName
       return false if num_retries >= Syspro.max_network_retries
 
       # Retry on timeout-related problems (either on open or read).
@@ -242,20 +246,20 @@ module Syspro
     end
 
     def log_request(context, num_retries)
-      Util.log_info("Request to Syspro API",
+      Util.log_info('Request to Syspro API',
                     account: context.account,
                     api_version: context.api_version,
                     method: context.method,
                     num_retries: num_retries,
                     path: context.path)
-      Util.log_debug("Request details",
+      Util.log_debug('Request details',
                      body: context.body,
                      query_params: context.query_params)
     end
     private :log_request
 
-    def log_response(context, request_start, status, body)
-      Util.log_info("Response from Syspro API",
+    def log_response(context, request_start, status, body) # rubocop:disable Metrics/LineLength, Metrics/MethodLength
+      Util.log_info('Response from Syspro API',
                     account: context.account,
                     api_version: context.api_version,
                     elapsed: Time.now - request_start,
@@ -263,14 +267,14 @@ module Syspro
                     path: context.path,
                     request_id: context.request_id,
                     status: status)
-      Util.log_debug("Response details",
+      Util.log_debug('Response details',
                      body: body,
                      request_id: context.request_id)
     end
     private :log_response
 
-    def log_response_error(context, request_start, e)
-      Util.log_error("Request error",
+    def log_response_error(context, request_start, e) # rubocop:disable Metrics/LineLength, Naming/UncommunicativeMethodParamName
+      Util.log_error('Request error',
                      elapsed: Time.now - request_start,
                      error_message: e.message,
                      method: context.method,
@@ -278,12 +282,12 @@ module Syspro
     end
     private :log_response_error
 
-    def handle_error_response(http_resp, context)
+    def handle_error_response(http_resp, context) # rubocop:disable Metrics/LineLength, Metrics/MethodLength
       begin
         resp = SysproResponse.from_faraday_hash(http_resp)
         error_data = resp.data[:error]
 
-        raise SysproError, "Indeterminate error" unless error_data
+        raise SysproError, 'Indeterminate error' unless error_data
       rescue Nokogiri::XML::SyntaxError, SysproError
         raise general_api_error(http_resp[:status], http_resp[:body])
       end
@@ -316,56 +320,55 @@ module Syspro
     # in so that we can generate a rich user agent header to help debug
     # integrations.
     class SystemProfiler
-      def self.uname
-        if File.exist?("/proc/version")
-          File.read("/proc/version").strip
+      def self.uname # rubocop:disable Metrics/MethodLength
+        if File.exist?('/proc/version')
+          File.read('/proc/version').strip
         else
-          case RbConfig::CONFIG["host_os"]
+          case RbConfig::CONFIG['host_os']
           when /linux|darwin|bsd|sunos|solaris|cygwin/i
             uname_from_system
           when /mswin|mingw/i
             uname_from_system_ver
           else
-            "unknown platform"
+            'unknown platform'
           end
         end
       end
 
       def self.uname_from_system
-        (`uname -a 2>/dev/null` || "").strip
+        (`uname -a 2>/dev/null` || '').strip
       rescue Errno::ENOENT
-        "uname executable not found"
+        'uname executable not found'
       rescue Errno::ENOMEM # couldn't create subprocess
-        "uname lookup failed"
+        'uname lookup failed'
       end
 
       def self.uname_from_system_ver
-        (`ver` || "").strip
+        (`ver` || '').strip
       rescue Errno::ENOENT
-        "ver executable not found"
+        'ver executable not found'
       rescue Errno::ENOMEM # couldn't create subprocess
-        "uname lookup failed"
+        'uname lookup failed'
       end
 
       def initialize
         @uname = self.class.uname
       end
 
-      def user_agent
-        lang_version = "#{RUBY_VERSION} p#{RUBY_PATCHLEVEL} (#{RUBY_RELEASE_DATE})"
+      def user_agent # rubocop:disable Metrics/MethodLength
+        lang_version = "#{RUBY_VERSION} p#{RUBY_PATCHLEVEL} (#{RUBY_RELEASE_DATE})" # rubocop:disable Metrics/LineLength
 
         {
           application: Syspro.app_info,
           bindings_version: Syspro::VERSION,
-          lang: "ruby",
+          lang: 'ruby',
           lang_version: lang_version,
           platform: RUBY_PLATFORM,
-          engine: defined?(RUBY_ENGINE) ? RUBY_ENGINE : "",
+          engine: defined?(RUBY_ENGINE) ? RUBY_ENGINE : '',
           uname: @uname,
-          hostname: Socket.gethostname,
+          hostname: Socket.gethostname
         }.delete_if { |_k, v| v.nil? }
       end
     end
   end
 end
-

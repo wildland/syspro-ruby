@@ -1,35 +1,38 @@
-require "cgi"
-require "faraday"
-require "json"
-require "logger"
-require "openssl"
+# frozen_string_literal: true
 
-require "syspro/api_resource"
-require "syspro/errors"
-require "syspro/get_logon_profile"
-require "syspro/get_version"
-require "syspro/logoff"
-require "syspro/logon"
-require "syspro/syspro_client"
-require "syspro/singleton_api_resource"
-require "syspro/syspro_object"
-require "syspro/syspro_response"
-require "syspro/util"
-require "syspro/version"
+require 'cgi'
+require 'faraday'
+require 'json'
+require 'logger'
+require 'openssl'
 
-require "syspro/api_operations/request"
-require "syspro/api_operations/query"
+require 'syspro/api_resource'
+require 'syspro/errors'
+require 'syspro/get_logon_profile'
+require 'syspro/get_version'
+require 'syspro/logoff'
+require 'syspro/logon'
+require 'syspro/syspro_client'
+require 'syspro/singleton_api_resource'
+require 'syspro/syspro_object'
+require 'syspro/syspro_response'
+require 'syspro/util'
+require 'syspro/version'
 
-require "syspro/business_objects/combrw"
-require "syspro/business_objects/comfch"
-require "syspro/business_objects/comfnd"
+require 'syspro/api_operations/request'
+require 'syspro/api_operations/query'
 
-require "syspro/business_objects/parsers/combrw_parser"
-require "syspro/business_objects/parsers/comfch_parser"
-require "syspro/business_objects/parsers/comfnd_parser"
+require 'syspro/business_objects/combrw'
+require 'syspro/business_objects/comfch'
+require 'syspro/business_objects/comfnd'
 
+require 'syspro/business_objects/parsers/combrw_parser'
+require 'syspro/business_objects/parsers/comfch_parser'
+require 'syspro/business_objects/parsers/comfnd_parser'
+
+# Main Module
 module Syspro
-  @api_base = "http://syspro.wildlandlabs.com:90/SYSPROWCFService/Rest"
+  @api_base = 'http://syspro.wildlandlabs.com:90/SYSPROWCFService/Rest'
 
   @open_timeout = 30
   @read_timeout = 80
@@ -69,14 +72,13 @@ module Syspro
 
   def self.log_level=(val)
     # Backwards compatibility for values that we briefly allowed
-    if val == "debug"
-      val = LEVEL_DEBUG
-    elsif val == "info"
-      val = LEVEL_INFO
-    end
-
+    val = LEVEL_DEBUG if val == 'debug'
+    val = LEVEL_INFO if val == 'info'
     if !val.nil? && ![LEVEL_DEBUG, LEVEL_ERROR, LEVEL_INFO].include?(val)
-      raise ArgumentError, "log_level should only be set to `nil`, `debug` or `info`"
+      raise(
+        ArgumentError,
+        'log_level should only be set to `nil`, `debug` or `info`'
+      )
     end
     @log_level = val
   end
@@ -104,5 +106,5 @@ module Syspro
     @max_network_retries = val.to_i
   end
 
-  Syspro.log_level = ENV["SYSPRO_LOG"] unless ENV["SYSPRO_LOG"].nil?
+  Syspro.log_level = ENV['SYSPRO_LOG'] unless ENV['SYSPRO_LOG'].nil?
 end

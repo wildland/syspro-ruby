@@ -1,5 +1,7 @@
-$LOAD_PATH.unshift File.expand_path("../../lib", __FILE__)
-require "syspro"
+# frozen_string_literal: true
 
-require "pry"
-require "minitest/autorun"
+$LOAD_PATH.unshift File.expand_path('../lib', __dir__)
+require 'syspro'
+
+require 'pry'
+require 'minitest/autorun'

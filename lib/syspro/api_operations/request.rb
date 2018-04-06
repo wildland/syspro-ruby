@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Syspro
   module ApiOperations
     module Request
@@ -28,7 +30,7 @@ module Syspro
         def warn_on_opts_in_params(params)
           Util::OPTS_USER_SPECIFIED.each do |opt|
             if params.key?(opt)
-              $stderr.puts("WARNING: #{opt} should be in opts instead of params.")
+              warn("WARNING: #{opt} should be in opts instead of params.")
             end
           end
         end
@@ -40,4 +42,3 @@ module Syspro
     end
   end
 end
-

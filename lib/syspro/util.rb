@@ -1,5 +1,8 @@
+# frozen_string_literal: true
+
 module Syspro
-  class Util
+  # Utillity class
+  class Util # rubocop:disable Metrics/ClassLength
     # Options that a user is allowed to specify.
     OPTS_USER_SPECIFIED = Set[
       :user_id
@@ -17,8 +20,7 @@ module Syspro
       OPTS_USER_SPECIFIED + Set[:client]
     ).freeze
 
-
-    def self.objects_to_ids(h)
+    def self.objects_to_ids(h) # rubocop:disable Metrics/MethodLength, Metrics/LineLength, Naming/UncommunicativeMethodParamName
       case h
       when ApiResource
         h.id
@@ -45,13 +47,17 @@ module Syspro
     # * +data+ - Hash of fields and values to be converted into a SysproObject.
     # * +opts+ - Options for +SysproObject+ like an API key that will be reused
     #   on subsequent API calls.
-    def self.convert_to_syspro_object(data, opts = {})
+    def self.convert_to_syspro_object(data, opts = {}) # rubocop:disable Metrics/LineLength, Metrics/MethodLength
       case data
       when Array
         data.map { |i| convert_to_syspro_object(i, opts) }
       when Hash
-        # Try converting to a known object class.  If none available, fall back to generic SysproObject
-        object_classes.fetch(data[:object], SysproObject).construct_from(data, opts)
+        # Try converting to a known object class.
+        # If none available, fall back to generic SysproObject
+        object_classes.fetch(
+          data[:object],
+          SysproObject
+        ).construct_from(data, opts)
       else
         data
       end
@@ -66,7 +72,7 @@ module Syspro
       when Hash
         opts.clone
       else
-        raise TypeError, "normalize_opts expects a string or a hash"
+        raise TypeError, 'normalize_opts expects a string or a hash'
       end
     end
 
@@ -78,7 +84,7 @@ module Syspro
     def self.normalize_headers(headers)
       headers.each_with_object({}) do |(k, v), new_headers|
         if k.is_a?(Symbol)
-          k = titlecase_parts(k.to_s.tr("_", "-"))
+          k = titlecase_parts(k.to_s.tr('_', '-'))
         elsif k.is_a?(String)
           k = titlecase_parts(k)
         end
@@ -89,10 +95,10 @@ module Syspro
 
     def self.encode_parameters(params)
       Util.flatten_params(params)
-          .map { |k, v| "#{url_encode(k)}=#{url_encode(v)}" }.join("&")
+          .map { |k, v| "#{url_encode(k)}=#{url_encode(v)}" }.join('&')
     end
 
-    def self.flatten_params(params, parent_key = nil)
+    def self.flatten_params(params, parent_key = nil) # rubocop:disable Metrics/LineLength, Metrics/MethodLength
       result = []
 
       # do not sort the final output because arrays (and arrays of hashes
@@ -113,26 +119,41 @@ module Syspro
     end
 
     def self.log_error(message, data = {})
-      if !Syspro.logger.nil? ||
-         !Syspro.log_level.nil? && Syspro.log_level <= Syspro::LEVEL_ERROR
-        log_internal(message, data, color: :cyan,
-                                    level: Syspro::LEVEL_ERROR, logger: Syspro.logger, out: $stderr)
+      if !Syspro.logger.nil? || !Syspro.log_level.nil? && Syspro.log_level <= Syspro::LEVEL_ERROR # rubocop:disable Style/GuardClause, Metrics/LineLength
+        log_internal(
+          message,
+          data,
+          color: :cyan,
+          level: Syspro::LEVEL_ERROR,
+          logger: Syspro.logger,
+          out: $stderr
+        )
       end
     end
 
     def self.log_info(message, data = {})
-      if !Syspro.logger.nil? ||
-         !Syspro.log_level.nil? && Syspro.log_level <= Syspro::LEVEL_INFO
-        log_internal(message, data, color: :cyan,
-                                    level: Syspro::LEVEL_INFO, logger: Syspro.logger, out: $stdout)
+      if !Syspro.logger.nil? || !Syspro.log_level.nil? && Syspro.log_level <= Syspro::LEVEL_INFO # rubocop:disable Style/GuardClause, Metrics/LineLength
+        log_internal(
+          message,
+          data,
+          color: :cyan,
+          level: Syspro::LEVEL_INFO,
+          logger: Syspro.logger,
+          out: $stdout
+        )
       end
     end
 
     def self.log_debug(message, data = {})
-      if !Syspro.logger.nil? ||
-         !Syspro.log_level.nil? && Syspro.log_level <= Syspro::LEVEL_DEBUG
-        log_internal(message, data, color: :blue,
-                                    level: Syspro::LEVEL_DEBUG, logger: Syspro.logger, out: $stdout)
+      if !Syspro.logger.nil? || !Syspro.log_level.nil? && Syspro.log_level <= Syspro::LEVEL_DEBUG # rubocop:disable Style/GuardClause, Metrics/LineLength
+        log_internal(
+          message,
+          data,
+          color: :blue,
+          level: Syspro::LEVEL_DEBUG,
+          logger: Syspro.logger,
+          out: $stdout
+        )
       end
     end
 
@@ -141,8 +162,47 @@ module Syspro
         # Don't use strict form encoding by changing the square bracket control
         # characters back to their literals. This is fine by the server, and
         # makes these parameter strings easier to read.
-        gsub("%5B", "[").gsub("%5D", "]")
+        gsub('%5B', '[').gsub('%5D', ']')
     end
+
+    # TODO: Make these named required arguments when we drop support for Ruby
+    # 2.0.
+    def self.log_internal(message, data = {}, color: nil, level: nil, logger: nil, out: nil) # rubocop:disable Metrics/LineLength, Metrics/AbcSize, Metrics/MethodLength, Metrics/ParameterLists
+      data_str = data.reject { |_k, v| v.nil? }.map do |(k, v)|
+        format(
+          '%s=%s', # rubocop:disable Style/FormatStringToken
+          colorize(k, color, !out.nil? && out.isatty),
+          wrap_logfmt_value(v)
+        )
+      end.join(' ')
+
+      if !logger.nil?
+        # the library's log levels are mapped to the same values as the
+        # standard library's logger
+        logger.log(
+          level,
+          format(
+            'message=%s %s', # rubocop:disable Style/FormatStringToken
+            wrap_logfmt_value(message),
+            data_str
+          )
+        )
+      elsif out.isatty
+        out.puts format(
+          '%s %s %s', # rubocop:disable Style/FormatStringToken
+          colorize(level_name(level)[0, 4].upcase, color, out.isatty),
+          message,
+          data_str
+        )
+      else
+        out.puts format(
+          'message=%s level=%s %s', # rubocop:disable Style/FormatStringToken
+          wrap_logfmt_value(message),
+          level_name(level),
+          data_str
+        )
+      end
+    end
+    private_class_method :log_internal
   end
 end
-

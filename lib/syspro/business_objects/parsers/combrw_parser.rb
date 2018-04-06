@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Syspro
   module BusinessObjects
     module Parsers
@@ -9,41 +11,37 @@ module Syspro
         end
 
         def parse
-          next_prev_key = doc.first_element_child.xpath("NextPrevKey")
-          next_prev_key_obj = next_prev_key.children.map { |el|
-            if el.name == "text"
-              next
-            end
+          next_prev_key = doc.first_element_child.xpath('NextPrevKey')
+          next_prev_key_obj = next_prev_key.children.map do |el|
+            next if el.name == 'text'
             {
               name: el.name,
               text: el.text
             }
-          }.compact
+          end.compact
 
-          header_details = doc.first_element_child.xpath("HeaderDetails")
-          header_details_obj = header_details.children.map { |el|
-            if el.name == "text"
-              next
-            end
+          header_details = doc.first_element_child.xpath('HeaderDetails')
+          header_details_obj = header_details.children.map do |el|
+            next if el.name == 'text'
             {
               name: el.name,
               text: el.text
             }
-          }.compact
+          end.compact
 
           rows = doc.first_element_child.xpath('Row')
-          rows_obj = rows.map { |el|
-            el.elements.map { |inner|
+          rows_obj = rows.flat_map do |el|
+            el.elements.map do |inner|
               {
                 name: inner.name,
                 value: inner.xpath('Value').text,
                 data_type: inner.xpath('DataType').text
               }
-            }
-          }.flatten(1).compact
+            end
+          end.compact
 
           BrowseObject.new(
-            doc.first_element_child.xpath("Title").text,
+            doc.first_element_child.xpath('Title').text,
             rows_obj,
             next_prev_key_obj,
             header_details_obj
@@ -55,4 +53,3 @@ module Syspro
     end
   end
 end
-

@@ -1,17 +1,19 @@
-require "syspro/syspro_object"
-require "syspro/api_operations/request"
+# frozen_string_literal: true
+
+require 'syspro/syspro_object'
+require 'syspro/api_operations/request'
 
 module Syspro
   class ApiResource < SysproObject
     include Syspro::ApiOperations::Request
 
     def self.class_name
-      name.split("::")[-1]
+      name.split('::')[-1]
     end
 
     def self.resource_url
       if self == ApiResource
-        raise NotImplementedError, "APIResource is an abstract class.  You should perform actions on its subclasses (Charge, Customer, etc.)"
+        raise NotImplementedError, 'APIResource is an abstract class.  You should perform actions on its subclasses (Charge, Customer, etc.)'
       end
       "/#{CGI.escape(class_name.downcase)}"
     end
