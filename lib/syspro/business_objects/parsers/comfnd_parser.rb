@@ -30,14 +30,14 @@ module Syspro
             }
           }.flatten(1).compact
 
-          FindObject.new(
+          QueryObject.new(
             header_details_obj,
             rows_obj,
             doc.first_element_child.xpath('//RowsReturned').text.to_i
           )
         end
 
-        FindObject = Struct.new(:header_details, :rows, :row_count)
+        QueryObject = Struct.new(:header_details, :rows, :row_count)
       end
     end
   end

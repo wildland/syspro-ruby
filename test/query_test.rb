@@ -41,9 +41,9 @@ class QueryTest < Minitest::Test
     ]
     comfnd.order_by = "StockCode"
 
-    find_result = comfnd.call(user_id.guid)
+    query_result = comfnd.call(user_id.guid)
 
-    refute_nil find_result
+    refute_nil query_result
   end
 
   def test_query_fetch
