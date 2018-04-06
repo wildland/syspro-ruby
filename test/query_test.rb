@@ -3,9 +3,19 @@
 require 'test_helper'
 
 class QueryTest < Minitest::Test
-  def test_query_browse # rubocop:disable Metrics/MethodLength
-    user_id = Syspro::Logon.logon('wland', 'piperita2016', 'L', '')
+  extend Minitest::Spec::DSL
+  before { VCR.insert_cassette name }
+  after { VCR.eject_cassette }
 
+  let(:username) { 'wland' }
+  let(:password) { 'piperita2016' }
+  let(:company) { 'L' }
+  let(:company_password) { '' }
+  let(:user_id) do
+    Syspro::Logon.logon(username, password, company, company_password)
+  end
+
+  def test_query_browse # rubocop:disable Metrics/MethodLength
     combrw = Syspro::BusinessObjects::ComBrw.new
     combrw.browse_name = 'InvMaster'
     combrw.start_condition = ''
@@ -23,8 +33,6 @@ class QueryTest < Minitest::Test
   end
 
   def test_query_query # rubocop:disable Metrics/MethodLength
-    user_id = Syspro::Logon.logon('wland', 'piperita2016', 'L', '')
-
     comfnd = Syspro::BusinessObjects::ComFnd.new
     comfnd.table_name = 'InvMaster'
     comfnd.return_rows = 5
@@ -49,8 +57,6 @@ class QueryTest < Minitest::Test
   end
 
   def test_query_fetch
-    user_id = Syspro::Logon.logon('wland', 'piperita2016', 'L', '')
-
     comfch = Syspro::BusinessObjects::ComFch.new
     comfch.table_name = 'InvMaster'
     comfch.key = '02'

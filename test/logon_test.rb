@@ -4,6 +4,8 @@ require 'test_helper'
 
 class LogonTest < Minitest::Test
   extend Minitest::Spec::DSL
+  before { VCR.insert_cassette name }
+  after { VCR.eject_cassette }
 
   let(:username) { 'wland' }
   let(:password) { 'piperita2016' }

@@ -1,0 +1,36 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://syspro.wildlandlabs.com:90/SYSPROWCFService/Rest/logoff?UserId=1BB5B3050954BB459A5D034DB5CC386980
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Syspro/7 RubyBindings/0.1.0
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '72'
+      Content-Type:
+      - application/octet-stream
+      Server:
+      - Microsoft-HTTPAPI/2.0
+      Date:
+      - Fri, 06 Apr 2018 19:22:53 GMT
+    body:
+      encoding: UTF-8
+      string: 'ERROR: Unable to read the SYSPRO base directory registry string BaseDir8'
+    http_version: 
+  recorded_at: Fri, 06 Apr 2018 19:22:52 GMT
+recorded_with: VCR 4.0.0

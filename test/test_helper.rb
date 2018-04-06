@@ -5,3 +5,14 @@ require 'syspro'
 
 require 'pry'
 require 'minitest/autorun'
+require 'minitest-vcr'
+require 'webmock'
+
+VCR.configure do |c|
+  c.cassette_library_dir = 'test/cassettes'
+  c.hook_into :webmock
+  # TODO: change passwords and move them to ENV
+  # c.filter_sensitive_data() { ENV[] }
+end
+
+MinitestVcr::Spec.configure!
