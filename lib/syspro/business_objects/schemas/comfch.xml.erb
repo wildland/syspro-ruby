@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<Fetch xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" xsd:noNamespaceSchemaLocation="COMFCH.XSD">
+  <TableName><%= @table_name %></TableName>
+  <Key><%= @key %></Key>
+  <% unless @optional_keys.empty? %>
+    <% @optional_keys.each_with_index do |key, i| %>
+      <<%= "OptionalKey#{ i + 1 }" %>><%= key[:value] %></<%= "OptionalKey#{ i + 1 }" %>>
+    <% end %>
+  <% end %>
+  <FullKeyProvided><%= @full_key_provided ? "N" : "Y" %></FullKeyProvided>
+  <DefaultType><%= @default_type %></DefaultType>
+  <EspressoFetch><%= @espresso_fetch ? "N" : "Y" %></EspressoFetch>
+</Fetch>
+

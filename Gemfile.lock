@@ -1,22 +1,59 @@
 PATH
   remote: .
   specs:
-    syspro (0.1.0)
+    syspro-ruby (1.0.0.alpha.1)
       faraday (~> 0.10)
+      nokogiri (~> 1.8.2)
 
 GEM
   remote: https://rubygems.org/
   specs:
+    addressable (2.5.2)
+      public_suffix (>= 2.0.2, < 4.0)
+    ast (2.4.0)
     coderay (1.1.2)
+    crack (0.4.3)
+      safe_yaml (~> 1.0.0)
     faraday (0.14.0)
       multipart-post (>= 1.2, < 3)
+    hashdiff (0.3.7)
     method_source (0.9.0)
+    mini_portile2 (2.3.0)
+    minispec-metadata (2.0.0)
+      minitest
     minitest (5.11.3)
+    minitest-vcr (1.4.0)
+      minispec-metadata (~> 2.0)
+      minitest (>= 4.7.5)
+      vcr (>= 2.9)
     multipart-post (2.0.0)
+    nokogiri (1.8.2)
+      mini_portile2 (~> 2.3.0)
+    parallel (1.12.1)
+    parser (2.5.0.5)
+      ast (~> 2.4.0)
+    powerpack (0.1.1)
     pry (0.11.3)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
+    public_suffix (3.0.2)
+    rainbow (3.0.0)
     rake (10.5.0)
+    rubocop (0.54.0)
+      parallel (~> 1.10)
+      parser (>= 2.5)
+      powerpack (~> 0.1)
+      rainbow (>= 2.2.2, < 4.0)
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (~> 1.0, >= 1.0.1)
+    ruby-progressbar (1.9.0)
+    safe_yaml (1.0.4)
+    unicode-display_width (1.3.0)
+    vcr (4.0.0)
+    webmock (3.3.0)
+      addressable (>= 2.3.6)
+      crack (>= 0.3.2)
+      hashdiff
 
 PLATFORMS
   ruby
@@ -24,9 +61,12 @@ PLATFORMS
 DEPENDENCIES
   bundler (~> 1.16)
   minitest (~> 5.0)
+  minitest-vcr (~> 1.4.0)
   pry (~> 0.11)
   rake (~> 10.0)
-  syspro!
+  rubocop (~> 0.54.0)
+  syspro-ruby!
+  webmock (~> 3.3.0)
 
 BUNDLED WITH
    1.16.1

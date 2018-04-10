@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<Query xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" xsd:noNamespaceSchemaLocation="COMFND.XSD">
+  <TableName><%= @table_name %></TableName>
+  <ReturnRows><%= @return_rows %></ReturnRows>
+  <Columns>
+    <% for column in @columns %>
+      <Column><%= column[:name] %></Column>
+    <% end %>
+  </Columns>
+  <% unless @expressions.empty? %>
+    <Where>
+      <% for expression in @expressions %>
+        <Expression>
+          <OpenBracket>(</OpenBracket>
+          <% unless expression[:andor].nil? %>
+            <AndOr><%= expression[:andor] %></AndOr>
+          <% end %>
+          <Column><%= expression[:column] %></Column>
+          <Condition><%= expression[:condition] %></Condition>
+          <Value><%= expression[:value] %></Value>
+          <CloseBracket>)</CloseBracket>
+        </Expression>
+      <% end %>
+    </Where>
+  <% end %>
+  <OrderBy>
+    <Column><%= @order_by %></Column>
+  </OrderBy>
+</Query>

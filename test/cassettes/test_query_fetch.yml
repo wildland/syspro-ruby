@@ -1,0 +1,96 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://syspro.wildlandlabs.com:90/SYSPROWCFService/Rest/logon?CompanyId=L&CompanyPassword=&Operator=wland&OperatorPassword=piperita2016
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Syspro/7 RubyBindings/0.1.0
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '36'
+      Content-Type:
+      - application/octet-stream
+      Server:
+      - Microsoft-HTTPAPI/2.0
+      Date:
+      - Fri, 06 Apr 2018 19:23:16 GMT
+    body:
+      encoding: UTF-8
+      string: '5B21680F424424498B7CE7CCDA98B41700  '
+    http_version: 
+  recorded_at: Fri, 06 Apr 2018 19:23:15 GMT
+- request:
+    method: get
+    uri: http://syspro.wildlandlabs.com:90/SYSPROWCFService/Rest/Query/Fetch?UserId=5B21680F424424498B7CE7CCDA98B41700%20%20&XmlIn=%3C?xml%20version=%221.0%22%20encoding=%22Windows-1252%22?%3E%0A%3CFetch%20xmlns:xsd=%22http://www.w3.org/2001/XMLSchema-instance%22%20xsd:noNamespaceSchemaLocation=%22COMFCH.XSD%22%3E%0A%20%20%3CTableName%3EInvMaster%3C/TableName%3E%0A%20%20%3CKey%3E02%3C/Key%3E%0A%20%20%0A%20%20%3CFullKeyProvided%3EY%3C/FullKeyProvided%3E%0A%20%20%3CDefaultType%3E%3C/DefaultType%3E%0A%20%20%3CEspressoFetch%3EN%3C/EspressoFetch%3E%0A%3C/Fetch%3E%0A%0A
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Syspro/7 RubyBindings/0.1.0
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '3911'
+      Content-Type:
+      - application/octet-stream
+      Server:
+      - Microsoft-HTTPAPI/2.0
+      Date:
+      - Fri, 06 Apr 2018 19:23:26 GMT
+    body:
+      encoding: UTF-8
+      string: "<?xml version=\"1.0\" encoding=\"Windows-1252\"?>\n<InvMaster Language='05'
+        Language2='EN' CssStyle='' DecFormat='1' DateFormat='01' Role='01' Version='7.0.035'
+        OperatorPrimaryRole='   '>\n<StockCode>02</StockCode>\n<Description>STR</Description>\n<LongDesc>SPEARMINT
+        TERPENES</LongDesc>\n<AlternateKey1/>\n<AlternateKey2/>\n<EccUser/>\n<StockUom>LB</StockUom>\n<AlternateUom>KG</AlternateUom>\n<OtherUom>DR</OtherUom>\n<ConvFactAltUom>
+        \    2.204620</ConvFactAltUom>\n<ConvMulDiv>M</ConvMulDiv>\n<ConvFactOthUom>
+        \  400.000000</ConvFactOthUom>\n<MulDiv>M</MulDiv>\n<Mass>           1.000000</Mass>\n<Volume>
+        \          0.000000</Volume>\n<Decimals>3</Decimals>\n<PriceCategory>A</PriceCategory>\n<PriceMethod>C</PriceMethod>\n<Supplier/>\n<CycleCount>
+        0</CycleCount>\n<ProductClass>STRP</ProductClass>\n<TaxCode>A</TaxCode>\n<OtherTaxCode/>\n<ListPriceCode>A</ListPriceCode>\n<SerialMethod>N</SerialMethod>\n<InterfaceFlag>Y</InterfaceFlag>\n<KitType>N</KitType>\n<LowLevelCode>
+        0</LowLevelCode>\n<Buyer/>\n<Planner/>\n<TraceableType>T</TraceableType>\n<MpsFlag>N</MpsFlag>\n<BulkIssueFlag>N</BulkIssueFlag>\n<AbcClass/>\n<LeadTime>
+        \        0</LeadTime>\n<StockMovementReq>Y</StockMovementReq>\n<ClearingFlag>N</ClearingFlag>\n<SupercessionDate>0000-00-00</SupercessionDate>\n<AbcAnalysisReq>Y</AbcAnalysisReq>\n<AbcCostingReq>N</AbcCostingReq>\n<CostUom>LB</CostUom>\n<MinPricePct>
+        \ 0.00</MinPricePct>\n<LabourCost>         0.00000</LabourCost>\n<MaterialCost>
+        \        0.00000</MaterialCost>\n<FixOverhead>         0.00000</FixOverhead>\n<VariableOverhead>
+        \        0.00000</VariableOverhead>\n<PartCategory>B</PartCategory>\n<DrawOfficeNum/>\n<WarehouseToUse>H1</WarehouseToUse>\n<BuyingRule>A</BuyingRule>\n<SpecificGravity>
+        0.0000</SpecificGravity>\n<ImplosionNum>    0</ImplosionNum>\n<Ebq>         400.000000</Ebq>\n<ComponentCount>
+        \   0</ComponentCount>\n<FixTimePeriod> 1</FixTimePeriod>\n<PanSize>           0.000000</PanSize>\n<DockToStock>
+        \        0</DockToStock>\n<OutputMassFlag>F</OutputMassFlag>\n<ShelfLife>
+        \  0</ShelfLife>\n<Version/>\n<Release/>\n<DemandTimeFence>         0</DemandTimeFence>\n<MakeToOrderFlag>N</MakeToOrderFlag>\n<ManufLeadTime>
+        \        0</ManufLeadTime>\n<GrossReqRule>I</GrossReqRule>\n<PercentageYield>100</PercentageYield>\n<AbcPreProd>
+        \        0.00000</AbcPreProd>\n<AbcManufacturing>         0.00000</AbcManufacturing>\n<AbcSales>
+        \        0.00000</AbcSales>\n<AbcCumPreProd>         0.00000</AbcCumPreProd>\n<AbcCumManuf>
+        \        0.00000</AbcCumManuf>\n<WipCtlGlCode/>\n<ResourceCode/>\n<GstTaxCode>A</GstTaxCode>\n<PrcInclGst>N</PrcInclGst>\n<SerEntryAtSale/>\n<StpSelection/>\n<UserField1/>\n<UserField2>
+        \          0.00000</UserField2>\n<UserField3/>\n<UserField4/>\n<UserField5/>\n<TariffCode/>\n<SupplementaryUnit>N</SupplementaryUnit>\n<EbqPan>E</EbqPan>\n<StdLandedCost>
+        \        0.00000</StdLandedCost>\n<LctRequired>N</LctRequired>\n<StdLctRoute/>\n<IssMultLotsFlag>Y</IssMultLotsFlag>\n<InclInStrValid>Y</InclInStrValid>\n<StdLabCostsBill>
+        \        0.00000</StdLabCostsBill>\n<PhantomIfComp/>\n<CountryOfOrigin/>\n<StockOnHold/>\n<StockOnHoldReason/>\n<EccFlag>N</EccFlag>\n<StockAndAltUm>N</StockAndAltUm>\n<AltUnitChar>0</AltUnitChar>\n<JobsOnHold/>\n<JobHoldAllocs/>\n<PurchOnHold/>\n<SalesOnHold/>\n<MaintOnHold/>\n<BatchBill>N</BatchBill>\n<BlanketPoExists/>\n<CallOffBpoExists/>\n<DistWarehouseToUse/>\n<JobClassification/>\n<SubContractCost>
+        \        0.00000</SubContractCost>\n<DateStkAdded>2005-08-26</DateStkAdded>\n<InspectionFlag/>\n<SerialPrefix/>\n<SerialSuffix/>\n<ReturnableItem/>\n<ProductGroup/>\n<PriceType/>\n<Basis/>\n<ManualCostFlag/>\n<ManufactureUom>LB</ManufactureUom>\n<ConvFactMuM>
+        \    1.000000</ConvFactMuM>\n<ManMulDiv>M</ManMulDiv>\n<LookAheadWin>         0</LookAheadWin>\n<LoadingFactor>
+        \    0.000</LoadingFactor>\n<SupplUnitCode/>\n<StorageSecurity/>\n<StorageHazard/>\n<StorageCondition/>\n<ProductShelfLife>
+        \  0</ProductShelfLife>\n<InternalShelfLife>   0</InternalShelfLife>\n<AltMethodFlag/>\n<AltSisoFlag/>\n<AltReductionFlag/>\n<WithTaxExpenseType/>\n</InvMaster>\n "
+    http_version: 
+  recorded_at: Fri, 06 Apr 2018 19:23:24 GMT
+recorded_with: VCR 4.0.0

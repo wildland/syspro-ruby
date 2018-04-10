@@ -1,10 +1,15 @@
-require_relative "api_resource"
+# frozen_string_literal: true
+
+require_relative 'api_resource'
 
 module Syspro
   class SingletonAPIResource < ApiResource
     def self.resource_url
       if self == SingletonAPIResource
-        raise NotImplementedError, "SingletonAPIResource is an abstract class.  You should perform actions on its subclasses (Customer, etc.)"
+        raise(
+          NotImplementedError,
+          'SingletonAPIResource is an abstract class.  You should perform actions on its subclasses (Customer, etc.)' # rubocop:disable Metrics/LineLength
+        )
       end
       "/#{CGI.escape(class_name.downcase)}"
     end

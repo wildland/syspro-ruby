@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Syspro
   class SysproError < StandardError
     attr_reader :message, :response, :code, :http_body, :http_headers,
@@ -16,8 +18,8 @@ module Syspro
     end
 
     def to_s
-      status_string = @http_status.nil? ? "" : "(Status #{@http_status}) "
-      id_string = @request_id.nil? ? "" : "(Request #{@request_id}) "
+      status_string = @http_status.nil? ? '' : "(Status #{@http_status}) "
+      id_string = @request_id.nil? ? '' : "(Request #{@request_id}) "
       "#{status_string}#{id_string}#{@message}"
     end
   end
@@ -30,5 +32,4 @@ module Syspro
 
   class ApiError < SysproError
   end
-
 end

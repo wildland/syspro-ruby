@@ -1,6 +1,9 @@
-require "nokogiri"
+# frozen_string_literal: true
+
+require 'nokogiri'
 
 module Syspro
+  # This class represents a syspro response
   class SysproResponse
     attr_accessor :data, :http_body, :http_headers, :http_status, :request_id
 
@@ -12,7 +15,7 @@ module Syspro
       resp.data = Nokogiri::XML(resp.http_body)
       resp.http_headers = http_resp[:headers]
       resp.http_status = http_resp[:status]
-      resp.request_id = http_resp[:headers]["Request-Id"]
+      resp.request_id = http_resp[:headers]['Request-Id']
       resp
     end
 
@@ -23,7 +26,7 @@ module Syspro
       resp.data = Nokogiri::XML(resp.http_body)
       resp.http_headers = http_resp.headers
       resp.http_status = http_resp.status
-      resp.request_id = http_resp.headers["Request-Id"]
+      resp.request_id = http_resp.headers['Request-Id']
       resp
     end
   end

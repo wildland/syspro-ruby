@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module Syspro
+  # This class represents a syspro response
   class SysproObject
     include Enumerable
 
@@ -18,7 +21,8 @@ module Syspro
     # considered to be equal if they have the same set of values and each one
     # of those values is the same.
     def ==(other)
-      other.is_a?(SysproObject) && @values == other.instance_variable_get(:@values)
+      other.is_a?(SysproObject) &&
+        @values == other.instance_variable_get(:@values)
     end
 
     def to_s(*_args)
@@ -26,8 +30,8 @@ module Syspro
     end
 
     def inspect
-      id_string = respond_to?(:id) && !id.nil? ? " id=#{id}" : ""
-      "#<#{self.class}:0x#{object_id.to_s(16)}#{id_string}> JSON: " + JSON.pretty_generate(@values)
+      id_string = respond_to?(:id) && !id.nil? ? " id=#{id}" : ''
+      "#<#{self.class}:0x#{object_id.to_s(16)}#{id_string}> JSON: " + JSON.pretty_generate(@values) # rubocop:disable Metrics/LineLength
     end
 
     def keys
@@ -38,9 +42,9 @@ module Syspro
       @values.values
     end
 
-    def to_hash
+    def to_hash # rubocop:disable Metrics/MethodLength
       maybe_to_hash = lambda do |value|
-        value && value.respond_to?(:to_hash) ? value.to_hash : value
+        value&.respond_to?(:to_hash) ? value.to_hash : value
       end
 
       @values.each_with_object({}) do |(key, value), acc|
@@ -57,11 +61,9 @@ module Syspro
       @values.each(&blk)
     end
 
-    private
-
     # Produces a deep copy of the given object including support for arrays,
     # hashes, and SysproObjects.
-    def self.deep_copy(obj)
+    def self.deep_copy(obj) # rubocop:disable Metrics/MethodLength
       case obj
       when Array
         obj.map { |e| deep_copy(e) }
@@ -82,6 +84,5 @@ module Syspro
       end
     end
     private_class_method :deep_copy
-
   end
 end
