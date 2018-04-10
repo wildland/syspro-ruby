@@ -4,8 +4,6 @@ module Syspro
   module ApiOperations
     module Query
       module ClassMethods
-        include Request
-
         def browse(params)
           request(:get, '/Query/Browse', params)
         end
