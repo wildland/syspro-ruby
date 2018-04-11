@@ -1,0 +1,70 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://syspro.wildlandlabs.com:90/SYSPROWCFService/Rest/logon?CompanyId=L&CompanyPassword=&Operator=wland&OperatorPassword=piperita2016
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Syspro/7 RubyBindings/1.0.0.alpha.1
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '36'
+      Content-Type:
+      - application/octet-stream
+      Server:
+      - Microsoft-HTTPAPI/2.0
+      Date:
+      - Wed, 11 Apr 2018 19:00:49 GMT
+    body:
+      encoding: UTF-8
+      string: 'E621DED6B5E98C4783D130230F6B29E700  '
+    http_version: 
+  recorded_at: Wed, 11 Apr 2018 19:00:49 GMT
+- request:
+    method: get
+    uri: http://syspro.wildlandlabs.com:90/SYSPROWCFService/Rest/Query/Query?BusinessObject=SORQBS&UserId=E621DED6B5E98C4783D130230F6B29E700%20%20&XmlIn=%3C?xml%20version=%221.0%22%20encoding=%22Windows-1252%22?%3E%0A%3CQuery%20xmlns:xsd=%22http://www.w3.org/2001/XMLSchema-instance%22%20xsd:noNamespaceSchemaLocation=%22SORQBS.XSD%22%3E%0A%20%20%3COption%3E%0A%20%20%20%20%3CIncludeSalesOrderDetails%3Etrue%3C/IncludeSalesOrderDetails%3E%0A%20%20%20%20%3CIncludeContractDetails%3Etrue%3C/IncludeContractDetails%3E%0A%20%20%20%20%3CIncludeDeliveryHistory%3Etrue%3C/IncludeDeliveryHistory%3E%0A%20%20%20%20%3CIncludeUnconfirmedReleases%3Etrue%3C/IncludeUnconfirmedReleases%3E%0A%20%20%20%20%3CIncludeConfirmedReleases%3Etrue%3C/IncludeConfirmedReleases%3E%0A%20%20%20%20%3CIncludeReleaseDetails%3Etrue%3C/IncludeReleaseDetails%3E%0A%20%20%20%20%3CIncludeReleaseHistory%3Etrue%3C/IncludeReleaseHistory%3E%0A%20%20%3C/Option%3E%0A%20%20%20%0A%20%20%20%20%3CFilter%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%3CCustomer%20FilterType=%22%22%20FilterValue=%22%22/%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%3C/Filter%3E%0A%20%20%0A%3C/Query%3E%0A%0A
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Syspro/7 RubyBindings/1.0.0.alpha.1
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '102'
+      Content-Type:
+      - application/octet-stream
+      Server:
+      - Microsoft-HTTPAPI/2.0
+      Date:
+      - Wed, 11 Apr 2018 19:00:53 GMT
+    body:
+      encoding: UTF-8
+      string: 'ERROR: Access denied to Functional Area ''SorBlanketSo'' for operator
+        ''WLAND'' (Business Object ''SORQBS'')'
+    http_version: 
+  recorded_at: Wed, 11 Apr 2018 19:00:53 GMT
+recorded_with: VCR 4.0.0

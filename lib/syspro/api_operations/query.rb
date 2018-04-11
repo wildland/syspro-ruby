@@ -16,8 +16,6 @@ module Syspro
           request(:get, '/Query/Query', params)
         end
 
-        def find; end
-
         private
 
         def warn_on_opts_in_params(params)
