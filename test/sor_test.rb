@@ -16,21 +16,27 @@ class SorTest < Minitest::Test
   end
 
   def test_sor_query
-    sorqbs = Syspro::BusinessObjects::SorQbs.new
+    sorqbs = Syspro::BusinessObjects::SorQry.new
 
-    sorqbs.include_sales_order_details = true
-    sorqbs.include_contact_details = true
-    sorqbs.include_delivery_history = true
-    sorqbs.include_unconfirmed_releases = true
-    sorqbs.include_confirmed_releases = true
-    sorqbs.include_release_details = true
-    sorqbs.include_release_history = true
-    sorqbs.filters = [
-      { name: 'Customer', type: 'A', value: 'JJJ001' }
-    ]
+    sorqbs.sales_order = '16R069'
+    sorqbs.invoice = nil
+    sorqbs.stocked_lines = true
+    sorqbs.non_stocked_lines = true
+    sorqbs.freight_lines = true
+    sorqbs.misc_lines = true
+    sorqbs.comment_lines = true
+    sorqbs.completed_lines = true
+    sorqbs.serials = true
+    sorqbs.lots = true
+    sorqbs.bins = true
+    sorqbs.attached_items = true
+    sorqbs.custom_forms = true
+    sorqbs.detail_line_custom_forms = true
+    sorqbs.values = true
+    sorqbs.line_ship_date = true
 
     sor_result = sorqbs.call(user_id.guid)
-    refute_nil sor_result
+    assert_kind_of Syspro::BusinessObjects::Models::SorDetail, sor_result
   end
 end
 

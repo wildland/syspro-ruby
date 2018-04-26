@@ -1,33 +1,34 @@
 # frozen_string_literal: true
 
-require 'syspro/business_objects/parsers/sorqbs_parser'
+require 'syspro/business_objects/parsers/sorqry_parser'
 require 'erb'
 
 module Syspro
   module BusinessObjects
-    class SorQbs < ApiResource
+    class SorQry < ApiResource
       include Syspro::ApiOperations::Query
       include Syspro::BusinessObjects::Parsers
 
-      attr_accessor :include_sales_order_details, :include_contact_details, :include_delivery_history,
-                    :include_unconfirmed_releases, :include_confirmed_releases, :include_release_details,
-                    :include_release_history, :filters
+      attr_accessor :sales_order, :invoice, :stocked_lines, :non_stocked_lines, :freight_lines,
+                    :misc_lines, :comment_lines, :completed_lines, :serials, :lots, :bins,
+                    :attached_items, :custom_forms, :detail_line_custom_forms, :values, :line_ship_date
 
       def call(user_id)
         xml_in = template.result(binding)
-        business_object = 'SORQBS'
+        business_object = 'SORQRY'
         params = { 'UserId' => user_id, 'BusinessObject' => business_object, 'XmlIn' => xml_in }
-        resp = SorQbs.query(params)
+        resp = SorQry.query(params)
+
         parse_response(resp)
       end
 
       def template
-        ERB.new File.read(File.expand_path('schemas/sorqbs.xml.erb', File.dirname(__FILE__))), nil, '%'
+        ERB.new File.read(File.expand_path('schemas/sorqry.xml.erb', File.dirname(__FILE__))), nil, '%'
       end
 
       def parse_response(resp)
         handle_errors(resp)
-        parser = SorQbsParser.new(respo[0].data)
+        parser = SorQryParser.new(resp[0].data)
         parser.parse
       end
 

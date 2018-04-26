@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<Query xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" xsd:noNamespaceSchemaLocation="SORQRY.XSD">
+  <Key>
+    <SalesOrder><%= @sales_order %></SalesOrder>
+    <% unless @invoice.nil? %>
+      <Invoice><%= @invoice %></Invoice>
+    <% end %>
+  </Key>
+  <Option>
+    <IncludeStockedLines><%= @stocked_lines ? "N" : "Y" %></IncludeStockedLines>
+      <IncludeNonStockedLines><%= @non_stocked_lines ? "N" : "Y" %></IncludeNonStockedLines>
+      <IncludeFreightLines><%= @freight_lines ? "N" : "Y" %></IncludeFreightLines>
+      <IncludeMiscLines><%= @misc_lines ? "N" : "Y" %></IncludeMiscLines>
+      <IncludeCommentLines><%= @comment_lines ? "N" : "Y" %></IncludeCommentLines>
+      <IncludeCompletedLines><%= @completed_lines ? "N" : "Y" %></IncludeCompletedLines>
+      <IncludeSerials><%= @serials ? "N" : "Y" %></IncludeSerials>
+      <IncludeLots><%= @lots ? "N" : "Y" %></IncludeLots>
+      <IncludeBins><%= @bins ? "N" : "Y" %></IncludeBins>
+      <IncludeAttachedItems><%= @attached_items ? "N" : "Y" %></IncludeAttachedItems>
+      <IncludeCustomForms><%= @custom_forms ? "N" : "Y" %></IncludeCustomForms>
+      <IncludeDetailLineCustomForms><%= @detail_line_custom_forms ? "N" : "Y" %></IncludeDetailLineCustomForms>
+      <IncludeValues><%= @values ? "N" : "Y" %></IncludeValues>
+      <ReturnLineShipDate><%= @line_ship_date ? "N" : "Y" %></ReturnLineShipDate>
+      <XslStylesheet/>
+  </Option>
+</Query>
+

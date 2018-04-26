@@ -27,15 +27,15 @@ http_interactions:
       Server:
       - Microsoft-HTTPAPI/2.0
       Date:
-      - Wed, 11 Apr 2018 19:00:49 GMT
+      - Thu, 26 Apr 2018 19:08:08 GMT
     body:
       encoding: UTF-8
-      string: 'E621DED6B5E98C4783D130230F6B29E700  '
+      string: 'E3333B82C68A4F4893184E2DE8C42E4A00  '
     http_version: 
-  recorded_at: Wed, 11 Apr 2018 19:00:49 GMT
+  recorded_at: Thu, 26 Apr 2018 19:08:09 GMT
 - request:
     method: get
-    uri: http://syspro.wildlandlabs.com:90/SYSPROWCFService/Rest/Query/Query?BusinessObject=SORQBS&UserId=E621DED6B5E98C4783D130230F6B29E700%20%20&XmlIn=%3C?xml%20version=%221.0%22%20encoding=%22Windows-1252%22?%3E%0A%3CQuery%20xmlns:xsd=%22http://www.w3.org/2001/XMLSchema-instance%22%20xsd:noNamespaceSchemaLocation=%22SORQBS.XSD%22%3E%0A%20%20%3COption%3E%0A%20%20%20%20%3CIncludeSalesOrderDetails%3Etrue%3C/IncludeSalesOrderDetails%3E%0A%20%20%20%20%3CIncludeContractDetails%3Etrue%3C/IncludeContractDetails%3E%0A%20%20%20%20%3CIncludeDeliveryHistory%3Etrue%3C/IncludeDeliveryHistory%3E%0A%20%20%20%20%3CIncludeUnconfirmedReleases%3Etrue%3C/IncludeUnconfirmedReleases%3E%0A%20%20%20%20%3CIncludeConfirmedReleases%3Etrue%3C/IncludeConfirmedReleases%3E%0A%20%20%20%20%3CIncludeReleaseDetails%3Etrue%3C/IncludeReleaseDetails%3E%0A%20%20%20%20%3CIncludeReleaseHistory%3Etrue%3C/IncludeReleaseHistory%3E%0A%20%20%3C/Option%3E%0A%20%20%20%0A%20%20%20%20%3CFilter%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%3CCustomer%20FilterType=%22%22%20FilterValue=%22%22/%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%3C/Filter%3E%0A%20%20%0A%3C/Query%3E%0A%0A
+    uri: http://syspro.wildlandlabs.com:90/SYSPROWCFService/Rest/Query/Query?BusinessObject=SORQRY&UserId=E3333B82C68A4F4893184E2DE8C42E4A00%20%20&XmlIn=%3C?xml%20version=%221.0%22%20encoding=%22Windows-1252%22?%3E%0A%3CQuery%20xmlns:xsd=%22http://www.w3.org/2001/XMLSchema-instance%22%20xsd:noNamespaceSchemaLocation=%22SORQRY.XSD%22%3E%0A%20%20%3CKey%3E%0A%20%20%20%20%3CSalesOrder%3E16R069%3C/SalesOrder%3E%0A%20%20%20%20%0A%20%20%3C/Key%3E%0A%20%20%3COption%3E%0A%20%20%20%20%3CIncludeStockedLines%3EN%3C/IncludeStockedLines%3E%0A%20%20%20%20%20%20%3CIncludeNonStockedLines%3EN%3C/IncludeNonStockedLines%3E%0A%20%20%20%20%20%20%3CIncludeFreightLines%3EN%3C/IncludeFreightLines%3E%0A%20%20%20%20%20%20%3CIncludeMiscLines%3EN%3C/IncludeMiscLines%3E%0A%20%20%20%20%20%20%3CIncludeCommentLines%3EN%3C/IncludeCommentLines%3E%0A%20%20%20%20%20%20%3CIncludeCompletedLines%3EN%3C/IncludeCompletedLines%3E%0A%20%20%20%20%20%20%3CIncludeSerials%3EN%3C/IncludeSerials%3E%0A%20%20%20%20%20%20%3CIncludeLots%3EN%3C/IncludeLots%3E%0A%20%20%20%20%20%20%3CIncludeBins%3EN%3C/IncludeBins%3E%0A%20%20%20%20%20%20%3CIncludeAttachedItems%3EN%3C/IncludeAttachedItems%3E%0A%20%20%20%20%20%20%3CIncludeCustomForms%3EN%3C/IncludeCustomForms%3E%0A%20%20%20%20%20%20%3CIncludeDetailLineCustomForms%3EN%3C/IncludeDetailLineCustomForms%3E%0A%20%20%20%20%20%20%3CIncludeValues%3EN%3C/IncludeValues%3E%0A%20%20%20%20%20%20%3CReturnLineShipDate%3EN%3C/ReturnLineShipDate%3E%0A%20%20%20%20%20%20%3CXslStylesheet/%3E%0A%20%20%3C/Option%3E%0A%3C/Query%3E%0A%0A
     body:
       encoding: US-ASCII
       string: ''
@@ -54,17 +54,33 @@ http_interactions:
       message: OK
     headers:
       Content-Length:
-      - '102'
+      - '3812'
       Content-Type:
       - application/octet-stream
       Server:
       - Microsoft-HTTPAPI/2.0
       Date:
-      - Wed, 11 Apr 2018 19:00:53 GMT
+      - Thu, 26 Apr 2018 19:08:15 GMT
     body:
       encoding: UTF-8
-      string: 'ERROR: Access denied to Functional Area ''SorBlanketSo'' for operator
-        ''WLAND'' (Business Object ''SORQBS'')'
+      string: "<?xml version=\"1.0\" encoding=\"Windows-1252\"?>\n<SorDetail Language='05'
+        Language2='EN' CssStyle='' DecFormat='1' DateFormat='01' Role='01' Version='7.0.047'
+        OperatorPrimaryRole='   '   xmlns:SALARE=\"SALARE\" xmlns:SALSLS=\"SALSLS\"
+        xmlns:TBLART=\"TBLART\" xmlns:SALBRN=\"SALBRN\" xmlns:TBLCUR=\"TBLCUR\" >\n<SalesOrder>16R069</SalesOrder>\n<DocumentType>O</DocumentType>\n<DocumentTypeDesc>Order</DocumentTypeDesc>\n<InterBranchTransfer/>\n<InterWhSale/>\n<SourceWarehouse/>\n<TargetWarehouse/>\n<GtrReference/>\n<Customer>SYM000</Customer>\n<CustomerName>SYMRISE
+        GLOBAL</CustomerName>\n<TaxStatusCode>E</TaxStatusCode>\n<TaxStatus>Exempt
+        from tax</TaxStatus>\n<GSTTaxStatusCode>E</GSTTaxStatusCode>\n<GSTTaxStatus>Exempt
+        from tax</GSTTaxStatus>\n<EUFlag>N</EUFlag>\n<EUFlagDesc>EU</EUFlagDesc>\n<SoldToName>SYMRISE
+        GLOBAL</SoldToName>\n<SoldAddr1>FR KREDITOREN</SoldAddr1>\n<SoldAddr2>POSTFACH
+        1253</SoldAddr2>\n<SoldAddr3>D-37601 HOLZMINDEN</SoldAddr3>\n<SoldAddr3Locality/>\n<SoldAddr4>GERMANY</SoldAddr4>\n<SoldAddr5/>\n<SoldPostalCode/>\n<SoldGpsLat>
+        \ 0.000000</SoldGpsLat>\n<SoldGpsLong>   0.000000</SoldGpsLong>\n<Salesperson>DAL</Salesperson>\n<ScheduledOrdFlag/>\n<DiscPct1>0.00</DiscPct1>\n<DiscPct2>0.00</DiscPct2>\n<DiscPct3>0.00</DiscPct3>\n<Commissions>\n<Salesperson>DAL</Salesperson>\n<CommissionSales1>0.00</CommissionSales1>\n<Edited_CommissionSales1>0.00</Edited_CommissionSales1>\n<Salesperson2/>\n<CommissionSales2>0.00</CommissionSales2>\n<Edited_CommissionSales2>0.00</Edited_CommissionSales2>\n<Salesperson3/>\n<CommissionSales3>0.00</CommissionSales3>\n<Edited_CommissionSales3>0.00</Edited_CommissionSales3>\n<Salesperson4/>\n<CommissionSales4>0.00</CommissionSales4>\n<Edited_CommissionSales4>0.00</Edited_CommissionSales4>\n</Commissions>\n<SALSLS:Name>DAN
+        A LABBEE</SALSLS:Name>\n<OrderStatus>*</OrderStatus>\n<OrderStatusDesc>Cancelled
+        during entry</OrderStatusDesc>\n<CustomerPoNumber/>\n<OrderDate>2014-08-13</OrderDate>\n<GITReference/>\n<ReqShipDate>2017-05-31</ReqShipDate>\n<ShippingInstrs/>\n<ShippingInstrsCod/>\n<SpecialInstrs/>\n<InvTermsOverride>3</InvTermsOverride>\n<DeliveryNote/>\n<LastDelNote/>\n<TimeDelPrtedHh>00</TimeDelPrtedHh>\n<TimeDelPrtedMm>00</TimeDelPrtedMm>\n<LastInvoice/>\n<DateLastInvPrt/>\n<TimeInvPrtedHh>00</TimeInvPrtedHh>\n<TimeInvPrtedMm>00</TimeInvPrtedMm>\n<TBLART:Description>NET
+        30 DAYS</TBLART:Description>\n<Branch>HQ</Branch>\n<SALBRN:Description>HARRAH,
+        WASHINGTON RECEIVABLES</SALBRN:Description>\n<EntInvoice/>\n<OrderType/>\n<Area>FG</Area>\n<SALARE:Description>FOREIGN</SALARE:Description>\n<TaxExemptNumber/>\n<GstExemptNum/>\n<Currency>$</Currency>\n<TBLCUR:Description>DOLLAR</TBLCUR:Description>\n<ShipAddress1>IMPORTANT</ShipAddress1>\n<ShipAddress2>THIS
+        IS A GLOBAL ACCOUNT</ShipAddress2>\n<ShipAddress3>USED TO HOLD</ShipAddress3>\n<ShipAddress3Locality/>\n<ShipAddress4>SCHEDULED
+        ORDERS ON CONTRACTS</ShipAddress4>\n<ShipAddress5>DO NOT SHIP FROM GLOBAL</ShipAddress5>\n<ShipPostalCode/>\n<ShipGpsLat>
+        \ 0.000000</ShipGpsLat>\n<ShipGpsLong>   0.000000</ShipGpsLong>\n<ShipComplete>N</ShipComplete>\n<Email/>\n<FixExchangeRate>N</FixExchangeRate>\n<ExchangeRate>
+        \    1.000000</ExchangeRate>\n<Edited_ExchangeRate>1.000000</Edited_ExchangeRate>\n<MulDiv>M</MulDiv>\n<ConsolidatedOrder/>\n<GstDeduction>I</GstDeduction>\n<CreditedInvDate/>\n<Job/>\n<SerialisedFlag/>\n<CounterSalesFlag/>\n<Nationality/>\n<DeliveryTerms/>\n<ShippingLocation/>\n<TransactionNature>000</TransactionNature>\n<TransportMode>00</TransportMode>\n<ProcessFlag>0</ProcessFlag>\n<JobsExistFlag/>\n<AlternateKey/>\n<HierarchyFlag/>\n<DepositFlag/>\n<EdiSource/>\n<MultShipCode/>\n<CompanyTaxNo/>\n<LastOperator>MATTB</LastOperator>\n<Operator/>\n<State/>\n<CountyZip/>\n<ExtendedTaxCode/>\n<WebCreated/>\n<Quote/>\n<DispatchesMade/>\n<LiveDispExist/>\n<NumDispatches>0</NumDispatches>\n<IncludeInMrp>Y</IncludeInMrp>\n<HeaderText>\n</HeaderText>\n<HeaderNotes>\n</HeaderNotes>\n</SorDetail>\n "
     http_version: 
-  recorded_at: Wed, 11 Apr 2018 19:00:53 GMT
+  recorded_at: Thu, 26 Apr 2018 19:08:15 GMT
 recorded_with: VCR 4.0.0
