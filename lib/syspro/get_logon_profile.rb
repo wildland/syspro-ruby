@@ -18,7 +18,7 @@ module Syspro
       OpenStruct.new(
         company_name: doc.xpath('//CompanyName').text,
         operator_code: doc.xpath('//OperatorCode').text,
-        operator_code: doc.xpath('//OperatorGroup').text,
+        operator_group: doc.xpath('//OperatorGroup').text,
         operator_email_address: doc.xpath('//OperatorEmailAddress').text,
         operator_location: doc.xpath('//OperatorLocation').text,
         operator_language_code: doc.xpath('//OperatorLanguageCode').text,
