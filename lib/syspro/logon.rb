@@ -10,11 +10,17 @@ module Syspro
         'CompanyPassword' => company_password
       }
       resp = request(:get, resource_url, params)
+      handle_errors(resp)
       UserIdObject.new(resp[0].http_body)
     end
 
     def resource_url
       '/Logon'
+    end
+
+    def handle_errors(resp)
+      body = resp[0].http_body
+      raise AuthenticationError, body if body =~ /^(ERROR)/
     end
 
     UserIdObject = Struct.new(:guid)
