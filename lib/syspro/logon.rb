@@ -18,7 +18,7 @@ module Syspro
       '/Logon'
     end
 
-    def handle_errors(resp)
+    def self.handle_errors(resp)
       body = resp[0].http_body
       raise AuthenticationError, body if body =~ /^(ERROR)/
     end

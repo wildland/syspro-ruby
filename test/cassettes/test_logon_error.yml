@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://syspro.wildlandlabs.com:90/SYSPROWCFService/Rest/logoff?UserId=1BB5B3050954BB459A5D034DB5CC386980
+    uri: http://syspro.wildlandlabs.com:90/SYSPROWCFService/Rest/logon?CompanyId=L&CompanyPassword=&Operator=wland&OperatorPassword=bad_password
     body:
       encoding: US-ASCII
       string: ''
@@ -21,7 +21,7 @@ http_interactions:
       message: OK
     headers:
       Content-Length:
-      - '72'
+      - '32'
       Content-Type:
       - application/octet-stream
       Server:
@@ -30,7 +30,7 @@ http_interactions:
       - Mon, 14 May 2018 20:17:51 GMT
     body:
       encoding: UTF-8
-      string: 'ERROR: Unable to read the SYSPRO base directory registry string BaseDir8'
+      string: 'ERROR: Invalid operator password'
     http_version: 
   recorded_at: Mon, 14 May 2018 20:17:50 GMT
 recorded_with: VCR 4.0.0
