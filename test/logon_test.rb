@@ -23,4 +23,15 @@ class LogonTest < Minitest::Test
       ).guid
     )
   end
+
+  def test_logon_error
+    assert_raises(::Syspro::AuthenticationError) {
+      logon_result = ::Syspro::SysproClient.new.logon(
+        username,
+        'bad_password',
+        company,
+        company_password
+      )
+    }
+  end
 end
