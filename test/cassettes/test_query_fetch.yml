@@ -27,15 +27,15 @@ http_interactions:
       Server:
       - Microsoft-HTTPAPI/2.0
       Date:
-      - Tue, 15 May 2018 00:54:14 GMT
+      - Thu, 17 May 2018 16:51:47 GMT
     body:
       encoding: UTF-8
-      string: '18E80C621C869848B726D01FF3A134A100  '
+      string: '5302D42E29F95946813203EF51DF25CE00  '
     http_version: 
-  recorded_at: Tue, 15 May 2018 00:54:13 GMT
+  recorded_at: Thu, 17 May 2018 16:51:47 GMT
 - request:
     method: get
-    uri: http://syspro.wildlandlabs.com:90/SYSPROWCFService/Rest/Query/Fetch?UserId=18E80C621C869848B726D01FF3A134A100%20%20&XmlIn=%3C?xml%20version=%221.0%22%20encoding=%22Windows-1252%22?%3E%0A%3CFetch%20xmlns:xsd=%22http://www.w3.org/2001/XMLSchema-instance%22%20xsd:noNamespaceSchemaLocation=%22COMFCH.XSD%22%3E%0A%20%20%3CTableName%3EInvMaster%3C/TableName%3E%0A%20%20%3CKey%3E02%3C/Key%3E%0A%20%20%0A%20%20%3CFullKeyProvided%3EY%3C/FullKeyProvided%3E%0A%20%20%3CDefaultType%3E%3C/DefaultType%3E%0A%20%20%3CEspressoFetch%3EN%3C/EspressoFetch%3E%0A%3C/Fetch%3E%0A%0A
+    uri: http://syspro.wildlandlabs.com:90/SYSPROWCFService/Rest/Query/Fetch?UserId=5302D42E29F95946813203EF51DF25CE00%20%20&XmlIn=%3C?xml%20version=%221.0%22%20encoding=%22Windows-1252%22?%3E%0A%3CFetch%20xmlns:xsd=%22http://www.w3.org/2001/XMLSchema-instance%22%20xsd:noNamespaceSchemaLocation=%22COMFCH.XSD%22%3E%0A%20%20%3CTableName%3EInvMaster%3C/TableName%3E%0A%20%20%3CKey%3E02%3C/Key%3E%0A%20%20%0A%20%20%3CFullKeyProvided%3EY%3C/FullKeyProvided%3E%0A%20%20%3CDefaultType%3E%3C/DefaultType%3E%0A%20%20%3CEspressoFetch%3EN%3C/EspressoFetch%3E%0A%3C/Fetch%3E%0A%0A
     body:
       encoding: US-ASCII
       string: ''
@@ -60,7 +60,7 @@ http_interactions:
       Server:
       - Microsoft-HTTPAPI/2.0
       Date:
-      - Tue, 15 May 2018 00:54:23 GMT
+      - Thu, 17 May 2018 16:51:56 GMT
     body:
       encoding: UTF-8
       string: "<?xml version=\"1.0\" encoding=\"Windows-1252\"?>\n<InvMaster Language='05'
@@ -92,5 +92,5 @@ http_interactions:
         \    0.000</LoadingFactor>\n<SupplUnitCode/>\n<StorageSecurity/>\n<StorageHazard/>\n<StorageCondition/>\n<ProductShelfLife>
         \  0</ProductShelfLife>\n<InternalShelfLife>   0</InternalShelfLife>\n<AltMethodFlag/>\n<AltSisoFlag/>\n<AltReductionFlag/>\n<WithTaxExpenseType/>\n</InvMaster>\n "
     http_version: 
-  recorded_at: Tue, 15 May 2018 00:54:22 GMT
+  recorded_at: Thu, 17 May 2018 16:51:56 GMT
 recorded_with: VCR 4.0.0

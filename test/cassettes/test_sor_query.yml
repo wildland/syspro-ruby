@@ -27,15 +27,15 @@ http_interactions:
       Server:
       - Microsoft-HTTPAPI/2.0
       Date:
-      - Tue, 15 May 2018 00:53:39 GMT
+      - Thu, 17 May 2018 16:52:48 GMT
     body:
       encoding: UTF-8
-      string: '88B1144955783D4386011BDD954453CC00  '
+      string: '6FDE76F80A298C409BEA62CB2CB0F58B00  '
     http_version: 
-  recorded_at: Tue, 15 May 2018 00:53:38 GMT
+  recorded_at: Thu, 17 May 2018 16:52:48 GMT
 - request:
     method: get
-    uri: http://syspro.wildlandlabs.com:90/SYSPROWCFService/Rest/Query/Query?BusinessObject=SORQRY&UserId=88B1144955783D4386011BDD954453CC00%20%20&XmlIn=%3C?xml%20version=%221.0%22%20encoding=%22Windows-1252%22?%3E%0A%3CQuery%20xmlns:xsd=%22http://www.w3.org/2001/XMLSchema-instance%22%20xsd:noNamespaceSchemaLocation=%22SORQRY.XSD%22%3E%0A%20%20%3CKey%3E%0A%20%20%20%20%3CSalesOrder%3E16R069%3C/SalesOrder%3E%0A%20%20%20%20%0A%20%20%3C/Key%3E%0A%20%20%3COption%3E%0A%20%20%20%20%3CIncludeStockedLines%3EN%3C/IncludeStockedLines%3E%0A%20%20%20%20%20%20%3CIncludeNonStockedLines%3EN%3C/IncludeNonStockedLines%3E%0A%20%20%20%20%20%20%3CIncludeFreightLines%3EN%3C/IncludeFreightLines%3E%0A%20%20%20%20%20%20%3CIncludeMiscLines%3EN%3C/IncludeMiscLines%3E%0A%20%20%20%20%20%20%3CIncludeCommentLines%3EN%3C/IncludeCommentLines%3E%0A%20%20%20%20%20%20%3CIncludeCompletedLines%3EN%3C/IncludeCompletedLines%3E%0A%20%20%20%20%20%20%3CIncludeSerials%3EN%3C/IncludeSerials%3E%0A%20%20%20%20%20%20%3CIncludeLots%3EN%3C/IncludeLots%3E%0A%20%20%20%20%20%20%3CIncludeBins%3EN%3C/IncludeBins%3E%0A%20%20%20%20%20%20%3CIncludeAttachedItems%3EN%3C/IncludeAttachedItems%3E%0A%20%20%20%20%20%20%3CIncludeCustomForms%3EN%3C/IncludeCustomForms%3E%0A%20%20%20%20%20%20%3CIncludeDetailLineCustomForms%3EN%3C/IncludeDetailLineCustomForms%3E%0A%20%20%20%20%20%20%3CIncludeValues%3EN%3C/IncludeValues%3E%0A%20%20%20%20%20%20%3CReturnLineShipDate%3EN%3C/ReturnLineShipDate%3E%0A%20%20%20%20%20%20%3CXslStylesheet/%3E%0A%20%20%3C/Option%3E%0A%3C/Query%3E%0A%0A
+    uri: http://syspro.wildlandlabs.com:90/SYSPROWCFService/Rest/Query/Query?BusinessObject=SORQRY&UserId=6FDE76F80A298C409BEA62CB2CB0F58B00%20%20&XmlIn=%3C?xml%20version=%221.0%22%20encoding=%22Windows-1252%22?%3E%0A%3CQuery%20xmlns:xsd=%22http://www.w3.org/2001/XMLSchema-instance%22%20xsd:noNamespaceSchemaLocation=%22SORQRY.XSD%22%3E%0A%20%20%3CKey%3E%0A%20%20%20%20%3CSalesOrder%3E16R069%3C/SalesOrder%3E%0A%20%20%20%20%0A%20%20%3C/Key%3E%0A%20%20%3COption%3E%0A%20%20%20%20%3CIncludeStockedLines%3EN%3C/IncludeStockedLines%3E%0A%20%20%20%20%20%20%3CIncludeNonStockedLines%3EN%3C/IncludeNonStockedLines%3E%0A%20%20%20%20%20%20%3CIncludeFreightLines%3EN%3C/IncludeFreightLines%3E%0A%20%20%20%20%20%20%3CIncludeMiscLines%3EN%3C/IncludeMiscLines%3E%0A%20%20%20%20%20%20%3CIncludeCommentLines%3EN%3C/IncludeCommentLines%3E%0A%20%20%20%20%20%20%3CIncludeCompletedLines%3EN%3C/IncludeCompletedLines%3E%0A%20%20%20%20%20%20%3CIncludeSerials%3EN%3C/IncludeSerials%3E%0A%20%20%20%20%20%20%3CIncludeLots%3EN%3C/IncludeLots%3E%0A%20%20%20%20%20%20%3CIncludeBins%3EN%3C/IncludeBins%3E%0A%20%20%20%20%20%20%3CIncludeAttachedItems%3EN%3C/IncludeAttachedItems%3E%0A%20%20%20%20%20%20%3CIncludeCustomForms%3EN%3C/IncludeCustomForms%3E%0A%20%20%20%20%20%20%3CIncludeDetailLineCustomForms%3EN%3C/IncludeDetailLineCustomForms%3E%0A%20%20%20%20%20%20%3CIncludeValues%3EN%3C/IncludeValues%3E%0A%20%20%20%20%20%20%3CReturnLineShipDate%3EN%3C/ReturnLineShipDate%3E%0A%20%20%20%20%20%20%3CXslStylesheet/%3E%0A%20%20%3C/Option%3E%0A%3C/Query%3E%0A%0A
     body:
       encoding: US-ASCII
       string: ''
@@ -60,7 +60,7 @@ http_interactions:
       Server:
       - Microsoft-HTTPAPI/2.0
       Date:
-      - Tue, 15 May 2018 00:53:44 GMT
+      - Thu, 17 May 2018 16:52:53 GMT
     body:
       encoding: UTF-8
       string: "<?xml version=\"1.0\" encoding=\"Windows-1252\"?>\n<SorDetail Language='05'
@@ -82,5 +82,5 @@ http_interactions:
         \ 0.000000</ShipGpsLat>\n<ShipGpsLong>   0.000000</ShipGpsLong>\n<ShipComplete>N</ShipComplete>\n<Email/>\n<FixExchangeRate>N</FixExchangeRate>\n<ExchangeRate>
         \    1.000000</ExchangeRate>\n<Edited_ExchangeRate>1.000000</Edited_ExchangeRate>\n<MulDiv>M</MulDiv>\n<ConsolidatedOrder/>\n<GstDeduction>I</GstDeduction>\n<CreditedInvDate/>\n<Job/>\n<SerialisedFlag/>\n<CounterSalesFlag/>\n<Nationality/>\n<DeliveryTerms/>\n<ShippingLocation/>\n<TransactionNature>000</TransactionNature>\n<TransportMode>00</TransportMode>\n<ProcessFlag>0</ProcessFlag>\n<JobsExistFlag/>\n<AlternateKey/>\n<HierarchyFlag/>\n<DepositFlag/>\n<EdiSource/>\n<MultShipCode/>\n<CompanyTaxNo/>\n<LastOperator>MATTB</LastOperator>\n<Operator/>\n<State/>\n<CountyZip/>\n<ExtendedTaxCode/>\n<WebCreated/>\n<Quote/>\n<DispatchesMade/>\n<LiveDispExist/>\n<NumDispatches>0</NumDispatches>\n<IncludeInMrp>Y</IncludeInMrp>\n<HeaderText>\n</HeaderText>\n<HeaderNotes>\n</HeaderNotes>\n</SorDetail>\n "
     http_version: 
-  recorded_at: Tue, 15 May 2018 00:53:43 GMT
+  recorded_at: Thu, 17 May 2018 16:52:53 GMT
 recorded_with: VCR 4.0.0

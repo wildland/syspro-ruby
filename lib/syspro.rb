@@ -32,7 +32,7 @@ require 'syspro/business_objects/porqry'
 
 require 'syspro/business_objects/models/sor'
 require 'syspro/business_objects/models/sor_detail'
-require 'syspro/business_objects/models/por'
+require 'syspro/business_objects/models/por_detail'
 
 require 'syspro/business_objects/parsers/combrw_parser'
 require 'syspro/business_objects/parsers/comfch_parser'

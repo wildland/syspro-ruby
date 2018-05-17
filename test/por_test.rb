@@ -50,6 +50,6 @@ class PorTest < Minitest::Test
     porqry.filter_value = ""
 
     por_result = porqry.call(user_id.guid)
-    assert_kind_of(Syspro::BusinessObjects::Models::Por, por_result)
+    assert_kind_of(Syspro::BusinessObjects::Models::PorDetail, por_result)
   end
 end
