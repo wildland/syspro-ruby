@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<Query xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" xsd:noNamespaceSchemaLocation="PORQRY.XSD">
+  <Key>
+    <PurchaseOrder><%= @purchase_order %></PurchaseOrder>
+  </Key>
+  <Option>
+    <IncludeStockedLines><%= @include_stocked_lines ? "N" : "Y" %></IncludeStockedLines>
+    <IncludeNonStockedLines><%= @include_non_stocked_lines ? "N" : "Y" %></IncludeNonStockedLines>
+    <IncludeFreightLines><%= @include_freight_lines ? "N" : "Y" %></IncludeFreightLines>
+    <IncludeMiscellaneousLines><%= @include_miscellaneous_lines ? "N" : "Y" %></IncludeMiscellaneousLines>
+    <IncludeCommentLines><%= @include_comment_lines ? "N" : "Y" %></IncludeCommentLines>
+    <IncludeCompletedLines><%= @include_completed_lines ? "N" : "Y" %></IncludeCompletedLines>
+    <IncludeGrns><%= @include_grns ? "N" : "Y" %></IncludeGrns>
+    <IncludeHistory><%= @include_history ? "N" : "Y" %></IncludeHistory>
+    <IncludeLctDetails><%= @include_lct_details ? "N" : "Y" %></IncludeLctDetails>
+    <IncludeRequisitionDetails><%= @include_requisition_details ? "N" : "Y" %></IncludeRequisitionDetails>
+    <IncludeRequisitionRouting><%= @include_requisition_routing ? "N" : "Y" %></IncludeRequisitionRouting>
+    <IncludeSalesOrders><%= @include_sales_orders ? "N" : "Y" %></IncludeSalesOrders>
+    <IncludeCustomForms><%= @include_custom_forms ? "N" : "Y" %></IncludeCustomForms> 
+    <XslStylesheet/>
+  </Option>
+  <Filter>
+    <LineNo FilterType="<%= @filter_type %>" FilterValue="<%= @filter_value %>"/>     
+  </Filter>
+</Query>
+

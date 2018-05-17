@@ -27,15 +27,15 @@ http_interactions:
       Server:
       - Microsoft-HTTPAPI/2.0
       Date:
-      - Mon, 14 May 2018 20:17:32 GMT
+      - Tue, 15 May 2018 00:54:32 GMT
     body:
       encoding: UTF-8
-      string: '34C603B5A0981D40BCB1B2E4111B1A5900  '
+      string: 'BE36CA1559EBC34985FC2D5EF166D75B00  '
     http_version: 
-  recorded_at: Mon, 14 May 2018 20:17:31 GMT
+  recorded_at: Tue, 15 May 2018 00:54:31 GMT
 - request:
     method: get
-    uri: http://syspro.wildlandlabs.com:90/SYSPROWCFService/Rest/Query/Query?BusinessObject=COMFND&UserId=34C603B5A0981D40BCB1B2E4111B1A5900%20%20&XmlIn=%3C?xml%20version=%221.0%22%20encoding=%22Windows-1252%22?%3E%0A%3CQuery%20xmlns:xsd=%22http://www.w3.org/2001/XMLSchema-instance%22%20xsd:noNamespaceSchemaLocation=%22COMFND.XSD%22%3E%0A%20%20%3CTableName%3EInvMaster%3C/TableName%3E%0A%20%20%3CReturnRows%3E5%3C/ReturnRows%3E%0A%20%20%3CColumns%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3CColumn%3EStockCode%3C/Column%3E%0A%20%20%20%20%0A%20%20%3C/Columns%3E%0A%20%20%0A%20%20%20%20%3CWhere%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%3CExpression%3E%0A%20%20%20%20%20%20%20%20%20%20%3COpenBracket%3E(%3C/OpenBracket%3E%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%3CAndOr%3EAnd%3C/AndOr%3E%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%3CColumn%3EStockCode%3C/Column%3E%0A%20%20%20%20%20%20%20%20%20%20%3CCondition%3EEQ%3C/Condition%3E%0A%20%20%20%20%20%20%20%20%20%20%3CValue%3E02%3C/Value%3E%0A%20%20%20%20%20%20%20%20%20%20%3CCloseBracket%3E)%3C/CloseBracket%3E%0A%20%20%20%20%20%20%20%20%3C/Expression%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%3C/Where%3E%0A%20%20%0A%20%20%3COrderBy%3E%0A%20%20%20%20%3CColumn%3EStockCode%3C/Column%3E%0A%20%20%3C/OrderBy%3E%0A%3C/Query%3E%0A
+    uri: http://syspro.wildlandlabs.com:90/SYSPROWCFService/Rest/Query/Query?BusinessObject=COMFND&UserId=BE36CA1559EBC34985FC2D5EF166D75B00%20%20&XmlIn=%3C?xml%20version=%221.0%22%20encoding=%22Windows-1252%22?%3E%0A%3CQuery%20xmlns:xsd=%22http://www.w3.org/2001/XMLSchema-instance%22%20xsd:noNamespaceSchemaLocation=%22COMFND.XSD%22%3E%0A%20%20%3CTableName%3EInvMaster%3C/TableName%3E%0A%20%20%3CReturnRows%3E5%3C/ReturnRows%3E%0A%20%20%3CColumns%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3CColumn%3EStockCode%3C/Column%3E%0A%20%20%20%20%0A%20%20%3C/Columns%3E%0A%20%20%0A%20%20%20%20%3CWhere%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%3CExpression%3E%0A%20%20%20%20%20%20%20%20%20%20%3COpenBracket%3E(%3C/OpenBracket%3E%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%3CAndOr%3EAnd%3C/AndOr%3E%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%3CColumn%3EStockCode%3C/Column%3E%0A%20%20%20%20%20%20%20%20%20%20%3CCondition%3EEQ%3C/Condition%3E%0A%20%20%20%20%20%20%20%20%20%20%3CValue%3E02%3C/Value%3E%0A%20%20%20%20%20%20%20%20%20%20%3CCloseBracket%3E)%3C/CloseBracket%3E%0A%20%20%20%20%20%20%20%20%3C/Expression%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%3C/Where%3E%0A%20%20%0A%20%20%3COrderBy%3E%0A%20%20%20%20%3CColumn%3EStockCode%3C/Column%3E%0A%20%20%3C/OrderBy%3E%0A%3C/Query%3E%0A
     body:
       encoding: US-ASCII
       string: ''
@@ -60,7 +60,7 @@ http_interactions:
       Server:
       - Microsoft-HTTPAPI/2.0
       Date:
-      - Mon, 14 May 2018 20:17:40 GMT
+      - Tue, 15 May 2018 00:54:40 GMT
     body:
       encoding: UTF-8
       string: "<?xml version=\"1.0\" encoding=\"Windows-1252\"?>\n<InvMaster Language='05'
@@ -68,5 +68,5 @@ http_interactions:
         OperatorPrimaryRole='   '>\n<HeaderDetails>\n<TableName>InvMaster</TableName>\n<Columns>\n<Column>StockCode</Column>\n</Columns>\n<OrderBy>\n<Column>StockCode</Column>\n</OrderBy>\n</HeaderDetails>\n<Row>\n<StockCode>02</StockCode>\n</Row>\n<RowsReturned>
         \      1</RowsReturned>\n</InvMaster>\n "
     http_version: 
-  recorded_at: Mon, 14 May 2018 20:17:39 GMT
+  recorded_at: Tue, 15 May 2018 00:54:39 GMT
 recorded_with: VCR 4.0.0

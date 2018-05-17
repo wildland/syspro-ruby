@@ -27,15 +27,15 @@ http_interactions:
       Server:
       - Microsoft-HTTPAPI/2.0
       Date:
-      - Mon, 14 May 2018 20:17:59 GMT
+      - Tue, 15 May 2018 00:53:30 GMT
     body:
       encoding: UTF-8
-      string: '305EC4843488A34FA16A50494B42BA7C00  '
+      string: 'BDEE07496905C3498683CDCAF0C7BB8100  '
     http_version: 
-  recorded_at: Mon, 14 May 2018 20:17:58 GMT
+  recorded_at: Tue, 15 May 2018 00:53:30 GMT
 - request:
     method: get
-    uri: http://syspro.wildlandlabs.com:90/SYSPROWCFService/Rest/logoff?UserId=305EC4843488A34FA16A50494B42BA7C00%20%20
+    uri: http://syspro.wildlandlabs.com:90/SYSPROWCFService/Rest/logoff?UserId=BDEE07496905C3498683CDCAF0C7BB8100%20%20
     body:
       encoding: US-ASCII
       string: ''
@@ -60,10 +60,10 @@ http_interactions:
       Server:
       - Microsoft-HTTPAPI/2.0
       Date:
-      - Mon, 14 May 2018 20:17:59 GMT
+      - Tue, 15 May 2018 00:53:30 GMT
     body:
       encoding: UTF-8
       string: '0'
     http_version: 
-  recorded_at: Mon, 14 May 2018 20:17:59 GMT
+  recorded_at: Tue, 15 May 2018 00:53:30 GMT
 recorded_with: VCR 4.0.0

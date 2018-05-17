@@ -1,0 +1,150 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://syspro.wildlandlabs.com:90/SYSPROWCFService/Rest/logon?CompanyId=L&CompanyPassword=&Operator=wland&OperatorPassword=piperita2016
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Syspro/7 RubyBindings/1.0.0.alpha.1
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '36'
+      Content-Type:
+      - application/octet-stream
+      Server:
+      - Microsoft-HTTPAPI/2.0
+      Date:
+      - Tue, 15 May 2018 21:00:23 GMT
+    body:
+      encoding: UTF-8
+      string: '3087FDA601939146B2D8AD4FA1CD2F2600  '
+    http_version: 
+  recorded_at: Tue, 15 May 2018 21:00:22 GMT
+- request:
+    method: get
+    uri: http://syspro.wildlandlabs.com:90/SYSPROWCFService/Rest/Query/Query?BusinessObject=PORQRY&UserId=3087FDA601939146B2D8AD4FA1CD2F2600%20%20&XmlIn=%3C?xml%20version=%221.0%22%20encoding=%22Windows-1252%22?%3E%0A%3CQuery%20xmlns:xsd=%22http://www.w3.org/2001/XMLSchema-instance%22%20xsd:noNamespaceSchemaLocation=%22PORQRY.XSD%22%3E%0A%20%20%3CKey%3E%0A%20%20%20%20%3CPurchaseOrder%3E%2000001%3C/PurchaseOrder%3E%0A%20%20%3C/Key%3E%0A%20%20%3COption%3E%0A%20%20%20%20%3CIncludeStockedLines%3EY%3C/IncludeStockedLines%3E%0A%20%20%20%20%3CIncludeNonStockedLines%3EY%3C/IncludeNonStockedLines%3E%0A%20%20%20%20%3CIncludeFreightLines%3EY%3C/IncludeFreightLines%3E%0A%20%20%20%20%3CIncludeMiscellaneousLines%3EY%3C/IncludeMiscellaneousLines%3E%0A%20%20%20%20%3CIncludeCommentLines%3EY%3C/IncludeCommentLines%3E%0A%20%20%20%20%3CIncludeCompletedLines%3EY%3C/IncludeCompletedLines%3E%0A%20%20%20%20%3CIncludeGrns%3EY%3C/IncludeGrns%3E%0A%20%20%20%20%3CIncludeHistory%3EY%3C/IncludeHistory%3E%0A%20%20%20%20%3CIncludeLctDetails%3EY%3C/IncludeLctDetails%3E%0A%20%20%20%20%3CIncludeRequisitionDetails%3EY%3C/IncludeRequisitionDetails%3E%0A%20%20%20%20%3CIncludeRequisitionRouting%3EY%3C/IncludeRequisitionRouting%3E%0A%20%20%20%20%3CIncludeSalesOrders%3EY%3C/IncludeSalesOrders%3E%0A%20%20%20%20%3CIncludeCustomForms%3EY%3C/IncludeCustomForms%3E%20%0A%20%20%20%20%3CXslStylesheet/%3E%0A%20%20%3C/Option%3E%0A%20%20%3CFilter%3E%0A%20%20%20%20%3CLineNo%20FilterType=%22A%22%20FilterValue=%22%22/%3E%20%20%20%20%20%0A%20%20%3C/Filter%3E%0A%3C/Query%3E%0A%0A
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Syspro/7 RubyBindings/1.0.0.alpha.1
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '20348'
+      Content-Type:
+      - application/octet-stream
+      Server:
+      - Microsoft-HTTPAPI/2.0
+      Date:
+      - Tue, 15 May 2018 21:00:28 GMT
+    body:
+      encoding: UTF-8
+      string: "<?xml version=\"1.0\" encoding=\"Windows-1252\"?>\n<PorDetail Language='05'
+        Language2='EN' CssStyle='' DecFormat='1' DateFormat='01' Role='01' Version='7.0.021'
+        OperatorPrimaryRole='   '   >\n<PurchaseOrder> 00001</PurchaseOrder>\n<Supplier>UTE002</Supplier>\n<SupplierName>UTEXAM
+        LOGISTICS LIMITED(ZERO)</SupplierName>\n<SupplierClass/>\n<Customer/>\n<CustomerName/>\n<CustomerPoNumber/>\n<SupplierAddr1/>\n<SupplierAddr2/>\n<SupplierAddr3/>\n<SupplierAddr3Locality/>\n<SupplierAddr4/>\n<SupplierAddr5/>\n<SupPostalCode/>\n<Currency>$</Currency>\n<LocalSupplier>Y</LocalSupplier>\n<Description>DOLLAR</Description>\n<DeliveryName>ULL
+        OWNED @ PDI</DeliveryName>\n<DeliveryAddr1/>\n<DeliveryAddr2/>\n<DeliveryAddr3/>\n<DeliveryAddr3Locality/>\n<DeliveryAddr4/>\n<DeliveryAddr5/>\n<PostalCode/>\n<DeliveryGpsLat>
+        \ 0.000000</DeliveryGpsLat>\n<DeliveryGpsLong>   0.000000</DeliveryGpsLong>\n<OrderStatus>*</OrderStatus>\n<OrderStatusDescription>Cancelled</OrderStatusDescription>\n<ExchangeRateFixedFlag>No</ExchangeRateFixedFlag>\n<PoExchangeRate>
+        \    1.000000</PoExchangeRate>\n<BlanketPoContract>No</BlanketPoContract>\n<ApInvoiceTerms>A</ApInvoiceTerms>\n<ApInvoiceTermsDescription>NET
+        30</ApInvoiceTermsDescription>\n<CompletedDate/>\n<Warehouse>U8</Warehouse>\n<WarehouseDesc>ULL
+        OWNED @ PDI</WarehouseDesc>\n<OrderEntryDate>2007-04-24</OrderEntryDate>\n<OrderDueDate>2007-04-24</OrderDueDate>\n<MemoDate>2007-04-24</MemoDate>\n<MemoCode/>\n<OrderType>Local</OrderType>\n<PaymentTerms/>\n<TaxStatus>Exempt
+        from tax</TaxStatus>\n<ShippingInstrs/>\n<OrderDiscount/>\n<AmendedCount>2</AmendedCount>\n<Buyer>BRH</Buyer>\n<Name>BILL
+        HOLLOWAY</Name>\n<DocumentFormat>0</DocumentFormat>\n<IncludeInMrp>Y</IncludeInMrp>\n<CustomForm>\n<Field>\n<Sequence>1</Sequence>\n<Name>TempPO</Name>\n<Prompt>Temporary
+        PO</Prompt>\n<Column>TemporaryPo</Column>\n<Type>A</Type>\n<Length>1</Length>\n<Decimals>0</Decimals>\n<Default>{Spaces}</Default>\n<AllowNull>Y</AllowNull>\n<ValidationType>1</ValidationType>\n<Value/>\n<ValueNull>N</ValueNull>\n</Field>\n<Field>\n<Sequence>2</Sequence>\n<Name>BUY001</Name>\n<Prompt>Buyer
+        Order Number</Prompt>\n<Column>BuyerOrderNumber</Column>\n<Type>A</Type>\n<Length>15</Length>\n<Decimals>0</Decimals>\n<Default>{Spaces}</Default>\n<AllowNull>Y</AllowNull>\n<ValidationType>1</ValidationType>\n<Value>1</Value>\n<ValueNull>N</ValueNull>\n</Field>\n</CustomForm>\n<PurchaseOrderLine>\n<Merchandise>\n<Line>1</Line>\n<LineType>1</LineType>\n<LineTypeDescription>Stocked
+        line</LineTypeDescription>\n<MStockCode>2804011COL</MStockCode>\n<MStockDes>SBL</MStockDes>\n<LongDesc>SPEARMINT
+        BLEND</LongDesc>\n<TraceableType>T</TraceableType>\n<Mass>1.000000</Mass>\n<Volume>0.000000</Volume>\n<ReceiptIntoFlag>I</ReceiptIntoFlag>\n<MWarehouse>U8</MWarehouse>\n<MWarehouseDesc>ULL
+        OWNED @ PDI</MWarehouseDesc>\n<MOutstandingQty>38,400.000</MOutstandingQty>\n<Unedited_MOutstandingQty>
+        \       38400.000000</Unedited_MOutstandingQty>\n<MOrderQty>38,400.000</MOrderQty>\n<Unedited_MOrderQty>
+        \       38400.000000</Unedited_MOrderQty>\n<MReceivedQty>0.000</MReceivedQty>\n<Unedited_MReceivedQty>
+        \           0.000000</Unedited_MReceivedQty>\n<MOrderUom>LB</MOrderUom>\n<MCompleteFlag/>\n<MJob/>\n<IncludeInMrp>Y</IncludeInMrp>\n<MPrice>0.00000</MPrice>\n<Edit_MPrice>0.000</Edit_MPrice>\n<OrderValue>0.00000</OrderValue>\n<MDiscPct1>
+        \           0.00</MDiscPct1>\n<MDiscPct2>            0.00</MDiscPct2>\n<MDiscPct3>
+        \           0.00</MDiscPct3>\n<MDiscValue>            0.00</MDiscValue>\n<MDiscValFlag/>\n<MPriceUom>LB</MPriceUom>\n<MLatestDueDate>2007-04-24</MLatestDueDate>\n<MSupCatalogue/>\n<MProductClass>SBL</MProductClass>\n<MProductClassDescription>SPEARMINT
+        BLEND LAB-CP</MProductClassDescription>\n<MStockingUom>LB</MStockingUom>\n<MDecimalsToPrt>1</MDecimalsToPrt>\n<MConvFactPrcUm>1.000000</MConvFactPrcUm>\n<MMulDivPrc>M</MMulDivPrc>\n<MTaxCode/>\n<MTaxCodeDescription/>\n<MConvFactOrdUm>1.000000</MConvFactOrdUm>\n<MMulDivAlloc>M</MMulDivAlloc>\n<MGlCode>1908-00</MGlCode>\n<MGlCodeDescription>HARRAH-CUSTOMER
+        OWNED</MGlCodeDescription>\n<MOrigDueDate>2007-04-24</MOrigDueDate>\n<MLctConfirmed/>\n<MSubcontractOp>00000</MSubcontractOp>\n<MVersion/>\n<MRelease/>\n<AssetFlag/>\n<CapexCode/>\n<AssetCapexLine/>\n<Discount/>\n<LastReceipt/>\n<Ledger>1908-00</Ledger>\n<RequisitionLine/>\n<RequisitionNo/>\n<RequisitionUser/>\n<Reschedule>No</Reschedule>\n<Rev/>\n<Release/>\n<SelectionCode/>\n<SelectionType/>\n<Currency>$</Currency>\n<MInspectionReqd>Yes</MInspectionReqd>\n<InspectedReceived>P</InspectedReceived>\n<StockAndAltUm>N</StockAndAltUm>\n<DefaultCostingMethod>P</DefaultCostingMethod>\n<DefaultPrice>0.00000</DefaultPrice>\n<Edit_DefaultPrice>0.000</Edit_DefaultPrice>\n<DefaultPrum>LB</DefaultPrum>\n<CostingMethodsAvailable>\n<ManualMethodCode>M</ManualMethodCode>\n<ManualMethodDesc>Manual
+        entry</ManualMethodDesc>\n<ManualMethodPrice>0.00000</ManualMethodPrice>\n<Edit_ManualMethodPrice>0.000</Edit_ManualMethodPrice>\n<ManualMethodCostingPrum>LB</ManualMethodCostingPrum>\n<TotalCostMethodCode>V</TotalCostMethodCode>\n<TotalCostMethodDesc>Total
+        cost</TotalCostMethodDesc>\n<TotalCostMethodPrice>0.00000</TotalCostMethodPrice>\n<Edit_TotalCostMethodPrice>0.000</Edit_TotalCostMethodPrice>\n<TotalCostCostingPrum>LB</TotalCostCostingPrum>\n<PurchasePriceMethodCode>P</PurchasePriceMethodCode>\n<PurchasePriceMethodDesc>Purchase
+        price</PurchasePriceMethodDesc>\n<PurchasePriceMethodPrice>0.00000</PurchasePriceMethodPrice>\n<Edit_PurchasePriceMethodPrice>0.000</Edit_PurchasePriceMethodPrice>\n<PurchasePriceCostingPrum>LB</PurchasePriceCostingPrum>\n<PriceTaxMethodCode>T</PriceTaxMethodCode>\n<PriceTaxMethodDesc>Price+tax</PriceTaxMethodDesc>\n<PriceTaxMethodPrice>0.00000</PriceTaxMethodPrice>\n<Edit_PriceTaxMethodPrice>0.000</Edit_PriceTaxMethodPrice>\n<PriceTaxCostingPrum>LB</PriceTaxCostingPrum>\n</CostingMethodsAvailable>\n</Merchandise>\n</PurchaseOrderLine>\n<PurchaseOrderLine>\n<Merchandise>\n<Line>2</Line>\n<LineType>1</LineType>\n<LineTypeDescription>Stocked
+        line</LineTypeDescription>\n<MStockCode>2804011COL</MStockCode>\n<MStockDes>SBL</MStockDes>\n<LongDesc>SPEARMINT
+        BLEND</LongDesc>\n<TraceableType>T</TraceableType>\n<Mass>1.000000</Mass>\n<Volume>0.000000</Volume>\n<ReceiptIntoFlag>I</ReceiptIntoFlag>\n<MWarehouse>U8</MWarehouse>\n<MWarehouseDesc>ULL
+        OWNED @ PDI</MWarehouseDesc>\n<MOutstandingQty>38,400.000</MOutstandingQty>\n<Unedited_MOutstandingQty>
+        \       38400.000000</Unedited_MOutstandingQty>\n<MOrderQty>38,400.000</MOrderQty>\n<Unedited_MOrderQty>
+        \       38400.000000</Unedited_MOrderQty>\n<MReceivedQty>0.000</MReceivedQty>\n<Unedited_MReceivedQty>
+        \           0.000000</Unedited_MReceivedQty>\n<MOrderUom>LB</MOrderUom>\n<MCompleteFlag/>\n<MJob/>\n<IncludeInMrp>Y</IncludeInMrp>\n<MPrice>0.00000</MPrice>\n<Edit_MPrice>0.000</Edit_MPrice>\n<OrderValue>0.00000</OrderValue>\n<MDiscPct1>
+        \           0.00</MDiscPct1>\n<MDiscPct2>            0.00</MDiscPct2>\n<MDiscPct3>
+        \           0.00</MDiscPct3>\n<MDiscValue>            0.00</MDiscValue>\n<MDiscValFlag/>\n<MPriceUom>LB</MPriceUom>\n<MLatestDueDate>2007-04-24</MLatestDueDate>\n<MSupCatalogue/>\n<MProductClass>SBL</MProductClass>\n<MProductClassDescription>SPEARMINT
+        BLEND LAB-CP</MProductClassDescription>\n<MStockingUom>LB</MStockingUom>\n<MDecimalsToPrt>1</MDecimalsToPrt>\n<MConvFactPrcUm>1.000000</MConvFactPrcUm>\n<MMulDivPrc>M</MMulDivPrc>\n<MTaxCode/>\n<MTaxCodeDescription/>\n<MConvFactOrdUm>1.000000</MConvFactOrdUm>\n<MMulDivAlloc>M</MMulDivAlloc>\n<MGlCode>1908-00</MGlCode>\n<MGlCodeDescription>HARRAH-CUSTOMER
+        OWNED</MGlCodeDescription>\n<MOrigDueDate>2007-04-24</MOrigDueDate>\n<MLctConfirmed/>\n<MSubcontractOp>00000</MSubcontractOp>\n<MVersion/>\n<MRelease/>\n<AssetFlag/>\n<CapexCode/>\n<AssetCapexLine/>\n<Discount/>\n<LastReceipt/>\n<Ledger>1908-00</Ledger>\n<RequisitionLine/>\n<RequisitionNo/>\n<RequisitionUser/>\n<Reschedule>No</Reschedule>\n<Rev/>\n<Release/>\n<SelectionCode/>\n<SelectionType/>\n<Currency>$</Currency>\n<MInspectionReqd>Yes</MInspectionReqd>\n<InspectedReceived>P</InspectedReceived>\n<StockAndAltUm>N</StockAndAltUm>\n<DefaultCostingMethod>P</DefaultCostingMethod>\n<DefaultPrice>0.00000</DefaultPrice>\n<Edit_DefaultPrice>0.000</Edit_DefaultPrice>\n<DefaultPrum>LB</DefaultPrum>\n<CostingMethodsAvailable>\n<ManualMethodCode>M</ManualMethodCode>\n<ManualMethodDesc>Manual
+        entry</ManualMethodDesc>\n<ManualMethodPrice>0.00000</ManualMethodPrice>\n<Edit_ManualMethodPrice>0.000</Edit_ManualMethodPrice>\n<ManualMethodCostingPrum>LB</ManualMethodCostingPrum>\n<TotalCostMethodCode>V</TotalCostMethodCode>\n<TotalCostMethodDesc>Total
+        cost</TotalCostMethodDesc>\n<TotalCostMethodPrice>0.00000</TotalCostMethodPrice>\n<Edit_TotalCostMethodPrice>0.000</Edit_TotalCostMethodPrice>\n<TotalCostCostingPrum>LB</TotalCostCostingPrum>\n<PurchasePriceMethodCode>P</PurchasePriceMethodCode>\n<PurchasePriceMethodDesc>Purchase
+        price</PurchasePriceMethodDesc>\n<PurchasePriceMethodPrice>0.00000</PurchasePriceMethodPrice>\n<Edit_PurchasePriceMethodPrice>0.000</Edit_PurchasePriceMethodPrice>\n<PurchasePriceCostingPrum>LB</PurchasePriceCostingPrum>\n<PriceTaxMethodCode>T</PriceTaxMethodCode>\n<PriceTaxMethodDesc>Price+tax</PriceTaxMethodDesc>\n<PriceTaxMethodPrice>0.00000</PriceTaxMethodPrice>\n<Edit_PriceTaxMethodPrice>0.000</Edit_PriceTaxMethodPrice>\n<PriceTaxCostingPrum>LB</PriceTaxCostingPrum>\n</CostingMethodsAvailable>\n</Merchandise>\n</PurchaseOrderLine>\n<PurchaseOrderLine>\n<Merchandise>\n<Line>3</Line>\n<LineType>1</LineType>\n<LineTypeDescription>Stocked
+        line</LineTypeDescription>\n<MStockCode>2804011COL</MStockCode>\n<MStockDes>SBL</MStockDes>\n<LongDesc>SPEARMINT
+        BLEND</LongDesc>\n<TraceableType>T</TraceableType>\n<Mass>1.000000</Mass>\n<Volume>0.000000</Volume>\n<ReceiptIntoFlag>I</ReceiptIntoFlag>\n<MWarehouse>U8</MWarehouse>\n<MWarehouseDesc>ULL
+        OWNED @ PDI</MWarehouseDesc>\n<MOutstandingQty>35,200.000</MOutstandingQty>\n<Unedited_MOutstandingQty>
+        \       35200.000000</Unedited_MOutstandingQty>\n<MOrderQty>35,200.000</MOrderQty>\n<Unedited_MOrderQty>
+        \       35200.000000</Unedited_MOrderQty>\n<MReceivedQty>0.000</MReceivedQty>\n<Unedited_MReceivedQty>
+        \           0.000000</Unedited_MReceivedQty>\n<MOrderUom>LB</MOrderUom>\n<MCompleteFlag/>\n<MJob/>\n<IncludeInMrp>Y</IncludeInMrp>\n<MPrice>0.00000</MPrice>\n<Edit_MPrice>0.000</Edit_MPrice>\n<OrderValue>0.00000</OrderValue>\n<MDiscPct1>
+        \           0.00</MDiscPct1>\n<MDiscPct2>            0.00</MDiscPct2>\n<MDiscPct3>
+        \           0.00</MDiscPct3>\n<MDiscValue>            0.00</MDiscValue>\n<MDiscValFlag/>\n<MPriceUom>LB</MPriceUom>\n<MLatestDueDate>2007-04-24</MLatestDueDate>\n<MSupCatalogue/>\n<MProductClass>SBL</MProductClass>\n<MProductClassDescription>SPEARMINT
+        BLEND LAB-CP</MProductClassDescription>\n<MStockingUom>LB</MStockingUom>\n<MDecimalsToPrt>1</MDecimalsToPrt>\n<MConvFactPrcUm>1.000000</MConvFactPrcUm>\n<MMulDivPrc>M</MMulDivPrc>\n<MTaxCode/>\n<MTaxCodeDescription/>\n<MConvFactOrdUm>1.000000</MConvFactOrdUm>\n<MMulDivAlloc>M</MMulDivAlloc>\n<MGlCode>1908-00</MGlCode>\n<MGlCodeDescription>HARRAH-CUSTOMER
+        OWNED</MGlCodeDescription>\n<MOrigDueDate>2007-04-24</MOrigDueDate>\n<MLctConfirmed/>\n<MSubcontractOp>00000</MSubcontractOp>\n<MVersion/>\n<MRelease/>\n<AssetFlag/>\n<CapexCode/>\n<AssetCapexLine/>\n<Discount/>\n<LastReceipt/>\n<Ledger>1908-00</Ledger>\n<RequisitionLine/>\n<RequisitionNo/>\n<RequisitionUser/>\n<Reschedule>No</Reschedule>\n<Rev/>\n<Release/>\n<SelectionCode/>\n<SelectionType/>\n<Currency>$</Currency>\n<MInspectionReqd>Yes</MInspectionReqd>\n<InspectedReceived>P</InspectedReceived>\n<StockAndAltUm>N</StockAndAltUm>\n<DefaultCostingMethod>P</DefaultCostingMethod>\n<DefaultPrice>0.00000</DefaultPrice>\n<Edit_DefaultPrice>0.000</Edit_DefaultPrice>\n<DefaultPrum>LB</DefaultPrum>\n<CostingMethodsAvailable>\n<ManualMethodCode>M</ManualMethodCode>\n<ManualMethodDesc>Manual
+        entry</ManualMethodDesc>\n<ManualMethodPrice>0.00000</ManualMethodPrice>\n<Edit_ManualMethodPrice>0.000</Edit_ManualMethodPrice>\n<ManualMethodCostingPrum>LB</ManualMethodCostingPrum>\n<TotalCostMethodCode>V</TotalCostMethodCode>\n<TotalCostMethodDesc>Total
+        cost</TotalCostMethodDesc>\n<TotalCostMethodPrice>0.00000</TotalCostMethodPrice>\n<Edit_TotalCostMethodPrice>0.000</Edit_TotalCostMethodPrice>\n<TotalCostCostingPrum>LB</TotalCostCostingPrum>\n<PurchasePriceMethodCode>P</PurchasePriceMethodCode>\n<PurchasePriceMethodDesc>Purchase
+        price</PurchasePriceMethodDesc>\n<PurchasePriceMethodPrice>0.00000</PurchasePriceMethodPrice>\n<Edit_PurchasePriceMethodPrice>0.000</Edit_PurchasePriceMethodPrice>\n<PurchasePriceCostingPrum>LB</PurchasePriceCostingPrum>\n<PriceTaxMethodCode>T</PriceTaxMethodCode>\n<PriceTaxMethodDesc>Price+tax</PriceTaxMethodDesc>\n<PriceTaxMethodPrice>0.00000</PriceTaxMethodPrice>\n<Edit_PriceTaxMethodPrice>0.000</Edit_PriceTaxMethodPrice>\n<PriceTaxCostingPrum>LB</PriceTaxCostingPrum>\n</CostingMethodsAvailable>\n</Merchandise>\n</PurchaseOrderLine>\n<PurchaseOrderLine>\n<Merchandise>\n<Line>4</Line>\n<LineType>1</LineType>\n<LineTypeDescription>Stocked
+        line</LineTypeDescription>\n<MStockCode>2804011COL</MStockCode>\n<MStockDes>SBL</MStockDes>\n<LongDesc>SPEARMINT
+        BLEND</LongDesc>\n<TraceableType>T</TraceableType>\n<Mass>1.000000</Mass>\n<Volume>0.000000</Volume>\n<ReceiptIntoFlag>I</ReceiptIntoFlag>\n<MWarehouse>U8</MWarehouse>\n<MWarehouseDesc>ULL
+        OWNED @ PDI</MWarehouseDesc>\n<MOutstandingQty>38,400.000</MOutstandingQty>\n<Unedited_MOutstandingQty>
+        \       38400.000000</Unedited_MOutstandingQty>\n<MOrderQty>38,400.000</MOrderQty>\n<Unedited_MOrderQty>
+        \       38400.000000</Unedited_MOrderQty>\n<MReceivedQty>0.000</MReceivedQty>\n<Unedited_MReceivedQty>
+        \           0.000000</Unedited_MReceivedQty>\n<MOrderUom>LB</MOrderUom>\n<MCompleteFlag/>\n<MJob/>\n<IncludeInMrp>Y</IncludeInMrp>\n<MPrice>0.00000</MPrice>\n<Edit_MPrice>0.000</Edit_MPrice>\n<OrderValue>0.00000</OrderValue>\n<MDiscPct1>
+        \           0.00</MDiscPct1>\n<MDiscPct2>            0.00</MDiscPct2>\n<MDiscPct3>
+        \           0.00</MDiscPct3>\n<MDiscValue>            0.00</MDiscValue>\n<MDiscValFlag/>\n<MPriceUom>LB</MPriceUom>\n<MLatestDueDate>2007-04-24</MLatestDueDate>\n<MSupCatalogue/>\n<MProductClass>SBL</MProductClass>\n<MProductClassDescription>SPEARMINT
+        BLEND LAB-CP</MProductClassDescription>\n<MStockingUom>LB</MStockingUom>\n<MDecimalsToPrt>1</MDecimalsToPrt>\n<MConvFactPrcUm>1.000000</MConvFactPrcUm>\n<MMulDivPrc>M</MMulDivPrc>\n<MTaxCode/>\n<MTaxCodeDescription/>\n<MConvFactOrdUm>1.000000</MConvFactOrdUm>\n<MMulDivAlloc>M</MMulDivAlloc>\n<MGlCode>1908-00</MGlCode>\n<MGlCodeDescription>HARRAH-CUSTOMER
+        OWNED</MGlCodeDescription>\n<MOrigDueDate>2007-04-24</MOrigDueDate>\n<MLctConfirmed/>\n<MSubcontractOp>00000</MSubcontractOp>\n<MVersion/>\n<MRelease/>\n<AssetFlag/>\n<CapexCode/>\n<AssetCapexLine/>\n<Discount/>\n<LastReceipt/>\n<Ledger>1908-00</Ledger>\n<RequisitionLine/>\n<RequisitionNo/>\n<RequisitionUser/>\n<Reschedule>No</Reschedule>\n<Rev/>\n<Release/>\n<SelectionCode/>\n<SelectionType/>\n<Currency>$</Currency>\n<MInspectionReqd>Yes</MInspectionReqd>\n<InspectedReceived>P</InspectedReceived>\n<StockAndAltUm>N</StockAndAltUm>\n<DefaultCostingMethod>P</DefaultCostingMethod>\n<DefaultPrice>0.00000</DefaultPrice>\n<Edit_DefaultPrice>0.000</Edit_DefaultPrice>\n<DefaultPrum>LB</DefaultPrum>\n<CostingMethodsAvailable>\n<ManualMethodCode>M</ManualMethodCode>\n<ManualMethodDesc>Manual
+        entry</ManualMethodDesc>\n<ManualMethodPrice>0.00000</ManualMethodPrice>\n<Edit_ManualMethodPrice>0.000</Edit_ManualMethodPrice>\n<ManualMethodCostingPrum>LB</ManualMethodCostingPrum>\n<TotalCostMethodCode>V</TotalCostMethodCode>\n<TotalCostMethodDesc>Total
+        cost</TotalCostMethodDesc>\n<TotalCostMethodPrice>0.00000</TotalCostMethodPrice>\n<Edit_TotalCostMethodPrice>0.000</Edit_TotalCostMethodPrice>\n<TotalCostCostingPrum>LB</TotalCostCostingPrum>\n<PurchasePriceMethodCode>P</PurchasePriceMethodCode>\n<PurchasePriceMethodDesc>Purchase
+        price</PurchasePriceMethodDesc>\n<PurchasePriceMethodPrice>0.00000</PurchasePriceMethodPrice>\n<Edit_PurchasePriceMethodPrice>0.000</Edit_PurchasePriceMethodPrice>\n<PurchasePriceCostingPrum>LB</PurchasePriceCostingPrum>\n<PriceTaxMethodCode>T</PriceTaxMethodCode>\n<PriceTaxMethodDesc>Price+tax</PriceTaxMethodDesc>\n<PriceTaxMethodPrice>0.00000</PriceTaxMethodPrice>\n<Edit_PriceTaxMethodPrice>0.000</Edit_PriceTaxMethodPrice>\n<PriceTaxCostingPrum>LB</PriceTaxCostingPrum>\n</CostingMethodsAvailable>\n</Merchandise>\n</PurchaseOrderLine>\n<PurchaseOrderLine>\n<Merchandise>\n<Line>5</Line>\n<LineType>1</LineType>\n<LineTypeDescription>Stocked
+        line</LineTypeDescription>\n<MStockCode>2804011COL</MStockCode>\n<MStockDes>SBL</MStockDes>\n<LongDesc>SPEARMINT
+        BLEND</LongDesc>\n<TraceableType>T</TraceableType>\n<Mass>1.000000</Mass>\n<Volume>0.000000</Volume>\n<ReceiptIntoFlag>I</ReceiptIntoFlag>\n<MWarehouse>U8</MWarehouse>\n<MWarehouseDesc>ULL
+        OWNED @ PDI</MWarehouseDesc>\n<MOutstandingQty>38,400.000</MOutstandingQty>\n<Unedited_MOutstandingQty>
+        \       38400.000000</Unedited_MOutstandingQty>\n<MOrderQty>38,400.000</MOrderQty>\n<Unedited_MOrderQty>
+        \       38400.000000</Unedited_MOrderQty>\n<MReceivedQty>0.000</MReceivedQty>\n<Unedited_MReceivedQty>
+        \           0.000000</Unedited_MReceivedQty>\n<MOrderUom>LB</MOrderUom>\n<MCompleteFlag/>\n<MJob/>\n<IncludeInMrp>Y</IncludeInMrp>\n<MPrice>0.00000</MPrice>\n<Edit_MPrice>0.000</Edit_MPrice>\n<OrderValue>0.00000</OrderValue>\n<MDiscPct1>
+        \           0.00</MDiscPct1>\n<MDiscPct2>            0.00</MDiscPct2>\n<MDiscPct3>
+        \           0.00</MDiscPct3>\n<MDiscValue>            0.00</MDiscValue>\n<MDiscValFlag/>\n<MPriceUom>LB</MPriceUom>\n<MLatestDueDate>2007-04-24</MLatestDueDate>\n<MSupCatalogue/>\n<MProductClass>SBL</MProductClass>\n<MProductClassDescription>SPEARMINT
+        BLEND LAB-CP</MProductClassDescription>\n<MStockingUom>LB</MStockingUom>\n<MDecimalsToPrt>1</MDecimalsToPrt>\n<MConvFactPrcUm>1.000000</MConvFactPrcUm>\n<MMulDivPrc>M</MMulDivPrc>\n<MTaxCode/>\n<MTaxCodeDescription/>\n<MConvFactOrdUm>1.000000</MConvFactOrdUm>\n<MMulDivAlloc>M</MMulDivAlloc>\n<MGlCode>1908-00</MGlCode>\n<MGlCodeDescription>HARRAH-CUSTOMER
+        OWNED</MGlCodeDescription>\n<MOrigDueDate>2007-04-24</MOrigDueDate>\n<MLctConfirmed/>\n<MSubcontractOp>00000</MSubcontractOp>\n<MVersion/>\n<MRelease/>\n<AssetFlag/>\n<CapexCode/>\n<AssetCapexLine/>\n<Discount/>\n<LastReceipt/>\n<Ledger>1908-00</Ledger>\n<RequisitionLine/>\n<RequisitionNo/>\n<RequisitionUser/>\n<Reschedule>No</Reschedule>\n<Rev/>\n<Release/>\n<SelectionCode/>\n<SelectionType/>\n<Currency>$</Currency>\n<MInspectionReqd>Yes</MInspectionReqd>\n<InspectedReceived>P</InspectedReceived>\n<StockAndAltUm>N</StockAndAltUm>\n<DefaultCostingMethod>P</DefaultCostingMethod>\n<DefaultPrice>0.00000</DefaultPrice>\n<Edit_DefaultPrice>0.000</Edit_DefaultPrice>\n<DefaultPrum>LB</DefaultPrum>\n<CostingMethodsAvailable>\n<ManualMethodCode>M</ManualMethodCode>\n<ManualMethodDesc>Manual
+        entry</ManualMethodDesc>\n<ManualMethodPrice>0.00000</ManualMethodPrice>\n<Edit_ManualMethodPrice>0.000</Edit_ManualMethodPrice>\n<ManualMethodCostingPrum>LB</ManualMethodCostingPrum>\n<TotalCostMethodCode>V</TotalCostMethodCode>\n<TotalCostMethodDesc>Total
+        cost</TotalCostMethodDesc>\n<TotalCostMethodPrice>0.00000</TotalCostMethodPrice>\n<Edit_TotalCostMethodPrice>0.000</Edit_TotalCostMethodPrice>\n<TotalCostCostingPrum>LB</TotalCostCostingPrum>\n<PurchasePriceMethodCode>P</PurchasePriceMethodCode>\n<PurchasePriceMethodDesc>Purchase
+        price</PurchasePriceMethodDesc>\n<PurchasePriceMethodPrice>0.00000</PurchasePriceMethodPrice>\n<Edit_PurchasePriceMethodPrice>0.000</Edit_PurchasePriceMethodPrice>\n<PurchasePriceCostingPrum>LB</PurchasePriceCostingPrum>\n<PriceTaxMethodCode>T</PriceTaxMethodCode>\n<PriceTaxMethodDesc>Price+tax</PriceTaxMethodDesc>\n<PriceTaxMethodPrice>0.00000</PriceTaxMethodPrice>\n<Edit_PriceTaxMethodPrice>0.000</Edit_PriceTaxMethodPrice>\n<PriceTaxCostingPrum>LB</PriceTaxCostingPrum>\n</CostingMethodsAvailable>\n</Merchandise>\n</PurchaseOrderLine>\n<PurchaseOrderTotals>\n<LocalValues>\n<LocalOrderValue>
+        \           0.00</LocalOrderValue>\n<LocalReceivedToDateValue>            0.00</LocalReceivedToDateValue>\n<LocalOutstandingValue>
+        \           0.00</LocalOutstandingValue>\n<Edited_LocalOrderValue>0.00</Edited_LocalOrderValue>\n<Edited_LocalReceivedToDateValue>0.00</Edited_LocalReceivedToDateValue>\n<Edited_LocalOutstandingValue>0.00</Edited_LocalOutstandingValue>\n</LocalValues>\n<CurrentValues>\n<CurrentOrderValue>0.00</CurrentOrderValue>\n<CurrentReceivedToDateValue>
+        \           0.00</CurrentReceivedToDateValue>\n<CurrentOutstandingValue>            0.00</CurrentOutstandingValue>\n<Edited_CurrentOrderValue>
+        \           0.00</Edited_CurrentOrderValue>\n<Edited_CurrentReceivedToDateValue>0.00</Edited_CurrentReceivedToDateValue>\n<Edited_CurrentOutstandingValue>0.00</Edited_CurrentOutstandingValue>\n</CurrentValues>\n<FirstReceiptDate/>\n<OrderCompleteDate/>\n</PurchaseOrderTotals>\n</PorDetail>\n "
+    http_version: 
+  recorded_at: Tue, 15 May 2018 21:00:26 GMT
+recorded_with: VCR 4.0.0
