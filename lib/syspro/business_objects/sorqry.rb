@@ -31,11 +31,6 @@ module Syspro
         parser = SorQryParser.new(resp[0].data)
         parser.parse
       end
-
-      def handle_errors(resp)
-        body = resp[0].http_body
-        raise SysproError, body if body =~ /^(ERROR)/
-      end
     end
   end
 end

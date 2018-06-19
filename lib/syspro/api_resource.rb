@@ -18,6 +18,12 @@ module Syspro
       "/#{CGI.escape(class_name.downcase)}"
     end
 
+    def handle_errors(resp)
+      body = resp[0].http_body
+      raise AuthenticationError, body if body =~ /^(ERROR: The supplied UserID is invalid.)/
+      raise SysproError, body if body =~ /^(ERROR)/
+    end
+
     def refresh
       resp, opts = request(:get, resource_url, @retrieve_params)
       initialize_from(resp.data, opts)

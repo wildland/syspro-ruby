@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<PostPurchaseOrderReceipts xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" xsd:noNamespaceSchemaLocation="portor.xsd">
+  <Parameters>
+    <TransactionDate><%= @transaction_date %></TransactionDate>
+    <IgnoreWarnings><%= @ignore_warnings ? "N" : "Y"%></IgnoreWarnings>
+    <NonStockedWhToUse><%= @non_stocked_wh_to_use %></NonStockedWhToUse>
+    <GRNMatchingAction><%= @grn_matching_action %></GRNMatchingAction>
+    <AllowBlankSupplier><%= @allow_blank_supplier ? "N" : "Y" %></AllowBlankSupplier>
+    <ApplyIfEntireDocumentValid><%= @apply_if_entire_document_valid ? "N" : "Y" %></ApplyIfEntireDocumentValid>
+    <ValidateOnly><%= @validate_only ? "N" : "Y" %></ValidateOnly>
+    <ManualSerialTransfersAllowed><%= @manual_serial_transfers_allowed ? "N" : "Y" %></ManualSerialTransfersAllowed>
+    <IgnoreAnalysis><%= @ignore_analysis ? "N" : "Y" %></IgnoreAnalysis>
+  </Parameters>
+</PostPurchaseOrderReceipts>
+

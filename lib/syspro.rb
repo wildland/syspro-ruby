@@ -21,18 +21,24 @@ require 'syspro/version'
 
 require 'syspro/api_operations/request'
 require 'syspro/api_operations/query'
+require 'syspro/api_operations/transaction'
 
 require 'syspro/business_objects/combrw'
 require 'syspro/business_objects/comfch'
 require 'syspro/business_objects/comfnd'
 require 'syspro/business_objects/sorqry'
+require 'syspro/business_objects/portor'
+require 'syspro/business_objects/porqry'
 
+require 'syspro/business_objects/models/sor'
 require 'syspro/business_objects/models/sor_detail'
+require 'syspro/business_objects/models/por_detail'
 
 require 'syspro/business_objects/parsers/combrw_parser'
 require 'syspro/business_objects/parsers/comfch_parser'
 require 'syspro/business_objects/parsers/comfnd_parser'
 require 'syspro/business_objects/parsers/sorqry_parser'
+require 'syspro/business_objects/parsers/portor_parser'
 
 # Main Module
 module Syspro
