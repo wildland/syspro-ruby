@@ -28,8 +28,6 @@ module Syspro
           key[:warehouse] = doc.first_element_child.xpath('Warehouse')
           key[:gl_journal] = gl_journal_obj
 
-          binding.pry
-
           receipts = doc.first_element_child.xpath('Receipt')
           receipts_obj = receipts.flat_map do |el|
             el.elements.map do |inner|
