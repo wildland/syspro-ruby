@@ -12,11 +12,15 @@ module Syspro
       attr_accessor :browse_name, :start_condition, :return_rows, :filters,
                     :table_name, :title, :columns
 
-      def call(user_id)
+      def call(user_id, raw)
         xml_in = template.result(binding)
         params = { 'UserId' => user_id, 'XmlIn' => xml_in }
         resp = ComBrw.browse(params)
-        parse_response(resp)
+        unless raw
+          parse_response(resp)
+        else
+          resp
+        end
       end
 
       def template
