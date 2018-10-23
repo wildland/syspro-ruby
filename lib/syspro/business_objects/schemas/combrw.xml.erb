@@ -10,16 +10,16 @@
       <ColumnFilterValue><%= @filter[:value] %></ColumnFilterValue>
     </Filter> 
   <% end %>
-  <BrowseDetails>
-    <TableName><%= @table_name %></TableName>
-    <Title><%= @title %></Title>
-    <% for @column in @columns %>
-      <Column>
-        <% unless @column[:name].nil? %><ColumnName><%= @column[:name] %></ColumnName><% end %>
-        <% unless @column[:description].nil? %><ColumnDescription><%= @column[:description] %></ColumnDescription><% end %>
-        <% unless @column[:key].nil? %><ColumnKey><%= @column[:key] %></ColumnKey><% end %>
-      </Column>
-    <% end %>
-  </BrowseDetails>
+  <%#<BrowseDetails>%>
+    <%#<TableName><%= @table_name %></TableName>%>
+    <%#<Title><%= @title %></Title>%>
+    <%#<% for @column in @columns %>%>
+      <%#<Column>%>
+        <%#<% unless @column[:name].nil? %><ColumnName><%= @column[:name] %></ColumnName><% end %>%>
+        <%#<% unless @column[:description].nil? %><ColumnDescription><%= @column[:description] %></ColumnDescription><% end %>%>
+        <%#<% unless @column[:key].nil? %><ColumnKey><%= @column[:key] %></ColumnKey><% end %>%>
+      <%#</Column>%>
+    <%#<% end %>%>
+  <%#</BrowseDetails>%>
 </Browse>
 
