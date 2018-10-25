@@ -12,7 +12,7 @@ module Syspro
       attr_accessor :browse_name, :start_at_key, :start_condition, :return_rows, :filters,
                     :table_name, :title, :columns
 
-      def call(user_id, raw)
+      def call(user_id, raw = false)
         xml_in = template.result(binding)
         params = { 'UserId' => user_id, 'XmlIn' => xml_in }
         resp = ComBrw.browse(params)
