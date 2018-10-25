@@ -9,7 +9,7 @@ module Syspro
       include Syspro::ApiOperations::Query
       include Syspro::BusinessObjects::Parsers
 
-      attr_accessor :browse_name, :start_condition, :return_rows, :filters,
+      attr_accessor :browse_name, :start_at_key, :start_condition, :return_rows, :filters,
                     :table_name, :title, :columns
 
       def call(user_id, raw)
