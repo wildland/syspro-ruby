@@ -20,9 +20,8 @@ module Syspro
                       :jobs_exist_flag, :alternate_key, :hierarchy_flag, :deposit_flag, :edi_source, :mult_ship_code,
                       :company_tax_no, :last_operator, :operator, :state, :county_zip, :extended_tax_code, :web_created,
                       :quote, :dispatches_made, :live_disp_exist, :num_dispatches, :include_in_mrp, :header_text,
-                      :header_notes, :commissions
+                      :header_notes, :commissions, :sales_order_lines
       end
     end
   end
 end
-

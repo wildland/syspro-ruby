@@ -121,20 +121,181 @@ module Syspro
           sor.header_text = doc.first_element_child.xpath("HeaderText").text
           sor.header_notes = doc.first_element_child.xpath("HeaderNotes").text
 
+          # Inner Nested Structure Parsing
+          sor.commissions = parse_commissions(doc)
+          sor.sales_order_lines = parse_sales_order_lines(doc)
+
+          sor
+        end
+
+        def parse_commissions(doc)
           commissions = doc.first_element_child.xpath("Commissions")
-          commissions_obj = commissions.children.map do |el|
+          commissions_obj = parse_children_elements(commissions)
+
+          commissions_obj
+        end
+
+
+        def parse_sales_order_lines(doc)
+          sales_order_lines = doc.first_element_child.xpath("SalesOrderLine")
+          sales_order_lines_obj = {}
+
+          sales_order_lines.children.each do |el|
+            next if el.name == "text"
+
+            serial_obj = {}
+            bin_obj = {}
+            attached_items_obj = {}
+            lot_obj = {}
+
+            if el.name == "MiscCharge"
+              unless sales_order_lines_obj[:misc_charge]
+                sales_order_lines_obj[:misc_charge] = []
+              end
+
+              misc_charge_arr = parse_children_elements(el)
+              sales_order_lines_obj[:misc_charge].push(misc_charge_arr)
+            end
+
+            if el.name == "Freight"
+              unless sales_order_lines_obj[:freight]
+                sales_order_lines_obj[:freight] = []
+              end
+
+              freight_arr = parse_children_elements(el)
+              sales_order_lines_obj[:freight].push(freight_arr)
+            end
+
+            if el.name == "CommentLine"
+              unless sales_order_lines_obj[:comment_line]
+                sales_order_lines_obj[:comment_line] = []
+              end
+
+              comment_line_arr = parse_children_elements(el)
+              sales_order_lines_obj[:comment_line].push(comment_line_arr)
+            end
+
+            if el.name == "Merchandise"
+              unless sales_order_lines_obj[:merchandise]
+                sales_order_lines_obj[:merchandise] = []
+              end
+
+              merchandise_arr = el.children.map do |el_child|
+                next if el_child.name == "text"
+
+                # NOTE: These first three in the following
+                # conditionals are "Merchandise" elements with
+                # thier own nested structure that need parsed
+                if el_child.name == "Serial"
+                  unless serial_obj[:serial]
+                    serial_obj[:serial] = []
+                  end
+
+                  serial_arr = parse_children_elements(el_child)
+                  serial_obj[:serial].push(serial_arr)
+                  serial_obj
+
+                elsif el_child.name == "Bin"
+                  unless bin_obj[:bin]
+                    bin_obj[:bin] = []
+                  end
+
+                  bin_arr = parse_children_elements(el_child)
+                  bin_obj[:bin].push(bin_arr)
+                  bin_obj
+
+                elsif el_child.name ==  "Lot"
+                  unless lot_obj[:lot]
+                    lot_obj[:lot] = []
+                  end
+
+                  lot_arr = parse_children_elements(el_child)
+                  lot_obj[:lot].push(lot_arr)
+                  lot_obj
+
+                elsif el_child.name == "AttachedItems"
+                  # NOTE: Like "Merchandise", "AttachedItems" is
+                  # an element within "Merchandise" that contains
+                  # elements with thier own nested structure that
+                  # need parsed
+
+                  sct_item_obj = {}
+                  requisition_item_obj = {}
+                  purchase_order_obj = {}
+
+                  unless attached_items_obj[:attached_items]
+                    attached_items_obj[:attached_items] = []
+                  end
+
+                  attached_items_arr = el_child.children.map do |attached_items_child|
+                    next if attached_items_child.name == "text"
+
+                    if attached_items_child.name == "SctItem"
+                      unless sct_item_obj[:sct_item]
+                        sct_item_obj[:sct_item] = []
+                      end
+
+                      sct_item_arr = parse_children_elements(attached_items_child)
+                      sct_item_obj[:sct_item].push(sct_item_arr)
+                      sct_item_obj
+
+                    elsif attached_items_child.name == "RequisitionItem"
+                      unless requisition_item_obj[:requisition_item]
+                        requisition_item_obj[:requisition_item] = []
+                      end
+
+                      requisition_item_arr = parse_children_elements(attached_items_child)
+                      requisition_item_obj[:requisition_item].push(requisition_item_arr)
+                      requisition_item_obj
+
+                    elsif attached_items_child.name == "PurchaseOrder"
+                      unless purchase_order_obj[:purchase_order]
+                        purchase_order_obj[:purchase_order] = []
+                      end
+
+                      purchase_order_arr = parse_children_elements(attached_items_child)
+                      purchase_order_obj[:purchase_order].push(purchase_order_arr)
+                      purchase_order_obj
+
+                    else
+                      {
+                        name: attached_items_child.name,
+                        text: attached_items_child.text
+                      }
+                    end
+                  end.compact
+
+                  attached_items_obj[:attached_items].push(attached_items_arr)
+                  attached_items_obj
+
+                else
+                  {
+                    name: el_child.name,
+                    text: el_child.text
+                  }
+                end
+              end.compact
+
+              sales_order_lines_obj[:merchandise].push(merchandise_arr)
+            end
+          end
+
+          sales_order_lines_obj
+        end
+
+        def parse_children_elements(el_child)
+          obj_array = el_child.children.map do |el|
             next if el.name == "text"
             {
               name: el.name,
               text: el.text
             }
           end.compact
-          sor.commissions = commissions_obj
 
-          sor
+          obj_array
         end
+
       end
     end
   end
 end
-
