@@ -7,6 +7,7 @@ module Syspro
         attr_reader :doc
 
         def initialize(doc)
+          @calculated_weight = 0
           @doc = doc
         end
 
@@ -124,6 +125,7 @@ module Syspro
           # Inner Nested Structure Parsing
           sor.commissions = parse_commissions(doc)
           sor.sales_order_lines = parse_sales_order_lines(doc)
+          sor.ship_weight = @calculated_weight
 
           sor
         end
@@ -139,6 +141,7 @@ module Syspro
         def parse_sales_order_lines(doc)
           sales_order_lines = doc.first_element_child.xpath("SalesOrderLine")
           sales_order_lines_obj = {}
+
 
           sales_order_lines.children.each do |el|
             next if el.name == "text"
@@ -182,6 +185,15 @@ module Syspro
 
               merchandise_arr = el.children.map do |el_child|
                 next if el_child.name == "text"
+
+                if el_child.name == "MOrderQty"
+                  @calculated_weight = @calculated_weight + el_child.text.split(' ')[0].split(',').join().to_f
+
+                  {
+                    name: el_child.name,
+                    text: el_child.text
+                  }
+                end
 
                 # NOTE: These first three in the following
                 # conditionals are "Merchandise" elements with
