@@ -116,8 +116,8 @@ module Syspro
 
       http_resp = execute_request_with_rescues(api_base, context) do
         conn.run_request(method, url, body, headers) do |req|
-          req.options.open_timeout = Syspro.open_timeout
-          req.options.timeout = Syspro.read_timeout
+          req.options.open_timeout = Syspro.configuration.open_timeout
+          req.options.timeout = Syspro.configuration.read_timeout
           req.params = query_params unless query_params.nil?
         end
       end

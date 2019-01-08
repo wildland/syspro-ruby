@@ -12,6 +12,16 @@ end
 
 task default: %i[test rubocop]
 
+task :console do
+  require 'irb'
+  require 'irb/completion'
+  require 'pry'
+  require 'yaml'
+  require 'syspro'
+  ARGV.clear
+  IRB.start
+end
+
 RuboCop::RakeTask.new(:rubocop) do |t|
   t.options = ['--display-cop-names']
 end

@@ -5,7 +5,9 @@ require 'faraday'
 require 'json'
 require 'logger'
 require 'openssl'
+require 'forwardable'
 
+require 'syspro/configuration'
 require 'syspro/api_resource'
 require 'syspro/errors'
 require 'syspro/get_logon_profile'
@@ -42,22 +44,6 @@ require 'syspro/business_objects/parsers/portor_parser'
 
 # Main Module
 module Syspro
-  @api_base = 'http://syspro.wildlandlabs.com:90/SYSPROWCFService/Rest'
-
-  @open_timeout = 30
-  @read_timeout = 80
-
-  @log_level = nil
-  @logger = nil
-
-  @max_network_retries = 0
-  @max_network_retry_delay = 2
-  @initial_network_retry_delay = 0.5
-
-  class << self
-    attr_accessor :api_base, :open_timeout, :read_timeout
-  end
-
   # Options that should be persisted between API requests. This includes
   # client, which is an object containing an HTTP client to reuse.
   OPTS_PERSISTABLE = (
@@ -69,52 +55,41 @@ module Syspro
   LEVEL_ERROR = Logger::ERROR
   LEVEL_INFO = Logger::INFO
 
-  # When set prompts the library to log some extra information to $stdout and
-  # $stderr about what it's doing. For example, it'll produce information about
-  # requests, responses, and errors that are received. Valid log levels are
-  # `debug` and `info`, with `debug` being a little more verbose in places.
-  #
-  # Use of this configuration is only useful when `.logger` is _not_ set. When
-  # it is, the decision what levels to print is entirely deferred to the logger.
-  def self.log_level
-    @log_level
-  end
-
-  def self.log_level=(val)
-    # Backwards compatibility for values that we briefly allowed
-    val = LEVEL_DEBUG if val == 'debug'
-    val = LEVEL_INFO if val == 'info'
-    if !val.nil? && ![LEVEL_DEBUG, LEVEL_ERROR, LEVEL_INFO].include?(val)
-      raise(
-        ArgumentError,
-        'log_level should only be set to `nil`, `debug` or `info`'
-      )
+  # Delegate old deprecated configuration
+  class << self
+    def configure
+      yield configuration
     end
-    @log_level = val
+
+    def configuration
+      Configuration.instance
+    end
+
+    def api_base
+      @api_base || "#{configuration.server_url}/SYSPROWCFService/Rest"
+    end
+
+    def api_base=(url)
+      warn "[DEPRECATION] `api_base=` is deprecated. Please use `configuration.server_url=` instead."
+      @api_base = url
+    end
+
+    private
+
+    def deprecate_config(name)
+      define_singleton_method(name) { call_deprecated_config(name) }
+      define_singleton_method("#{name}=") { |v| call_deprecated_config("#{name}=", v) }
+    end
+
+    def call_deprecated_config(name, *args)
+      warn "[DEPRECATION] `#{name}` is deprecated. Please use `configuration.#{name}` instead."
+      configuration.send(name, *args)
+    end
   end
 
-  # Sets a logger to which logging output will be sent. The logger should
-  # support the same interface as the `Logger` class that's part of Ruby's
-  # standard library (hint, anything in `Rails.logger` will likely be
-  # suitable).
-  #
-  # If `.logger` is set, the value of `.log_level` is ignored. The decision on
-  # what levels to print is entirely deferred to the logger.
-  def self.logger
-    @logger
-  end
-
-  def self.logger=(val)
-    @logger = val
-  end
-
-  def self.max_network_retries
-    @max_network_retries
-  end
-
-  def self.max_network_retries=(val)
-    @max_network_retries = val.to_i
-  end
-
-  Syspro.log_level = ENV['SYSPRO_LOG'] unless ENV['SYSPRO_LOG'].nil?
+  deprecate_config :open_timeout
+  deprecate_config :read_timeout
+  deprecate_config :log_level
+  deprecate_config :logger
+  deprecate_config :max_network_retries
 end
