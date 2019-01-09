@@ -5,8 +5,8 @@ class PorTest < Minitest::Test
   before { VCR.insert_cassette name }
   after { VCR.eject_cassette }
 
-  let(:username) { 'wland' }
-  let(:password) { 'piperita2016' }
+  let(:username) { 'wland' }  
+  let(:password) { 'Piperita2018' }
   let(:company) { 'L' }
   let(:company_password) { '' }
   let(:user_id) do

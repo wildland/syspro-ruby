@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: get
-    uri: http://syspro.wildlandlabs.com:90/SYSPROWCFService/Rest/logon?CompanyId=L&CompanyPassword=&Operator=wland&OperatorPassword=piperita2016
+    uri: http://syspro.wildlandlabs.com:90/SYSPROWCFService/Rest/logon?CompanyId=L&CompanyPassword=&Operator=wland&OperatorPassword=Piperita2018
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Syspro/7 RubyBindings/1.0.0.alpha.1
+      - Syspro/7 RubyBindings/1.0.0.alpha.2
       Content-Type:
       - application/x-www-form-urlencoded
       Accept-Encoding:
@@ -27,21 +27,21 @@ http_interactions:
       Server:
       - Microsoft-HTTPAPI/2.0
       Date:
-      - Thu, 17 May 2018 16:52:05 GMT
+      - Wed, 09 Jan 2019 00:28:39 GMT
     body:
       encoding: UTF-8
-      string: 'AA79E916A9C2814A887CB5F77952335400  '
+      string: '42F9885C71D1C94C8D76D156C187573D00  '
     http_version: 
-  recorded_at: Thu, 17 May 2018 16:52:05 GMT
+  recorded_at: Wed, 09 Jan 2019 00:28:39 GMT
 - request:
     method: get
-    uri: http://syspro.wildlandlabs.com:90/SYSPROWCFService/Rest/Query/Browse?UserId=AA79E916A9C2814A887CB5F77952335400%20%20&XmlIn=%3C?xml%20version=%221.0%22%20encoding=%22Windows-1252%22?%3E%0A%3CBrowse%20xmlns:xsd=%22http://www.w3.org/2001/XMLSchema-instance%22%20xsd:noNamespaceSchemaLocation=%22COMBRW.XSD%22%3E%0A%20%20%3CBrowseName%3EInvMaster%3C/BrowseName%3E%0A%20%20%3CStartAtKey/%3E%0A%20%20%3CStartCondition%3E%3C/StartCondition%3E%0A%20%20%3CReturnRows%3E5%3C/ReturnRows%3E%0A%20%20%0A%20%20%3CBrowseDetails%3E%0A%20%20%20%20%3CTableName%3EInvMaster%3C/TableName%3E%0A%20%20%20%20%3CTitle%3EStockCodes%3C/Title%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3CColumn%3E%0A%20%20%20%20%20%20%20%20%3CColumnName%3EStockCode%3C/ColumnName%3E%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%3C/Column%3E%0A%20%20%20%20%0A%20%20%3C/BrowseDetails%3E%0A%3C/Browse%3E%0A%0A
+    uri: http://syspro.wildlandlabs.com:90/SYSPROWCFService/Rest/Query/Browse?UserId=42F9885C71D1C94C8D76D156C187573D00%20%20&XmlIn=%3C?xml%20version=%221.0%22%20encoding=%22Windows-1252%22?%3E%0A%3CBrowse%20xmlns:xsd=%22http://www.w3.org/2001/XMLSchema-instance%22%20xsd:noNamespaceSchemaLocation=%22COMBRW.XSD%22%3E%0A%20%20%3CBrowseName%3EInvMaster%3C/BrowseName%3E%0A%20%20%3CStartAtKey%3E%3C/StartAtKey%3E%0A%20%20%3CStartCondition%3E%3C/StartCondition%3E%0A%20%20%3CReturnRows%3E5%3C/ReturnRows%3E%0A%20%20%0A%3C/Browse%3E%0A%0A
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Syspro/7 RubyBindings/1.0.0.alpha.1
+      - Syspro/7 RubyBindings/1.0.0.alpha.2
       Content-Type:
       - application/x-www-form-urlencoded
       Accept-Encoding:
@@ -54,19 +54,25 @@ http_interactions:
       message: OK
     headers:
       Content-Length:
-      - '944'
+      - '1899'
       Content-Type:
       - application/octet-stream
       Server:
       - Microsoft-HTTPAPI/2.0
       Date:
-      - Thu, 17 May 2018 16:52:09 GMT
+      - Wed, 09 Jan 2019 00:28:41 GMT
     body:
       encoding: UTF-8
       string: "<?xml version=\"1.0\" encoding=\"Windows-1252\"?>\n<InvMaster Language='05'
-        Language2='EN' CssStyle='' DecFormat='1' DateFormat='01' Role='01' Version='7.0.036'
-        OperatorPrimaryRole='   '>\n<Title>StockCodes</Title>\n<Row>\n<StockCode>\n<Value>02</Value>\n<DataType>AlphaNumeric</DataType>\n</StockCode>\n</Row>\n<Row>\n<StockCode>\n<Value>021</Value>\n<DataType>AlphaNumeric</DataType>\n</StockCode>\n</Row>\n<Row>\n<StockCode>\n<Value>0214011IFF</Value>\n<DataType>AlphaNumeric</DataType>\n</StockCode>\n</Row>\n<Row>\n<StockCode>\n<Value>022</Value>\n<DataType>AlphaNumeric</DataType>\n</StockCode>\n</Row>\n<Row>\n<StockCode>\n<Value>023</Value>\n<DataType>AlphaNumeric</DataType>\n</StockCode>\n</Row>\n<NextPrevKey>\n<PrevKey>02</PrevKey>\n<NextKey>023</NextKey>\n<Fwd>True</Fwd>\n<Back>False</Back>\n</NextPrevKey>\n<HeaderDetails>\n<Header>Stock
-        code</Header>\n<Key>StockCode</Key>\n<KeyDescription>Stock code</KeyDescription>\n<Table>InvMaster</Table>\n</HeaderDetails>\n</InvMaster>\n "
+        Language2='EN' CssStyle='' DecFormat='1' DateFormat='01' Role='01' Version='7.0.038'
+        OperatorPrimaryRole='   '>\n<Title>Stock Codes</Title>\n<Row>\n<StockCode>\n<Value>02</Value>\n<DataType>AlphaNumeric</DataType>\n</StockCode>\n<Description>\n<Value>STR</Value>\n<DataType>AlphaNumeric</DataType>\n</Description>\n<LongDesc>\n<Value>SPEARMINT
+        TERPENES</Value>\n<DataType>AlphaNumeric</DataType>\n</LongDesc>\n</Row>\n<Row>\n<StockCode>\n<Value>021</Value>\n<DataType>AlphaNumeric</DataType>\n</StockCode>\n<Description>\n<Value>STR</Value>\n<DataType>AlphaNumeric</DataType>\n</Description>\n<LongDesc>\n<Value>SPEARMINT
+        TERPENES NATIVE</Value>\n<DataType>AlphaNumeric</DataType>\n</LongDesc>\n</Row>\n<Row>\n<StockCode>\n<Value>0214011IFF</Value>\n<DataType>AlphaNumeric</DataType>\n</StockCode>\n<Description>\n<Value>00196998</Value>\n<DataType>AlphaNumeric</DataType>\n</Description>\n<LongDesc>\n<Value>SPEARMINT
+        TERPENES</Value>\n<DataType>AlphaNumeric</DataType>\n</LongDesc>\n</Row>\n<Row>\n<StockCode>\n<Value>022</Value>\n<DataType>AlphaNumeric</DataType>\n</StockCode>\n<Description>\n<Value>STR</Value>\n<DataType>AlphaNumeric</DataType>\n</Description>\n<LongDesc>\n<Value>SPEARMINT
+        TERPENES SCOTCH</Value>\n<DataType>AlphaNumeric</DataType>\n</LongDesc>\n</Row>\n<Row>\n<StockCode>\n<Value>023</Value>\n<DataType>AlphaNumeric</DataType>\n</StockCode>\n<Description>\n<Value>STR</Value>\n<DataType>AlphaNumeric</DataType>\n</Description>\n<LongDesc>\n<Value>SPEARMINT
+        TERPENES INDIAN</Value>\n<DataType>AlphaNumeric</DataType>\n</LongDesc>\n</Row>\n<NextPrevKey>\n<PrevKey>02</PrevKey>\n<NextKey>023</NextKey>\n<Fwd>True</Fwd>\n<Back>False</Back>\n</NextPrevKey>\n<HeaderDetails>\n<Header>Stock
+        code</Header>\n<Header>Description</Header>\n<Header>Long description</Header>\n<Key>StockCode</Key>\n<KeyDescription>Stock
+        code</KeyDescription>\n<Table>InvMaster</Table>\n</HeaderDetails>\n</InvMaster>\n "
     http_version: 
-  recorded_at: Thu, 17 May 2018 16:52:09 GMT
+  recorded_at: Wed, 09 Jan 2019 00:28:40 GMT
 recorded_with: VCR 4.0.0
