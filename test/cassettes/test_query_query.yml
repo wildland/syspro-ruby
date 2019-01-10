@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://syspro.wildlandlabs.com:90/SYSPROWCFService/Rest/logon?CompanyId=L&CompanyPassword=&Operator=wland&OperatorPassword=Piperita2018
+    uri: http://syspro.wildlandlabs.com:90/SYSPROWCFService/Rest/logon?CompanyId=<syspro_company>&CompanyPassword=&Operator=<syspro_username>&OperatorPassword=<syspro_password>
     body:
       encoding: US-ASCII
       string: ''
@@ -20,22 +20,22 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Content-Length:
-      - '36'
       Content-Type:
       - application/octet-stream
       Server:
       - Microsoft-HTTPAPI/2.0
       Date:
-      - Wed, 09 Jan 2019 00:28:41 GMT
+      - Wed, 09 Jan 2019 22:58:00 GMT
+      Content-<syspro_company>ength:
+      - '36'
     body:
       encoding: UTF-8
-      string: '5164D8F79E0BC54E94AA768802A7936100  '
+      string: '96AB04439FC3B84BAEC49E6E11DA770900  '
     http_version: 
-  recorded_at: Wed, 09 Jan 2019 00:28:40 GMT
+  recorded_at: Wed, 09 Jan 2019 22:57:58 GMT
 - request:
     method: get
-    uri: http://syspro.wildlandlabs.com:90/SYSPROWCFService/Rest/Query/Query?BusinessObject=COMFND&UserId=5164D8F79E0BC54E94AA768802A7936100%20%20&XmlIn=%3C?xml%20version=%221.0%22%20encoding=%22Windows-1252%22?%3E%0A%3CQuery%20xmlns:xsd=%22http://www.w3.org/2001/XMLSchema-instance%22%20xsd:noNamespaceSchemaLocation=%22COMFND.XSD%22%3E%0A%20%20%3CTableName%3EInvMaster%3C/TableName%3E%0A%20%20%3CReturnRows%3E5%3C/ReturnRows%3E%0A%20%20%3CColumns%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3CColumn%3EStockCode%3C/Column%3E%0A%20%20%20%20%0A%20%20%3C/Columns%3E%0A%20%20%0A%20%20%20%20%3CWhere%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%3CExpression%3E%0A%20%20%20%20%20%20%20%20%20%20%3COpenBracket%3E(%3C/OpenBracket%3E%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%3CAndOr%3EAnd%3C/AndOr%3E%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%3CColumn%3EStockCode%3C/Column%3E%0A%20%20%20%20%20%20%20%20%20%20%3CCondition%3EEQ%3C/Condition%3E%0A%20%20%20%20%20%20%20%20%20%20%3CValue%3E02%3C/Value%3E%0A%20%20%20%20%20%20%20%20%20%20%3CCloseBracket%3E)%3C/CloseBracket%3E%0A%20%20%20%20%20%20%20%20%3C/Expression%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%3C/Where%3E%0A%20%20%0A%20%20%3COrderBy%3E%0A%20%20%20%20%3CColumn%3EStockCode%3C/Column%3E%0A%20%20%3C/OrderBy%3E%0A%3C/Query%3E%0A
+    uri: http://syspro.wildlandlabs.com:90/SYSPROWCFService/Rest/Query/Query?BusinessObject=COMFND&UserId=96AB04439FC3B84BAEC49E6E11DA770900%20%20&XmlIn=%3C?xml%20version=%221.0%22%20encoding=%22Windows-1252%22?%3E%0A%3CQuery%20xmlns:xsd=%22http://www.w3.org/2001/XM<syspro_company>Schema-instance%22%20xsd:noNamespaceSchema<syspro_company>ocation=%22COMFND.XSD%22%3E%0A%20%20%3CTableName%3EInvMaster%3C/TableName%3E%0A%20%20%3CReturnRows%3E5%3C/ReturnRows%3E%0A%20%20%3CColumns%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3CColumn%3EStockCode%3C/Column%3E%0A%20%20%20%20%0A%20%20%3C/Columns%3E%0A%20%20%0A%20%20%20%20%3CWhere%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%3CExpression%3E%0A%20%20%20%20%20%20%20%20%20%20%3COpenBracket%3E(%3C/OpenBracket%3E%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%3CAndOr%3EAnd%3C/AndOr%3E%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%3CColumn%3EStockCode%3C/Column%3E%0A%20%20%20%20%20%20%20%20%20%20%3CCondition%3EEQ%3C/Condition%3E%0A%20%20%20%20%20%20%20%20%20%20%3CValue%3E02%3C/Value%3E%0A%20%20%20%20%20%20%20%20%20%20%3CCloseBracket%3E)%3C/CloseBracket%3E%0A%20%20%20%20%20%20%20%20%3C/Expression%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%3C/Where%3E%0A%20%20%0A%20%20%3COrderBy%3E%0A%20%20%20%20%3CColumn%3EStockCode%3C/Column%3E%0A%20%20%3C/OrderBy%3E%0A%3C/Query%3E%0A
     body:
       encoding: US-ASCII
       string: ''
@@ -53,20 +53,20 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Content-Length:
-      - '436'
       Content-Type:
       - application/octet-stream
       Server:
       - Microsoft-HTTPAPI/2.0
       Date:
-      - Wed, 09 Jan 2019 00:28:43 GMT
+      - Wed, 09 Jan 2019 22:58:01 GMT
+      Content-<syspro_company>ength:
+      - '436'
     body:
       encoding: UTF-8
-      string: "<?xml version=\"1.0\" encoding=\"Windows-1252\"?>\n<InvMaster Language='05'
-        Language2='EN' CssStyle='' DecFormat='1' DateFormat='01' Role='01' Version='7.0.053'
-        OperatorPrimaryRole='   '>\n<HeaderDetails>\n<TableName>InvMaster</TableName>\n<Columns>\n<Column>StockCode</Column>\n</Columns>\n<OrderBy>\n<Column>StockCode</Column>\n</OrderBy>\n</HeaderDetails>\n<Row>\n<StockCode>02</StockCode>\n</Row>\n<RowsReturned>
+      string: "<?xml version=\"1.0\" encoding=\"Windows-1252\"?>\n<InvMaster <syspro_company>anguage='05'
+        <syspro_company>anguage2='EN' CssStyle='' DecFormat='1' DateFormat='01' Role='01'
+        Version='7.0.053' OperatorPrimaryRole='   '>\n<HeaderDetails>\n<TableName>InvMaster</TableName>\n<Columns>\n<Column>StockCode</Column>\n</Columns>\n<OrderBy>\n<Column>StockCode</Column>\n</OrderBy>\n</HeaderDetails>\n<Row>\n<StockCode>02</StockCode>\n</Row>\n<RowsReturned>
         \      1</RowsReturned>\n</InvMaster>\n "
     http_version: 
-  recorded_at: Wed, 09 Jan 2019 00:28:42 GMT
+  recorded_at: Wed, 09 Jan 2019 22:57:59 GMT
 recorded_with: VCR 4.0.0

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://syspro.wildlandlabs.com:90/SYSPROWCFService/Rest/logon?CompanyId=L&CompanyPassword=&Operator=wland&OperatorPassword=Piperita2018
+    uri: http://syspro.wildlandlabs.com:90/SYSPROWCFService/Rest/logon?CompanyId=<syspro_company>&CompanyPassword=&Operator=<syspro_username>&OperatorPassword=<syspro_password>
     body:
       encoding: US-ASCII
       string: ''
@@ -20,22 +20,22 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Content-Length:
-      - '36'
       Content-Type:
       - application/octet-stream
       Server:
       - Microsoft-HTTPAPI/2.0
       Date:
-      - Wed, 09 Jan 2019 00:28:43 GMT
+      - Wed, 09 Jan 2019 22:58:01 GMT
+      Content-<syspro_company>ength:
+      - '36'
     body:
       encoding: UTF-8
-      string: '298FDAC63B744A44B5512B1057C0FB2A00  '
+      string: '614801C3977A2A47B26669EEC9005EF200  '
     http_version: 
-  recorded_at: Wed, 09 Jan 2019 00:28:42 GMT
+  recorded_at: Wed, 09 Jan 2019 22:58:00 GMT
 - request:
     method: get
-    uri: http://syspro.wildlandlabs.com:90/SYSPROWCFService/Rest/Query/Fetch?UserId=298FDAC63B744A44B5512B1057C0FB2A00%20%20&XmlIn=%3C?xml%20version=%221.0%22%20encoding=%22Windows-1252%22?%3E%0A%3CFetch%20xmlns:xsd=%22http://www.w3.org/2001/XMLSchema-instance%22%20xsd:noNamespaceSchemaLocation=%22COMFCH.XSD%22%3E%0A%20%20%3CTableName%3EInvMaster%3C/TableName%3E%0A%20%20%3CKey%3E02%3C/Key%3E%0A%20%20%0A%20%20%3CFullKeyProvided%3EY%3C/FullKeyProvided%3E%0A%20%20%3CDefaultType%3E%3C/DefaultType%3E%0A%20%20%3CEspressoFetch%3EN%3C/EspressoFetch%3E%0A%3C/Fetch%3E%0A%0A
+    uri: http://syspro.wildlandlabs.com:90/SYSPROWCFService/Rest/Query/Fetch?UserId=614801C3977A2A47B26669EEC9005EF200%20%20&XmlIn=%3C?xml%20version=%221.0%22%20encoding=%22Windows-1252%22?%3E%0A%3CFetch%20xmlns:xsd=%22http://www.w3.org/2001/XM<syspro_company>Schema-instance%22%20xsd:noNamespaceSchema<syspro_company>ocation=%22COMFCH.XSD%22%3E%0A%20%20%3CTableName%3EInvMaster%3C/TableName%3E%0A%20%20%3CKey%3E02%3C/Key%3E%0A%20%20%0A%20%20%3CFullKeyProvided%3EY%3C/FullKeyProvided%3E%0A%20%20%3CDefaultType%3E%3C/DefaultType%3E%0A%20%20%3CEspressoFetch%3EN%3C/EspressoFetch%3E%0A%3C/Fetch%3E%0A%0A
     body:
       encoding: US-ASCII
       string: ''
@@ -53,44 +53,46 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Content-Length:
-      - '3911'
       Content-Type:
       - application/octet-stream
       Server:
       - Microsoft-HTTPAPI/2.0
       Date:
-      - Wed, 09 Jan 2019 00:28:44 GMT
+      - Wed, 09 Jan 2019 22:58:01 GMT
+      Content-<syspro_company>ength:
+      - '3911'
     body:
       encoding: UTF-8
-      string: "<?xml version=\"1.0\" encoding=\"Windows-1252\"?>\n<InvMaster Language='05'
-        Language2='EN' CssStyle='' DecFormat='1' DateFormat='01' Role='01' Version='7.0.035'
-        OperatorPrimaryRole='   '>\n<StockCode>02</StockCode>\n<Description>STR</Description>\n<LongDesc>SPEARMINT
-        TERPENES</LongDesc>\n<AlternateKey1/>\n<AlternateKey2/>\n<EccUser/>\n<StockUom>LB</StockUom>\n<AlternateUom>KG</AlternateUom>\n<OtherUom>DR</OtherUom>\n<ConvFactAltUom>
+      string: "<?xml version=\"1.0\" encoding=\"Windows-1252\"?>\n<InvMaster <syspro_company>anguage='05'
+        <syspro_company>anguage2='EN' CssStyle='' DecFormat='1' DateFormat='01' Role='01'
+        Version='7.0.035' OperatorPrimaryRole='   '>\n<StockCode>02</StockCode>\n<Description>STR</Description>\n<<syspro_company>ongDesc>SPEARMINT
+        TERPENES</<syspro_company>ongDesc>\n<AlternateKey1/>\n<AlternateKey2/>\n<EccUser/>\n<StockUom><syspro_company>B</StockUom>\n<AlternateUom>KG</AlternateUom>\n<OtherUom>DR</OtherUom>\n<ConvFactAltUom>
         \    2.204620</ConvFactAltUom>\n<ConvMulDiv>M</ConvMulDiv>\n<ConvFactOthUom>
         \  400.000000</ConvFactOthUom>\n<MulDiv>M</MulDiv>\n<Mass>           1.000000</Mass>\n<Volume>
         \          0.000000</Volume>\n<Decimals>3</Decimals>\n<PriceCategory>A</PriceCategory>\n<PriceMethod>C</PriceMethod>\n<Supplier/>\n<CycleCount>
-        0</CycleCount>\n<ProductClass>STRP</ProductClass>\n<TaxCode>A</TaxCode>\n<OtherTaxCode/>\n<ListPriceCode>A</ListPriceCode>\n<SerialMethod>N</SerialMethod>\n<InterfaceFlag>Y</InterfaceFlag>\n<KitType>N</KitType>\n<LowLevelCode>
-        0</LowLevelCode>\n<Buyer/>\n<Planner/>\n<TraceableType>T</TraceableType>\n<MpsFlag>N</MpsFlag>\n<BulkIssueFlag>N</BulkIssueFlag>\n<AbcClass/>\n<LeadTime>
-        \        0</LeadTime>\n<StockMovementReq>Y</StockMovementReq>\n<ClearingFlag>N</ClearingFlag>\n<SupercessionDate>0000-00-00</SupercessionDate>\n<AbcAnalysisReq>Y</AbcAnalysisReq>\n<AbcCostingReq>N</AbcCostingReq>\n<CostUom>LB</CostUom>\n<MinPricePct>
-        \ 0.00</MinPricePct>\n<LabourCost>         0.00000</LabourCost>\n<MaterialCost>
+        0</CycleCount>\n<ProductClass>STRP</ProductClass>\n<TaxCode>A</TaxCode>\n<OtherTaxCode/>\n<<syspro_company>istPriceCode>A</<syspro_company>istPriceCode>\n<SerialMethod>N</SerialMethod>\n<InterfaceFlag>Y</InterfaceFlag>\n<KitType>N</KitType>\n<<syspro_company>ow<syspro_company>evelCode>
+        0</<syspro_company>ow<syspro_company>evelCode>\n<Buyer/>\n<Planner/>\n<TraceableType>T</TraceableType>\n<MpsFlag>N</MpsFlag>\n<BulkIssueFlag>N</BulkIssueFlag>\n<AbcClass/>\n<<syspro_company>eadTime>
+        \        0</<syspro_company>eadTime>\n<StockMovementReq>Y</StockMovementReq>\n<ClearingFlag>N</ClearingFlag>\n<SupercessionDate>0000-00-00</SupercessionDate>\n<AbcAnalysisReq>Y</AbcAnalysisReq>\n<AbcCostingReq>N</AbcCostingReq>\n<CostUom><syspro_company>B</CostUom>\n<MinPricePct>
+        \ 0.00</MinPricePct>\n<<syspro_company>abourCost>         0.00000</<syspro_company>abourCost>\n<MaterialCost>
         \        0.00000</MaterialCost>\n<FixOverhead>         0.00000</FixOverhead>\n<VariableOverhead>
         \        0.00000</VariableOverhead>\n<PartCategory>B</PartCategory>\n<DrawOfficeNum/>\n<WarehouseToUse>H1</WarehouseToUse>\n<BuyingRule>A</BuyingRule>\n<SpecificGravity>
         0.0000</SpecificGravity>\n<ImplosionNum>    0</ImplosionNum>\n<Ebq>         400.000000</Ebq>\n<ComponentCount>
         \   0</ComponentCount>\n<FixTimePeriod> 1</FixTimePeriod>\n<PanSize>           0.000000</PanSize>\n<DockToStock>
-        \        0</DockToStock>\n<OutputMassFlag>F</OutputMassFlag>\n<ShelfLife>
-        \  0</ShelfLife>\n<Version/>\n<Release/>\n<DemandTimeFence>         0</DemandTimeFence>\n<MakeToOrderFlag>N</MakeToOrderFlag>\n<ManufLeadTime>
-        \        0</ManufLeadTime>\n<GrossReqRule>I</GrossReqRule>\n<PercentageYield>100</PercentageYield>\n<AbcPreProd>
+        \        0</DockToStock>\n<OutputMassFlag>F</OutputMassFlag>\n<Shelf<syspro_company>ife>
+        \  0</Shelf<syspro_company>ife>\n<Version/>\n<Release/>\n<DemandTimeFence>
+        \        0</DemandTimeFence>\n<MakeToOrderFlag>N</MakeToOrderFlag>\n<Manuf<syspro_company>eadTime>
+        \        0</Manuf<syspro_company>eadTime>\n<GrossReqRule>I</GrossReqRule>\n<PercentageYield>100</PercentageYield>\n<AbcPreProd>
         \        0.00000</AbcPreProd>\n<AbcManufacturing>         0.00000</AbcManufacturing>\n<AbcSales>
         \        0.00000</AbcSales>\n<AbcCumPreProd>         0.00000</AbcCumPreProd>\n<AbcCumManuf>
         \        0.00000</AbcCumManuf>\n<WipCtlGlCode/>\n<ResourceCode/>\n<GstTaxCode>A</GstTaxCode>\n<PrcInclGst>N</PrcInclGst>\n<SerEntryAtSale/>\n<StpSelection/>\n<UserField1/>\n<UserField2>
-        \          0.00000</UserField2>\n<UserField3/>\n<UserField4/>\n<UserField5/>\n<TariffCode/>\n<SupplementaryUnit>N</SupplementaryUnit>\n<EbqPan>E</EbqPan>\n<StdLandedCost>
-        \        0.00000</StdLandedCost>\n<LctRequired>N</LctRequired>\n<StdLctRoute/>\n<IssMultLotsFlag>Y</IssMultLotsFlag>\n<InclInStrValid>Y</InclInStrValid>\n<StdLabCostsBill>
-        \        0.00000</StdLabCostsBill>\n<PhantomIfComp/>\n<CountryOfOrigin/>\n<StockOnHold/>\n<StockOnHoldReason/>\n<EccFlag>N</EccFlag>\n<StockAndAltUm>N</StockAndAltUm>\n<AltUnitChar>0</AltUnitChar>\n<JobsOnHold/>\n<JobHoldAllocs/>\n<PurchOnHold/>\n<SalesOnHold/>\n<MaintOnHold/>\n<BatchBill>N</BatchBill>\n<BlanketPoExists/>\n<CallOffBpoExists/>\n<DistWarehouseToUse/>\n<JobClassification/>\n<SubContractCost>
-        \        0.00000</SubContractCost>\n<DateStkAdded>2005-08-26</DateStkAdded>\n<InspectionFlag/>\n<SerialPrefix/>\n<SerialSuffix/>\n<ReturnableItem/>\n<ProductGroup/>\n<PriceType/>\n<Basis/>\n<ManualCostFlag/>\n<ManufactureUom>LB</ManufactureUom>\n<ConvFactMuM>
-        \    1.000000</ConvFactMuM>\n<ManMulDiv>M</ManMulDiv>\n<LookAheadWin>         0</LookAheadWin>\n<LoadingFactor>
-        \    0.000</LoadingFactor>\n<SupplUnitCode/>\n<StorageSecurity/>\n<StorageHazard/>\n<StorageCondition/>\n<ProductShelfLife>
-        \  0</ProductShelfLife>\n<InternalShelfLife>   0</InternalShelfLife>\n<AltMethodFlag/>\n<AltSisoFlag/>\n<AltReductionFlag/>\n<WithTaxExpenseType/>\n</InvMaster>\n "
+        \          0.00000</UserField2>\n<UserField3/>\n<UserField4/>\n<UserField5/>\n<TariffCode/>\n<SupplementaryUnit>N</SupplementaryUnit>\n<EbqPan>E</EbqPan>\n<Std<syspro_company>andedCost>
+        \        0.00000</Std<syspro_company>andedCost>\n<<syspro_company>ctRequired>N</<syspro_company>ctRequired>\n<Std<syspro_company>ctRoute/>\n<IssMult<syspro_company>otsFlag>Y</IssMult<syspro_company>otsFlag>\n<InclInStrValid>Y</InclInStrValid>\n<Std<syspro_company>abCostsBill>
+        \        0.00000</Std<syspro_company>abCostsBill>\n<PhantomIfComp/>\n<CountryOfOrigin/>\n<StockOnHold/>\n<StockOnHoldReason/>\n<EccFlag>N</EccFlag>\n<StockAndAltUm>N</StockAndAltUm>\n<AltUnitChar>0</AltUnitChar>\n<JobsOnHold/>\n<JobHoldAllocs/>\n<PurchOnHold/>\n<SalesOnHold/>\n<MaintOnHold/>\n<BatchBill>N</BatchBill>\n<BlanketPoExists/>\n<CallOffBpoExists/>\n<DistWarehouseToUse/>\n<JobClassification/>\n<SubContractCost>
+        \        0.00000</SubContractCost>\n<DateStkAdded>2005-08-26</DateStkAdded>\n<InspectionFlag/>\n<SerialPrefix/>\n<SerialSuffix/>\n<ReturnableItem/>\n<ProductGroup/>\n<PriceType/>\n<Basis/>\n<ManualCostFlag/>\n<ManufactureUom><syspro_company>B</ManufactureUom>\n<ConvFactMuM>
+        \    1.000000</ConvFactMuM>\n<ManMulDiv>M</ManMulDiv>\n<<syspro_company>ookAheadWin>
+        \        0</<syspro_company>ookAheadWin>\n<<syspro_company>oadingFactor>     0.000</<syspro_company>oadingFactor>\n<SupplUnitCode/>\n<StorageSecurity/>\n<StorageHazard/>\n<StorageCondition/>\n<ProductShelf<syspro_company>ife>
+        \  0</ProductShelf<syspro_company>ife>\n<InternalShelf<syspro_company>ife>
+        \  0</InternalShelf<syspro_company>ife>\n<AltMethodFlag/>\n<AltSisoFlag/>\n<AltReductionFlag/>\n<WithTaxExpenseType/>\n</InvMaster>\n "
     http_version: 
-  recorded_at: Wed, 09 Jan 2019 00:28:43 GMT
+  recorded_at: Wed, 09 Jan 2019 22:58:00 GMT
 recorded_with: VCR 4.0.0
