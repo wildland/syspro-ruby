@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: get
-    uri: http://syspro.wildlandlabs.com:90/SYSPROWCFService/Rest/logon?CompanyId=L&CompanyPassword=&Operator=wland&OperatorPassword=piperita2016
+    uri: http://syspro.wildlandlabs.com:90/SYSPROWCFService/Rest/logon?CompanyId=L&CompanyPassword=&Operator=wland&OperatorPassword=Piperita2018
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Syspro/7 RubyBindings/1.0.0.alpha.1
+      - Syspro/7 RubyBindings/1.0.0.alpha.2
       Content-Type:
       - application/x-www-form-urlencoded
       Accept-Encoding:
@@ -27,21 +27,21 @@ http_interactions:
       Server:
       - Microsoft-HTTPAPI/2.0
       Date:
-      - Thu, 17 May 2018 16:52:35 GMT
+      - Wed, 09 Jan 2019 00:28:34 GMT
     body:
       encoding: UTF-8
-      string: 'C6897E2FC9768F4DA49CA2144341435700  '
+      string: 'E4B229FC9C2F7A4BA70D10AF87DBB35600  '
     http_version: 
-  recorded_at: Thu, 17 May 2018 16:52:35 GMT
+  recorded_at: Wed, 09 Jan 2019 00:28:33 GMT
 - request:
     method: get
-    uri: http://syspro.wildlandlabs.com:90/SYSPROWCFService/Rest/Query/Query?BusinessObject=PORQRY&UserId=C6897E2FC9768F4DA49CA2144341435700%20%20&XmlIn=%3C?xml%20version=%221.0%22%20encoding=%22Windows-1252%22?%3E%0A%3CQuery%20xmlns:xsd=%22http://www.w3.org/2001/XMLSchema-instance%22%20xsd:noNamespaceSchemaLocation=%22PORQRY.XSD%22%3E%0A%20%20%3CKey%3E%0A%20%20%20%20%3CPurchaseOrder%3E%2000001%3C/PurchaseOrder%3E%0A%20%20%3C/Key%3E%0A%20%20%3COption%3E%0A%20%20%20%20%3CIncludeStockedLines%3EY%3C/IncludeStockedLines%3E%0A%20%20%20%20%3CIncludeNonStockedLines%3EY%3C/IncludeNonStockedLines%3E%0A%20%20%20%20%3CIncludeFreightLines%3EY%3C/IncludeFreightLines%3E%0A%20%20%20%20%3CIncludeMiscellaneousLines%3EY%3C/IncludeMiscellaneousLines%3E%0A%20%20%20%20%3CIncludeCommentLines%3EY%3C/IncludeCommentLines%3E%0A%20%20%20%20%3CIncludeCompletedLines%3EY%3C/IncludeCompletedLines%3E%0A%20%20%20%20%3CIncludeGrns%3EY%3C/IncludeGrns%3E%0A%20%20%20%20%3CIncludeHistory%3EY%3C/IncludeHistory%3E%0A%20%20%20%20%3CIncludeLctDetails%3EY%3C/IncludeLctDetails%3E%0A%20%20%20%20%3CIncludeRequisitionDetails%3EY%3C/IncludeRequisitionDetails%3E%0A%20%20%20%20%3CIncludeRequisitionRouting%3EY%3C/IncludeRequisitionRouting%3E%0A%20%20%20%20%3CIncludeSalesOrders%3EY%3C/IncludeSalesOrders%3E%0A%20%20%20%20%3CIncludeCustomForms%3EY%3C/IncludeCustomForms%3E%20%0A%20%20%20%20%3CXslStylesheet/%3E%0A%20%20%3C/Option%3E%0A%20%20%3CFilter%3E%0A%20%20%20%20%3CLineNo%20FilterType=%22A%22%20FilterValue=%22%22/%3E%20%20%20%20%20%0A%20%20%3C/Filter%3E%0A%3C/Query%3E%0A%0A
+    uri: http://syspro.wildlandlabs.com:90/SYSPROWCFService/Rest/Query/Query?BusinessObject=PORQRY&UserId=E4B229FC9C2F7A4BA70D10AF87DBB35600%20%20&XmlIn=%3C?xml%20version=%221.0%22%20encoding=%22Windows-1252%22?%3E%0A%3CQuery%20xmlns:xsd=%22http://www.w3.org/2001/XMLSchema-instance%22%20xsd:noNamespaceSchemaLocation=%22PORQRY.XSD%22%3E%0A%20%20%3CKey%3E%0A%20%20%20%20%3CPurchaseOrder%3E%2000001%3C/PurchaseOrder%3E%0A%20%20%3C/Key%3E%0A%20%20%3COption%3E%0A%20%20%20%20%3CIncludeStockedLines%3EY%3C/IncludeStockedLines%3E%0A%20%20%20%20%3CIncludeNonStockedLines%3EY%3C/IncludeNonStockedLines%3E%0A%20%20%20%20%3CIncludeFreightLines%3EY%3C/IncludeFreightLines%3E%0A%20%20%20%20%3CIncludeMiscellaneousLines%3EY%3C/IncludeMiscellaneousLines%3E%0A%20%20%20%20%3CIncludeCommentLines%3EY%3C/IncludeCommentLines%3E%0A%20%20%20%20%3CIncludeCompletedLines%3EY%3C/IncludeCompletedLines%3E%0A%20%20%20%20%3CIncludeGrns%3EY%3C/IncludeGrns%3E%0A%20%20%20%20%3CIncludeHistory%3EY%3C/IncludeHistory%3E%0A%20%20%20%20%3CIncludeLctDetails%3EY%3C/IncludeLctDetails%3E%0A%20%20%20%20%3CIncludeRequisitionDetails%3EY%3C/IncludeRequisitionDetails%3E%0A%20%20%20%20%3CIncludeRequisitionRouting%3EY%3C/IncludeRequisitionRouting%3E%0A%20%20%20%20%3CIncludeSalesOrders%3EY%3C/IncludeSalesOrders%3E%0A%20%20%20%20%3CIncludeCustomForms%3EY%3C/IncludeCustomForms%3E%20%0A%20%20%20%20%3CXslStylesheet/%3E%0A%20%20%3C/Option%3E%0A%20%20%3CFilter%3E%0A%20%20%20%20%3CLineNo%20FilterType=%22A%22%20FilterValue=%22%22/%3E%20%20%20%20%20%0A%20%20%3C/Filter%3E%0A%3C/Query%3E%0A%0A
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Syspro/7 RubyBindings/1.0.0.alpha.1
+      - Syspro/7 RubyBindings/1.0.0.alpha.2
       Content-Type:
       - application/x-www-form-urlencoded
       Accept-Encoding:
@@ -60,11 +60,11 @@ http_interactions:
       Server:
       - Microsoft-HTTPAPI/2.0
       Date:
-      - Thu, 17 May 2018 16:52:40 GMT
+      - Wed, 09 Jan 2019 00:28:38 GMT
     body:
       encoding: UTF-8
       string: "<?xml version=\"1.0\" encoding=\"Windows-1252\"?>\n<PorDetail Language='05'
-        Language2='EN' CssStyle='' DecFormat='1' DateFormat='01' Role='01' Version='7.0.021'
+        Language2='EN' CssStyle='' DecFormat='1' DateFormat='01' Role='01' Version='7.0.022'
         OperatorPrimaryRole='   '   >\n<PurchaseOrder> 00001</PurchaseOrder>\n<Supplier>UTE002</Supplier>\n<SupplierName>UTEXAM
         LOGISTICS LIMITED(ZERO)</SupplierName>\n<SupplierClass/>\n<Customer/>\n<CustomerName/>\n<CustomerPoNumber/>\n<SupplierAddr1/>\n<SupplierAddr2/>\n<SupplierAddr3/>\n<SupplierAddr3Locality/>\n<SupplierAddr4/>\n<SupplierAddr5/>\n<SupPostalCode/>\n<Currency>$</Currency>\n<LocalSupplier>Y</LocalSupplier>\n<Description>DOLLAR</Description>\n<DeliveryName>ULL
         OWNED @ PDI</DeliveryName>\n<DeliveryAddr1/>\n<DeliveryAddr2/>\n<DeliveryAddr3/>\n<DeliveryAddr3Locality/>\n<DeliveryAddr4/>\n<DeliveryAddr5/>\n<PostalCode/>\n<DeliveryGpsLat>
@@ -146,5 +146,5 @@ http_interactions:
         \           0.00</CurrentReceivedToDateValue>\n<CurrentOutstandingValue>            0.00</CurrentOutstandingValue>\n<Edited_CurrentOrderValue>
         \           0.00</Edited_CurrentOrderValue>\n<Edited_CurrentReceivedToDateValue>0.00</Edited_CurrentReceivedToDateValue>\n<Edited_CurrentOutstandingValue>0.00</Edited_CurrentOutstandingValue>\n</CurrentValues>\n<FirstReceiptDate/>\n<OrderCompleteDate/>\n</PurchaseOrderTotals>\n</PorDetail>\n "
     http_version: 
-  recorded_at: Thu, 17 May 2018 16:52:40 GMT
+  recorded_at: Wed, 09 Jan 2019 00:28:37 GMT
 recorded_with: VCR 4.0.0

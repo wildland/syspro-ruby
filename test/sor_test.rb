@@ -39,4 +39,3 @@ class SorTest < Minitest::Test
     assert_kind_of Syspro::BusinessObjects::Models::SorDetail, sor_result
   end
 end
-
