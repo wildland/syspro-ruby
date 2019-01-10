@@ -38,7 +38,7 @@ module Syspro
                    'XmlIn' => xml_in }
         resp = PorToi.post(params)
 
-        # parse_response(resp)
+        parse_response(resp)
       end
 
       def template

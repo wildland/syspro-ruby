@@ -5,9 +5,9 @@ require 'test_helper'
 class PorToiTest < Minitest::Test
   extend Minitest::Spec::DSL
 
-  let(:username) { 'wland' }
-  let(:password) { 'Piperita2018' }
-  let(:company) { 'L' }
+  let(:username) { ENV['SYSPRO_USERNAME'] }
+  let(:password) { ENV['SYSPRO_PASSWORD'] }
+  let(:company) { ENV['SYSPRO_COMPANY'] }
   let(:company_password) { '' }
   let(:user_id) do
     Syspro::Logon.logon(username, password, company, company_password)
@@ -69,9 +69,9 @@ class PorToiTest < Minitest::Test
     
     po.order_details = Syspro::BusinessObjects::Models::PurchaseOrders::OrderDetails.new
     po.order_details.stock_lines = [line1]
-   
-    syspro_po = po.call(user_id.guid)
     binding.pry
+    
+    syspro_po = po.call(user_id.guid)
     
     assert_equal syspro_po.error_numbers.length, 0
   end

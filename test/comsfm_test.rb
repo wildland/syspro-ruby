@@ -5,9 +5,9 @@ require 'test_helper'
 class ComsFmTest < Minitest::Test
   extend Minitest::Spec::DSL
 
-  let(:username) { 'wland' }
-  let(:password) { 'Piperita2018' }
-  let(:company) { 'L' }
+  let(:username) { ENV['SYSPRO_USERNAME'] }
+  let(:password) { ENV['SYSPRO_PASSWORD'] }
+  let(:company) { ENV['SYSPRO_COMPANY'] }
   let(:company_password) { '' }
   let(:user_id) do
     Syspro::Logon.logon(username, password, company, company_password)
