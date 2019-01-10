@@ -20,17 +20,17 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Content-Length:
-      - '7'
       Content-Type:
       - application/octet-stream
       Server:
       - Microsoft-HTTPAPI/2.0
       Date:
-      - Wed, 09 Jan 2019 00:28:44 GMT
+      - Wed, 09 Jan 2019 22:58:07 GMT
+      Content-<syspro_company>ength:
+      - '7'
     body:
       encoding: UTF-8
       string: 7.0.0.6
     http_version: 
-  recorded_at: Wed, 09 Jan 2019 00:28:43 GMT
+  recorded_at: Wed, 09 Jan 2019 22:58:05 GMT
 recorded_with: VCR 4.0.0

@@ -11,8 +11,9 @@ require 'webmock'
 VCR.configure do |c|
   c.cassette_library_dir = 'test/cassettes'
   c.hook_into :webmock
-  # TODO: change passwords and move them to ENV
-  # c.filter_sensitive_data() { ENV[] }
+  c.filter_sensitive_data('<syspro_username>') { ENV['SYSPRO_USERNAME'] }
+  c.filter_sensitive_data('<syspro_password>') { ENV['SYSPRO_PASSWORD'] }
+  c.filter_sensitive_data('<syspro_company>') { ENV['SYSPRO_COMPANY'] }
 end
 
 MinitestVcr::Spec.configure!

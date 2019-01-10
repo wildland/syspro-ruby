@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://syspro.wildlandlabs.com:90/SYSPROWCFService/Rest/logon?CompanyId=L&CompanyPassword=&Operator=wland&OperatorPassword=Piperita2018
+    uri: http://syspro.wildlandlabs.com:90/SYSPROWCFService/Rest/logon?CompanyId=<syspro_company>&CompanyPassword=&Operator=<syspro_username>&OperatorPassword=<syspro_password>
     body:
       encoding: US-ASCII
       string: ''
@@ -20,22 +20,22 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Content-Length:
-      - '36'
       Content-Type:
       - application/octet-stream
       Server:
       - Microsoft-HTTPAPI/2.0
       Date:
-      - Wed, 09 Jan 2019 00:28:32 GMT
+      - Wed, 09 Jan 2019 22:58:05 GMT
+      Content-<syspro_company>ength:
+      - '36'
     body:
       encoding: UTF-8
-      string: 'F3FD8466E601D44CB900D3B5B267692200  '
+      string: 'E5AEED46726A9B43904A3F53B39844D000  '
     http_version: 
-  recorded_at: Wed, 09 Jan 2019 00:28:31 GMT
+  recorded_at: Wed, 09 Jan 2019 22:58:03 GMT
 - request:
     method: get
-    uri: http://syspro.wildlandlabs.com:90/SYSPROWCFService/Rest/Query/Query?BusinessObject=SORQRY&UserId=F3FD8466E601D44CB900D3B5B267692200%20%20&XmlIn=%3C?xml%20version=%221.0%22%20encoding=%22Windows-1252%22?%3E%0A%3CQuery%20xmlns:xsd=%22http://www.w3.org/2001/XMLSchema-instance%22%20xsd:noNamespaceSchemaLocation=%22SORQRY.XSD%22%3E%0A%20%20%3CKey%3E%0A%20%20%20%20%3CSalesOrder%3E16R069%3C/SalesOrder%3E%0A%20%20%20%20%0A%20%20%3C/Key%3E%0A%20%20%3COption%3E%0A%20%20%20%20%3CIncludeStockedLines%3EN%3C/IncludeStockedLines%3E%0A%20%20%20%20%20%20%3CIncludeNonStockedLines%3EN%3C/IncludeNonStockedLines%3E%0A%20%20%20%20%20%20%3CIncludeFreightLines%3EN%3C/IncludeFreightLines%3E%0A%20%20%20%20%20%20%3CIncludeMiscLines%3EN%3C/IncludeMiscLines%3E%0A%20%20%20%20%20%20%3CIncludeCommentLines%3EN%3C/IncludeCommentLines%3E%0A%20%20%20%20%20%20%3CIncludeCompletedLines%3EN%3C/IncludeCompletedLines%3E%0A%20%20%20%20%20%20%3CIncludeSerials%3EN%3C/IncludeSerials%3E%0A%20%20%20%20%20%20%3CIncludeLots%3EN%3C/IncludeLots%3E%0A%20%20%20%20%20%20%3CIncludeBins%3EN%3C/IncludeBins%3E%0A%20%20%20%20%20%20%3CIncludeAttachedItems%3EN%3C/IncludeAttachedItems%3E%0A%20%20%20%20%20%20%3CIncludeCustomForms%3EN%3C/IncludeCustomForms%3E%0A%20%20%20%20%20%20%3CIncludeDetailLineCustomForms%3EN%3C/IncludeDetailLineCustomForms%3E%0A%20%20%20%20%20%20%3CIncludeValues%3EN%3C/IncludeValues%3E%0A%20%20%20%20%20%20%3CReturnLineShipDate%3EN%3C/ReturnLineShipDate%3E%0A%20%20%20%20%20%20%3CXslStylesheet/%3E%0A%20%20%3C/Option%3E%0A%3C/Query%3E%0A%0A
+    uri: http://syspro.wildlandlabs.com:90/SYSPROWCFService/Rest/Query/Query?BusinessObject=SORQRY&UserId=E5AEED46726A9B43904A3F53B39844D000%20%20&XmlIn=%3C?xml%20version=%221.0%22%20encoding=%22Windows-1252%22?%3E%0A%3CQuery%20xmlns:xsd=%22http://www.w3.org/2001/XM<syspro_company>Schema-instance%22%20xsd:noNamespaceSchema<syspro_company>ocation=%22SORQRY.XSD%22%3E%0A%20%20%3CKey%3E%0A%20%20%20%20%3CSalesOrder%3E16R069%3C/SalesOrder%3E%0A%20%20%20%20%0A%20%20%3C/Key%3E%0A%20%20%3COption%3E%0A%20%20%20%20%3CIncludeStocked<syspro_company>ines%3EN%3C/IncludeStocked<syspro_company>ines%3E%0A%20%20%20%20%20%20%3CIncludeNonStocked<syspro_company>ines%3EN%3C/IncludeNonStocked<syspro_company>ines%3E%0A%20%20%20%20%20%20%3CIncludeFreight<syspro_company>ines%3EN%3C/IncludeFreight<syspro_company>ines%3E%0A%20%20%20%20%20%20%3CIncludeMisc<syspro_company>ines%3EN%3C/IncludeMisc<syspro_company>ines%3E%0A%20%20%20%20%20%20%3CIncludeComment<syspro_company>ines%3EN%3C/IncludeComment<syspro_company>ines%3E%0A%20%20%20%20%20%20%3CIncludeCompleted<syspro_company>ines%3EN%3C/IncludeCompleted<syspro_company>ines%3E%0A%20%20%20%20%20%20%3CIncludeSerials%3EN%3C/IncludeSerials%3E%0A%20%20%20%20%20%20%3CInclude<syspro_company>ots%3EN%3C/Include<syspro_company>ots%3E%0A%20%20%20%20%20%20%3CIncludeBins%3EN%3C/IncludeBins%3E%0A%20%20%20%20%20%20%3CIncludeAttachedItems%3EN%3C/IncludeAttachedItems%3E%0A%20%20%20%20%20%20%3CIncludeCustomForms%3EN%3C/IncludeCustomForms%3E%0A%20%20%20%20%20%20%3CIncludeDetail<syspro_company>ineCustomForms%3EN%3C/IncludeDetail<syspro_company>ineCustomForms%3E%0A%20%20%20%20%20%20%3CIncludeValues%3EN%3C/IncludeValues%3E%0A%20%20%20%20%20%20%3CReturn<syspro_company>ineShipDate%3EN%3C/Return<syspro_company>ineShipDate%3E%0A%20%20%20%20%20%20%3CXslStylesheet/%3E%0A%20%20%3C/Option%3E%0A%3C/Query%3E%0A%0A
     body:
       encoding: US-ASCII
       string: ''
@@ -53,34 +53,37 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Content-Length:
-      - '3812'
       Content-Type:
       - application/octet-stream
       Server:
       - Microsoft-HTTPAPI/2.0
       Date:
-      - Wed, 09 Jan 2019 00:28:34 GMT
+      - Wed, 09 Jan 2019 22:58:06 GMT
+      Content-<syspro_company>ength:
+      - '3812'
     body:
       encoding: UTF-8
-      string: "<?xml version=\"1.0\" encoding=\"Windows-1252\"?>\n<SorDetail Language='05'
-        Language2='EN' CssStyle='' DecFormat='1' DateFormat='01' Role='01' Version='7.0.047'
-        OperatorPrimaryRole='   '   xmlns:SALARE=\"SALARE\" xmlns:SALSLS=\"SALSLS\"
-        xmlns:TBLART=\"TBLART\" xmlns:SALBRN=\"SALBRN\" xmlns:TBLCUR=\"TBLCUR\" >\n<SalesOrder>16R069</SalesOrder>\n<DocumentType>O</DocumentType>\n<DocumentTypeDesc>Order</DocumentTypeDesc>\n<InterBranchTransfer/>\n<InterWhSale/>\n<SourceWarehouse/>\n<TargetWarehouse/>\n<GtrReference/>\n<Customer>SYM000</Customer>\n<CustomerName>SYMRISE
-        GLOBAL</CustomerName>\n<TaxStatusCode>E</TaxStatusCode>\n<TaxStatus>Exempt
+      string: "<?xml version=\"1.0\" encoding=\"Windows-1252\"?>\n<SorDetail <syspro_company>anguage='05'
+        <syspro_company>anguage2='EN' CssStyle='' DecFormat='1' DateFormat='01' Role='01'
+        Version='7.0.047' OperatorPrimaryRole='   '   xmlns:SA<syspro_company>ARE=\"SA<syspro_company>ARE\"
+        xmlns:SA<syspro_company>S<syspro_company>S=\"SA<syspro_company>S<syspro_company>S\"
+        xmlns:TB<syspro_company>ART=\"TB<syspro_company>ART\" xmlns:SA<syspro_company>BRN=\"SA<syspro_company>BRN\"
+        xmlns:TB<syspro_company>CUR=\"TB<syspro_company>CUR\" >\n<SalesOrder>16R069</SalesOrder>\n<DocumentType>O</DocumentType>\n<DocumentTypeDesc>Order</DocumentTypeDesc>\n<InterBranchTransfer/>\n<InterWhSale/>\n<SourceWarehouse/>\n<TargetWarehouse/>\n<GtrReference/>\n<Customer>SYM000</Customer>\n<CustomerName>SYMRISE
+        G<syspro_company>OBA<syspro_company></CustomerName>\n<TaxStatusCode>E</TaxStatusCode>\n<TaxStatus>Exempt
         from tax</TaxStatus>\n<GSTTaxStatusCode>E</GSTTaxStatusCode>\n<GSTTaxStatus>Exempt
         from tax</GSTTaxStatus>\n<EUFlag>N</EUFlag>\n<EUFlagDesc>EU</EUFlagDesc>\n<SoldToName>SYMRISE
-        GLOBAL</SoldToName>\n<SoldAddr1>FR KREDITOREN</SoldAddr1>\n<SoldAddr2>POSTFACH
-        1253</SoldAddr2>\n<SoldAddr3>D-37601 HOLZMINDEN</SoldAddr3>\n<SoldAddr3Locality/>\n<SoldAddr4>GERMANY</SoldAddr4>\n<SoldAddr5/>\n<SoldPostalCode/>\n<SoldGpsLat>
-        \ 0.000000</SoldGpsLat>\n<SoldGpsLong>   0.000000</SoldGpsLong>\n<Salesperson>DAL</Salesperson>\n<ScheduledOrdFlag/>\n<DiscPct1>0.00</DiscPct1>\n<DiscPct2>0.00</DiscPct2>\n<DiscPct3>0.00</DiscPct3>\n<Commissions>\n<Salesperson>DAL</Salesperson>\n<CommissionSales1>0.00</CommissionSales1>\n<Edited_CommissionSales1>0.00</Edited_CommissionSales1>\n<Salesperson2/>\n<CommissionSales2>0.00</CommissionSales2>\n<Edited_CommissionSales2>0.00</Edited_CommissionSales2>\n<Salesperson3/>\n<CommissionSales3>0.00</CommissionSales3>\n<Edited_CommissionSales3>0.00</Edited_CommissionSales3>\n<Salesperson4/>\n<CommissionSales4>0.00</CommissionSales4>\n<Edited_CommissionSales4>0.00</Edited_CommissionSales4>\n</Commissions>\n<SALSLS:Name>DAN
-        A LABBEE</SALSLS:Name>\n<OrderStatus>*</OrderStatus>\n<OrderStatusDesc>Cancelled
-        during entry</OrderStatusDesc>\n<CustomerPoNumber/>\n<OrderDate>2014-08-13</OrderDate>\n<GITReference/>\n<ReqShipDate>2017-05-31</ReqShipDate>\n<ShippingInstrs/>\n<ShippingInstrsCod/>\n<SpecialInstrs/>\n<InvTermsOverride>3</InvTermsOverride>\n<DeliveryNote/>\n<LastDelNote/>\n<TimeDelPrtedHh>00</TimeDelPrtedHh>\n<TimeDelPrtedMm>00</TimeDelPrtedMm>\n<LastInvoice/>\n<DateLastInvPrt/>\n<TimeInvPrtedHh>00</TimeInvPrtedHh>\n<TimeInvPrtedMm>00</TimeInvPrtedMm>\n<TBLART:Description>NET
-        30 DAYS</TBLART:Description>\n<Branch>HQ</Branch>\n<SALBRN:Description>HARRAH,
-        WASHINGTON RECEIVABLES</SALBRN:Description>\n<EntInvoice/>\n<OrderType/>\n<Area>FG</Area>\n<SALARE:Description>FOREIGN</SALARE:Description>\n<TaxExemptNumber/>\n<GstExemptNum/>\n<Currency>$</Currency>\n<TBLCUR:Description>DOLLAR</TBLCUR:Description>\n<ShipAddress1>IMPORTANT</ShipAddress1>\n<ShipAddress2>THIS
-        IS A GLOBAL ACCOUNT</ShipAddress2>\n<ShipAddress3>USED TO HOLD</ShipAddress3>\n<ShipAddress3Locality/>\n<ShipAddress4>SCHEDULED
-        ORDERS ON CONTRACTS</ShipAddress4>\n<ShipAddress5>DO NOT SHIP FROM GLOBAL</ShipAddress5>\n<ShipPostalCode/>\n<ShipGpsLat>
-        \ 0.000000</ShipGpsLat>\n<ShipGpsLong>   0.000000</ShipGpsLong>\n<ShipComplete>N</ShipComplete>\n<Email/>\n<FixExchangeRate>N</FixExchangeRate>\n<ExchangeRate>
-        \    1.000000</ExchangeRate>\n<Edited_ExchangeRate>1.000000</Edited_ExchangeRate>\n<MulDiv>M</MulDiv>\n<ConsolidatedOrder/>\n<GstDeduction>I</GstDeduction>\n<CreditedInvDate/>\n<Job/>\n<SerialisedFlag/>\n<CounterSalesFlag/>\n<Nationality/>\n<DeliveryTerms/>\n<ShippingLocation/>\n<TransactionNature>000</TransactionNature>\n<TransportMode>00</TransportMode>\n<ProcessFlag>0</ProcessFlag>\n<JobsExistFlag/>\n<AlternateKey/>\n<HierarchyFlag/>\n<DepositFlag/>\n<EdiSource/>\n<MultShipCode/>\n<CompanyTaxNo/>\n<LastOperator>MATTB</LastOperator>\n<Operator/>\n<State/>\n<CountyZip/>\n<ExtendedTaxCode/>\n<WebCreated/>\n<Quote/>\n<DispatchesMade/>\n<LiveDispExist/>\n<NumDispatches>0</NumDispatches>\n<IncludeInMrp>Y</IncludeInMrp>\n<HeaderText>\n</HeaderText>\n<HeaderNotes>\n</HeaderNotes>\n</SorDetail>\n "
+        G<syspro_company>OBA<syspro_company></SoldToName>\n<SoldAddr1>FR KREDITOREN</SoldAddr1>\n<SoldAddr2>POSTFACH
+        1253</SoldAddr2>\n<SoldAddr3>D-37601 HO<syspro_company>ZMINDEN</SoldAddr3>\n<SoldAddr3<syspro_company>ocality/>\n<SoldAddr4>GERMANY</SoldAddr4>\n<SoldAddr5/>\n<SoldPostalCode/>\n<SoldGps<syspro_company>at>
+        \ 0.000000</SoldGps<syspro_company>at>\n<SoldGps<syspro_company>ong>   0.000000</SoldGps<syspro_company>ong>\n<Salesperson>DA<syspro_company></Salesperson>\n<ScheduledOrdFlag/>\n<DiscPct1>0.00</DiscPct1>\n<DiscPct2>0.00</DiscPct2>\n<DiscPct3>0.00</DiscPct3>\n<Commissions>\n<Salesperson>DA<syspro_company></Salesperson>\n<CommissionSales1>0.00</CommissionSales1>\n<Edited_CommissionSales1>0.00</Edited_CommissionSales1>\n<Salesperson2/>\n<CommissionSales2>0.00</CommissionSales2>\n<Edited_CommissionSales2>0.00</Edited_CommissionSales2>\n<Salesperson3/>\n<CommissionSales3>0.00</CommissionSales3>\n<Edited_CommissionSales3>0.00</Edited_CommissionSales3>\n<Salesperson4/>\n<CommissionSales4>0.00</CommissionSales4>\n<Edited_CommissionSales4>0.00</Edited_CommissionSales4>\n</Commissions>\n<SA<syspro_company>S<syspro_company>S:Name>DAN
+        A <syspro_company>ABBEE</SA<syspro_company>S<syspro_company>S:Name>\n<OrderStatus>*</OrderStatus>\n<OrderStatusDesc>Cancelled
+        during entry</OrderStatusDesc>\n<CustomerPoNumber/>\n<OrderDate>2014-08-13</OrderDate>\n<GITReference/>\n<ReqShipDate>2017-05-31</ReqShipDate>\n<ShippingInstrs/>\n<ShippingInstrsCod/>\n<SpecialInstrs/>\n<InvTermsOverride>3</InvTermsOverride>\n<DeliveryNote/>\n<<syspro_company>astDelNote/>\n<TimeDelPrtedHh>00</TimeDelPrtedHh>\n<TimeDelPrtedMm>00</TimeDelPrtedMm>\n<<syspro_company>astInvoice/>\n<Date<syspro_company>astInvPrt/>\n<TimeInvPrtedHh>00</TimeInvPrtedHh>\n<TimeInvPrtedMm>00</TimeInvPrtedMm>\n<TB<syspro_company>ART:Description>NET
+        30 DAYS</TB<syspro_company>ART:Description>\n<Branch>HQ</Branch>\n<SA<syspro_company>BRN:Description>HARRAH,
+        WASHINGTON RECEIVAB<syspro_company>ES</SA<syspro_company>BRN:Description>\n<EntInvoice/>\n<OrderType/>\n<Area>FG</Area>\n<SA<syspro_company>ARE:Description>FOREIGN</SA<syspro_company>ARE:Description>\n<TaxExemptNumber/>\n<GstExemptNum/>\n<Currency>$</Currency>\n<TB<syspro_company>CUR:Description>DO<syspro_company><syspro_company>AR</TB<syspro_company>CUR:Description>\n<ShipAddress1>IMPORTANT</ShipAddress1>\n<ShipAddress2>THIS
+        IS A G<syspro_company>OBA<syspro_company> ACCOUNT</ShipAddress2>\n<ShipAddress3>USED
+        TO HO<syspro_company>D</ShipAddress3>\n<ShipAddress3<syspro_company>ocality/>\n<ShipAddress4>SCHEDU<syspro_company>ED
+        ORDERS ON CONTRACTS</ShipAddress4>\n<ShipAddress5>DO NOT SHIP FROM G<syspro_company>OBA<syspro_company></ShipAddress5>\n<ShipPostalCode/>\n<ShipGps<syspro_company>at>
+        \ 0.000000</ShipGps<syspro_company>at>\n<ShipGps<syspro_company>ong>   0.000000</ShipGps<syspro_company>ong>\n<ShipComplete>N</ShipComplete>\n<Email/>\n<FixExchangeRate>N</FixExchangeRate>\n<ExchangeRate>
+        \    1.000000</ExchangeRate>\n<Edited_ExchangeRate>1.000000</Edited_ExchangeRate>\n<MulDiv>M</MulDiv>\n<ConsolidatedOrder/>\n<GstDeduction>I</GstDeduction>\n<CreditedInvDate/>\n<Job/>\n<SerialisedFlag/>\n<CounterSalesFlag/>\n<Nationality/>\n<DeliveryTerms/>\n<Shipping<syspro_company>ocation/>\n<TransactionNature>000</TransactionNature>\n<TransportMode>00</TransportMode>\n<ProcessFlag>0</ProcessFlag>\n<JobsExistFlag/>\n<AlternateKey/>\n<HierarchyFlag/>\n<DepositFlag/>\n<EdiSource/>\n<MultShipCode/>\n<CompanyTaxNo/>\n<<syspro_company>astOperator>MATTB</<syspro_company>astOperator>\n<Operator/>\n<State/>\n<CountyZip/>\n<ExtendedTaxCode/>\n<WebCreated/>\n<Quote/>\n<DispatchesMade/>\n<<syspro_company>iveDispExist/>\n<NumDispatches>0</NumDispatches>\n<IncludeInMrp>Y</IncludeInMrp>\n<HeaderText>\n</HeaderText>\n<HeaderNotes>\n</HeaderNotes>\n</SorDetail>\n "
     http_version: 
-  recorded_at: Wed, 09 Jan 2019 00:28:33 GMT
+  recorded_at: Wed, 09 Jan 2019 22:58:03 GMT
 recorded_with: VCR 4.0.0

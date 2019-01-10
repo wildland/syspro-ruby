@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://syspro.wildlandlabs.com:90/SYSPROWCFService/Rest/logon?CompanyId=L&CompanyPassword=&Operator=wland&OperatorPassword=Piperita2018
+    uri: http://syspro.wildlandlabs.com:90/SYSPROWCFService/Rest/logon?CompanyId=<syspro_company>&CompanyPassword=&Operator=<syspro_username>&OperatorPassword=<syspro_password>
     body:
       encoding: US-ASCII
       string: ''
@@ -20,22 +20,22 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Content-Length:
-      - '36'
       Content-Type:
       - application/octet-stream
       Server:
       - Microsoft-HTTPAPI/2.0
       Date:
-      - Wed, 09 Jan 2019 00:28:31 GMT
+      - Wed, 09 Jan 2019 22:58:07 GMT
+      Content-<syspro_company>ength:
+      - '36'
     body:
       encoding: UTF-8
-      string: '4A540294F5C15A4F8084B3E0905E44F200  '
+      string: '8769428E37B2BF4AA353D1440BA1834600  '
     http_version: 
-  recorded_at: Wed, 09 Jan 2019 00:28:30 GMT
+  recorded_at: Wed, 09 Jan 2019 22:58:05 GMT
 - request:
     method: get
-    uri: http://syspro.wildlandlabs.com:90/SYSPROWCFService/Rest/logoff?UserId=4A540294F5C15A4F8084B3E0905E44F200%20%20
+    uri: http://syspro.wildlandlabs.com:90/SYSPROWCFService/Rest/logoff?UserId=8769428E37B2BF4AA353D1440BA1834600%20%20
     body:
       encoding: US-ASCII
       string: ''
@@ -53,17 +53,17 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Content-Length:
-      - '1'
       Content-Type:
       - application/octet-stream
       Server:
       - Microsoft-HTTPAPI/2.0
       Date:
-      - Wed, 09 Jan 2019 00:28:32 GMT
+      - Wed, 09 Jan 2019 22:58:07 GMT
+      Content-<syspro_company>ength:
+      - '1'
     body:
       encoding: UTF-8
       string: '0'
     http_version: 
-  recorded_at: Wed, 09 Jan 2019 00:28:31 GMT
+  recorded_at: Wed, 09 Jan 2019 22:58:05 GMT
 recorded_with: VCR 4.0.0
