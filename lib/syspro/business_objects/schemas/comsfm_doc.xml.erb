@@ -1,0 +1,12 @@
+<SetupCustomForm xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" xsd:noNamespaceSchemaLocation="COMSFMDOC.XSD">
+<% @items.each do |item| %>
+  <Item>
+    <Key>
+      <FormType><%= item.form_type %></FormType>
+      <KeyField><%= item.key_field %></KeyField>
+      <FieldName><%= item.field_name %></FieldName>
+    </Key>
+    <AlphaValue><%= item.alpha_value ? "Y" : "N" %></AlphaValue>
+  </Item>
+<% end %>
+</SetupCustomForm>

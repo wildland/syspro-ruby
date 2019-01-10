@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="Windows-1252"?>
 <PostPurchaseOrders xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" xsd:noNamespaceSchemaLocation="PORTOI.XSD">
   <Parameters>
-    <ValidateOnly><%= @validate_only ? "N" : "Y" %></ValidateOnly>
-    <IgnoreWarnings><%= @ignore_warnings ? "N" : "Y" %></IgnoreWarnings>
-    <AllowNonStockItems><%= @allow_non_stock_items ? "N" : "Y" %></AllowNonStockItems>
-    <AllowZeroPrice><%= @allow_zero_price ? "N" : "Y" %></AllowZeroPrice>
-    <ValidateWorkingDays><%= @validate_working_days ? "N" : "Y" %></ValidateWorkingDays>
-    <AllowPoWhenBlanketPo><%= @allow_po_when_blanket_po ? "N" : "Y" %></AllowPoWhenBlanketPo>
+    <ValidateOnly><%= @validate_only ? @validate_only : "N" %></ValidateOnly>
+    <IgnoreWarnings><%= @ignore_warnings ? @ignore_warnings : "N" %></IgnoreWarnings>
+    <AllowNonStockItems><%= @allow_non_stock_items ? @allow_non_stock_items : "N" %></AllowNonStockItems>
+    <AllowZeroPrice><%= @allow_zero_price ? @allow_zero_price : "N" %></AllowZeroPrice>
+    <ValidateWorkingDays><%= @validate_working_days ? @validate_working_days : "N" %></ValidateWorkingDays>
+    <AllowPoWhenBlanketPo><%= @allow_po_when_blanket_po ? @allow_po_when_blanket_po : "N" %></AllowPoWhenBlanketPo>
     <DefaultMemoCode><%= @default_memo_code ? default_memo_code.to_s : "" %></DefaultMemoCode>
-    <FixedExchangeRate><%= @fixed_exchange_rate ? "N" : "Y" %></FixedExchangeRate>
+    <FixedExchangeRate><%= @fixed_exchange_rate ? @fixed_exchange_rate : "N" %></FixedExchangeRate>
     <DefaultMemoDays><%= @default_memo_days ? @default_memo_days.to_s : "0" %></DefaultMemoDays>
-    <AllowBlankLedgerCode><%= @allow_blank_ledger_code ? "N" : "Y" %></AllowBlankLedgerCode>
+    <AllowBlankLedgerCode><%= @allow_blank_ledger_code ? @allow_blank_ledger_code : "N" %></AllowBlankLedgerCode>
     <DefaultDeliveryAddress/>
-    <CalcDueDate><%= @calc_due_date ? "N" : "Y" %></CalcDueDate>
-    <InsertDangerousGoodsText><%= @insert_dangerous_goods_text ? "N" : "Y" %></InsertDangerousGoodsText>
-    <InsertAdditionalPOText><%= @insert_additional_po_text ? "N" : "Y" %></InsertAdditionalPOText>
+    <CalcDueDate><%= @calc_due_date ? @calc_due_date : "N" %></CalcDueDate>
+    <InsertDangerousGoodsText><%= @insert_dangerous_goods_text ? @insert_dangerous_goods_text : "N" %></InsertDangerousGoodsText>
+    <InsertAdditionalPOText><%= @insert_additional_po_text ? @insert_additional_po_text : "N" %></InsertAdditionalPOText>
     <Status><%= @status ? status.to_s : "1" %></Status>
   </Parameters>
 </PostPurchaseOrders>

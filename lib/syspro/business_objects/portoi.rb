@@ -11,7 +11,7 @@ module Syspro
 
       # input params
       attr_accessor :purchase_order_header,
-        :purchase_order_details,
+        :order_details,
         :validate_only,
         :ignore_warnings,
         :allow_non_stock_items,
@@ -38,7 +38,7 @@ module Syspro
                    'XmlIn' => xml_in }
         resp = PorToi.post(params)
 
-        parse_response(resp)
+        # parse_response(resp)
       end
 
       def template
