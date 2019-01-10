@@ -30,17 +30,22 @@ require 'syspro/business_objects/comfch'
 require 'syspro/business_objects/comfnd'
 require 'syspro/business_objects/sorqry'
 require 'syspro/business_objects/portor'
+require 'syspro/business_objects/portoi'
 require 'syspro/business_objects/porqry'
 
 require 'syspro/business_objects/models/sor'
 require 'syspro/business_objects/models/sor_detail'
 require 'syspro/business_objects/models/por_detail'
+require 'syspro/business_objects/models/purchase_order_header'
+require 'syspro/business_objects/models/purchase_order_detail'
+require 'syspro/business_objects/models/purchase_order'
 
 require 'syspro/business_objects/parsers/combrw_parser'
 require 'syspro/business_objects/parsers/comfch_parser'
 require 'syspro/business_objects/parsers/comfnd_parser'
 require 'syspro/business_objects/parsers/sorqry_parser'
 require 'syspro/business_objects/parsers/portor_parser'
+require 'syspro/business_objects/parsers/portoi_parser'
 
 # Main Module
 module Syspro

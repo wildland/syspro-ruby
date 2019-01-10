@@ -8,7 +8,7 @@ class QueryTest < Minitest::Test
   after { VCR.eject_cassette }
 
   let(:username) { 'wland' }
-  let(:password) { 'piperita2016' }
+  let(:password) { 'Piperita2018' }
   let(:company) { 'L' }
   let(:company_password) { '' }
   let(:user_id) do

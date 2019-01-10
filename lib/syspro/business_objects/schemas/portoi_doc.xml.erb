@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<PostPurchaseOrders xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" xsd:noNamespaceSchemaLocation="PORTOIDOC.XSD">
+  <Orders>
+    <OrderHeader>
+      <OrderActionType><%= render_xml(@purchase_order_header.order_action_type) %></OrderActionType>
+      <Supplier><%= render_xml(@purchase_order_header.supplier) %></Supplier>
+      <ExchRateFixed><%= render_xml(@purchase_order_header.exch_rate_fixed) %></ExchRateFixed>
+      <ExchangeRate><%= render_xml(@purchase_order_header.exchange_rate) %></ExchangeRate>
+      <OrderType><%= render_xml(@purchase_order_header.order_type) %></OrderType>
+      <Customer><%= render_xml(@purchase_order_header.customer) %></Customer>
+      <TaxStatus><%= render_xml(@purchase_order_header.tax_status) %></TaxStatus>
+      <PaymentTerms><%= render_xml(@purchase_order_header.payment_terms) %></PaymentTerms>
+      <InvoiceTerms><%= render_xml(@purchase_order_header.invoice_terms) %></InvoiceTerms>
+      <CustomerPoNumber><%= render_xml(@purchase_order_header.customer_po_number) %></CustomerPoNumber>
+      <ShippingInstrs><%= render_xml(@purchase_order_header.shipping_instrs) %></ShippingInstrs>
+      <OrderDate><%= render_xml(@purchase_order_header.order_date) %></OrderDate>
+      <DueDate><%= render_xml(@purchase_order_header.due_date) %></DueDate>
+      <MemoDate><%= render_xml(@purchase_order_header.memo_date) %></MemoDate>
+      <ApplyDueDateToLines><%= render_xml(@purchase_order_header.apply_due_date_to_lines) %></ApplyDueDateToLines>
+      <MemoCode><%= render_xml(@purchase_order_header.memo_code) %></MemoCode>
+      <Buyer><%= render_xml(@purchase_order_header.buyer) %></Buyer>
+      <DeliveryName><%= render_xml(@purchase_order_header.delivery_name) %></DeliveryName>
+      <DeliveryAddr1><%= render_xml(@purchase_order_header.delivery_addr1) %></DeliveryAddr1>
+      <DeliveryAddr2><%= render_xml(@purchase_order_header.delivery_addr2) %></DeliveryAddr2>
+      <DeliveryAddr3><%= render_xml(@purchase_order_header.delivery_addr3) %></DeliveryAddr3>
+      <DeliveryAddr4><%= render_xml(@purchase_order_header.delivery_addr4) %></DeliveryAddr4>
+      <DeliveryAddr5><%= render_xml(@purchase_order_header.delivery_addr5) %></DeliveryAddr5>
+      <PostalCode><%= render_xml(@purchase_order_header.postal_code) %></PostalCode>
+      <Warehouse><%= render_xml(@purchase_order_header.warehouse) %></Warehouse>
+      <DiscountLessPlus><%= render_xml(@purchase_order_header.discount_less_plus) %></DiscountLessPlus>
+      <DiscPercent1><%= render_xml(@purchase_order_header.disc_percent1) %></DiscPercent1>
+      <DiscPercent2><%= render_xml(@purchase_order_header.disc_percent2) %></DiscPercent2>
+      <DiscPercent3><%= render_xml(@purchase_order_header.disc_percent3) %></DiscPercent3>
+      <PurchaseOrder><%= render_xml(@purchase_order_header.purchase_order) %></PurchaseOrder>
+      <ChgPOStatToReadyToPrint><%= render_xml(@purchase_order_header.chg_po_stat_to_ready_to_print) %></ChgPOStatToReadyToPrint>
+    </OrderHeader>
+  </Orders>
+</PostPurchaseOrders>
