@@ -38,16 +38,6 @@ class SorTest < Minitest::Test
 
     sor_result = sorqbs.call(user_id.guid)
 
-    puts " "
-    puts "================================================="
-    puts "================================================="
-    puts " "
-    puts password
-    puts " "
-    puts "================================================="
-    puts "================================================="
-    puts " "
-
     assert_kind_of Syspro::BusinessObjects::Models::SorDetail, sor_result
   end
 end
