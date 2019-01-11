@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<PostPurchaseOrders xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" xsd:noNamespaceSchemaLocation="PORTOIDOC.XSD">
+  <Orders>
+    <OrderHeader>
+      <OrderActionType><%= render_xml(@purchase_order_header.order_action_type) %></OrderActionType>
+      <Supplier><%= render_xml(@purchase_order_header.supplier) %></Supplier>
+      <ExchRateFixed><%= render_xml(@purchase_order_header.exch_rate_fixed) %></ExchRateFixed>
+      <ExchangeRate><%= render_xml(@purchase_order_header.exchange_rate) %></ExchangeRate>
+      <OrderType><%= render_xml(@purchase_order_header.order_type) %></OrderType>
+      <Customer><%= render_xml(@purchase_order_header.customer) %></Customer>
+      <TaxStatus><%= render_xml(@purchase_order_header.tax_status) %></TaxStatus>
+      <PaymentTerms><%= render_xml(@purchase_order_header.payment_terms) %></PaymentTerms>
+      <InvoiceTerms><%= render_xml(@purchase_order_header.invoice_terms) %></InvoiceTerms>
+      <CustomerPoNumber><%= render_xml(@purchase_order_header.customer_po_number) %></CustomerPoNumber>
+      <ShippingInstrs><%= render_xml(@purchase_order_header.shipping_instrs) %></ShippingInstrs>
+      <OrderDate><%= render_xml(@purchase_order_header.order_date) %></OrderDate>
+      <DueDate><%= render_xml(@purchase_order_header.due_date) %></DueDate>
+      <MemoDate><%= render_xml(@purchase_order_header.memo_date) %></MemoDate>
+      <ApplyDueDateToLines><%= render_xml(@purchase_order_header.apply_due_date_to_lines) %></ApplyDueDateToLines>
+      <MemoCode><%= render_xml(@purchase_order_header.memo_code) %></MemoCode>
+      <Buyer><%= render_xml(@purchase_order_header.buyer) %></Buyer>
+      <DeliveryName><%= render_xml(@purchase_order_header.delivery_name) %></DeliveryName>
+      <DeliveryAddr1><%= render_xml(@purchase_order_header.delivery_addr1) %></DeliveryAddr1>
+      <DeliveryAddr2><%= render_xml(@purchase_order_header.delivery_addr2) %></DeliveryAddr2>
+      <DeliveryAddr3><%= render_xml(@purchase_order_header.delivery_addr3) %></DeliveryAddr3>
+      <DeliveryAddr4><%= render_xml(@purchase_order_header.delivery_addr4) %></DeliveryAddr4>
+      <DeliveryAddr5><%= render_xml(@purchase_order_header.delivery_addr5) %></DeliveryAddr5>
+      <PostalCode><%= render_xml(@purchase_order_header.postal_code) %></PostalCode>
+      <Warehouse><%= render_xml(@purchase_order_header.warehouse) %></Warehouse>
+      <DiscountLessPlus><%= render_xml(@purchase_order_header.discount_less_plus) %></DiscountLessPlus>
+      <DiscPercent1><%= render_xml(@purchase_order_header.disc_percent1) %></DiscPercent1>
+      <DiscPercent2><%= render_xml(@purchase_order_header.disc_percent2) %></DiscPercent2>
+      <DiscPercent3><%= render_xml(@purchase_order_header.disc_percent3) %></DiscPercent3>
+      <PurchaseOrder><%= render_xml(@purchase_order_header.purchase_order) %></PurchaseOrder>
+      <ChgPOStatToReadyToPrint><%= render_xml(@purchase_order_header.chg_po_stat_to_ready_to_print) %></ChgPOStatToReadyToPrint>
+    </OrderHeader>
+  <%
+  if @order_details && @order_details.has_data
+  %>
+    <OrderDetails>
+  <%
+    if @order_details.has_stock
+      @order_details.stock_lines.each do |stock_line|
+  %>
+      <StockLine>
+        <PurchaseOrderLine><%= render_xml(stock_line.purchase_order_line) %></PurchaseOrderLine>
+        <LineActionType><%= render_xml(stock_line.line_action_type)%></LineActionType>
+        <StockCode><%= render_xml(stock_line.stock_code)%></StockCode>
+        <StockDescription><%= render_xml(stock_line.stock_description)%></StockDescription>
+        <Warehouse><%= render_xml(stock_line.warehouse)%></Warehouse>
+        <SupCatalogue><%= render_xml(stock_line.sup_catalogue)%></SupCatalogue>
+        <OrderQty><%= render_xml(stock_line.order_qty)%></OrderQty>
+        <OrderUom><%= render_xml(stock_line.order_uom)%></OrderUom>
+        <Units><%= render_xml(stock_line.units)%></Units>
+        <Pieces><%= render_xml(stock_line.pieces)%></Pieces>
+        <PriceMethod><%= render_xml(stock_line.price_method)%></PriceMethod>
+        <SupplierContract><%= render_xml(stock_line.supplier_contract)%></SupplierContract>
+        <Price><%= render_xml(stock_line.price)%></Price>
+        <PriceUom><%= render_xml(stock_line.price_uom)%></PriceUom>
+        <LineDiscType><%= render_xml(stock_line.line_disc_type)%></LineDiscType>
+        <LineDiscLessPlus><%= render_xml(stock_line.line_disc_less_plus)%></LineDiscLessPlus>
+        <LineDiscPercent1><%= render_xml(stock_line.line_disc_percent1)%></LineDiscPercent1>
+        <LineDiscPercent2><%= render_xml(stock_line.line_disc_percent2)%></LineDiscPercent2>
+        <LineDiscPercent3><%= render_xml(stock_line.line_disc_percent3)%></LineDiscPercent3>
+        <LineDiscValue><%= render_xml(stock_line.line_disc_value)%></LineDiscValue>
+        <Taxable><%= render_xml(stock_line.taxable)%></Taxable>
+        <TaxCode><%= render_xml(stock_line.tax_codev)%></TaxCode>
+        <Job><%= render_xml(stock_line.job)%></Job>
+        <Version><%= render_xml(stock_line.version)%></Version>
+        <Release><%= render_xml(stock_line.release)%></Release>
+        <LatestDueDate><%= render_xml(stock_line.latest_due_date)%></LatestDueDate>
+        <OriginalDueDate><%= render_xml(stock_line.original_due_date)%></OriginalDueDate>
+        <RescheduleDueDate><%= render_xml(stock_line.reschedule_due_date)%></RescheduleDueDate>
+        <LedgerCode><%= render_xml(stock_line.ledger_code)%></LedgerCode>
+        <PasswordForLedgerCode><%= render_xml(stock_line.password_for_ledger_code)%></PasswordForLedgerCode>
+        <SubcontractOp><%= render_xml(stock_line.subcontract_op)%></SubcontractOp>
+        <InspectionReqd><%= render_xml(stock_line.inspection_reqd)%></InspectionReqd>
+        <ProductClass><%= render_xml(stock_line.product_class)%></ProductClass>
+        <NonsUnitMass><%= render_xml(stock_line.nons_unit_mass)%></NonsUnitMass>
+        <NonsUnitVol><%= render_xml(stock_line.nons_unit_vol)%></NonsUnitVol>
+      </StockLine>
+  <%
+      end
+    end
+
+    if @order_details.has_comment
+      @order_details.comment_lines.each do |comment_line|
+    %>
+      <CommentLine>
+        <PurchaseOrderLine><%= render_xml(comment_line.purchase_order_line)%></PurchaseOrderLine>
+        <LineActionType><%= render_xml(comment_line.line_action_type)%></LineActionType>
+        <Comment><%= render_xml(comment_line.comment)%></Comment>
+        <AttachedToStkLineNumber><%= render_xml(comment_line.attached_to_stk_line_number)%></AttachedToStkLineNumber>
+        <DeleteAttachedCommentLines><%= render_xml(comment_line.delete_attached_comment_lines)%></DeleteAttachedCommentLines>
+        <ChangeSingleCommentLine><%= render_xml(comment_line.change_single_comment_line)%></ChangeSingleCommentLine>
+      </CommentLine>
+    <%
+      end
+    end
+
+    if @order_details.has_misc_charge
+      @order_details.misc_charge_lines.each do |misc_charge_line|
+    %>
+      <MiscChargeLine>
+        <PurchaseOrderLine><%= render_xml(misc_charge_line.purchase_order_line)%></PurchaseOrderLine>
+        <LineActionType><%= render_xml(misc_charge_line.line_action_type)%></LineActionType>
+        <MiscChargeValue><%= render_xml(misc_charge_line.misc_charge_value)%></MiscChargeValue>
+        <MiscChargeTax><%= render_xml(misc_charge_line.misc_charge_tax)%></MiscChargeTax>
+        <MiscTaxable><%= render_xml(misc_charge_line.misc_taxable)%></MiscTaxable>
+        <MiscChargeFLoc><%= render_xml(misc_charge_line.misc_charge_f_loc)%></MiscChargeFLoc>
+        <MiscDescription><%= render_xml(misc_charge_line.misc_description)%></MiscDescription>
+        <MiscCommentCode><%= render_xml(misc_charge_line.misc_comment_code)%></MiscCommentCode>
+      </MiscChargeLine>
+    <%
+      end
+    end
+
+    if @order_details.has_freight
+      @order_details.freight_lines.each do |freight_line|
+  %>
+      <FreightLine>
+        <PurchaseOrderLine><%= render_xml(freight_line.purchase_order_line)%></PurchaseOrderLine>
+        <LineActionType><%= render_xml(freight_line.line_action_type)%></LineActionType>
+        <FreightValue><%= render_xml(freight_line.freight_value)%></FreightValue>
+        <FreightTaxCode><%= render_xml(freight_line.freight_tax_code)%></FreightTaxCode>
+        <FreightTaxable><%= render_xml(freight_line.freight_taxable)%></FreightTaxable>
+        <FreightFLoc><%= render_xml(freight_line.freight_f_loc)%></FreightFLoc>
+      </FreightLine>
+  <%
+      end
+    end
+  %>
+    </OrderDetails>
+  <%
+  end
+  %>
+  </Orders>
+</PostPurchaseOrders>

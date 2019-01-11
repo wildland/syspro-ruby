@@ -24,23 +24,38 @@ require 'syspro/version'
 require 'syspro/api_operations/request'
 require 'syspro/api_operations/query'
 require 'syspro/api_operations/transaction'
+require 'syspro/api_operations/setup'
 
 require 'syspro/business_objects/combrw'
 require 'syspro/business_objects/comfch'
 require 'syspro/business_objects/comfnd'
 require 'syspro/business_objects/sorqry'
 require 'syspro/business_objects/portor'
+require 'syspro/business_objects/portoi'
 require 'syspro/business_objects/porqry'
+require 'syspro/business_objects/comsfm'
 
 require 'syspro/business_objects/models/sor'
 require 'syspro/business_objects/models/sor_detail'
 require 'syspro/business_objects/models/por_detail'
+
+require 'syspro/business_objects/models/purchase_order'
+require 'syspro/business_objects/models/purchase_orders/header'
+require 'syspro/business_objects/models/purchase_orders/order_details'
+require 'syspro/business_objects/models/purchase_orders/stock_line'
+require 'syspro/business_objects/models/purchase_orders/freight_line'
+require 'syspro/business_objects/models/purchase_orders/misc_charge_line'
+require 'syspro/business_objects/models/purchase_orders/comment_line'
+
+require 'syspro/business_objects/models/comsfm_item'
 
 require 'syspro/business_objects/parsers/combrw_parser'
 require 'syspro/business_objects/parsers/comfch_parser'
 require 'syspro/business_objects/parsers/comfnd_parser'
 require 'syspro/business_objects/parsers/sorqry_parser'
 require 'syspro/business_objects/parsers/portor_parser'
+require 'syspro/business_objects/parsers/portoi_parser'
+require 'syspro/business_objects/parsers/comsfm_parser'
 
 # Main Module
 module Syspro
