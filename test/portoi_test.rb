@@ -66,13 +66,12 @@ class PorToiTest < Minitest::Test
     line1.line_disc_percent3 = 0
     line1.line_disc_value = 0
     line1.taxable = "N"
-    
+
     po.order_details = Syspro::BusinessObjects::Models::PurchaseOrders::OrderDetails.new
     po.order_details.stock_lines = [line1]
-    binding.pry
-    
+
     syspro_po = po.call(user_id.guid)
-    
+
     assert_equal syspro_po.error_numbers.length, 0
   end
 end
