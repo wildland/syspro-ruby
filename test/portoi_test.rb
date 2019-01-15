@@ -69,7 +69,6 @@ class PorToiTest < Minitest::Test
     
     po.order_details = Syspro::BusinessObjects::Models::PurchaseOrders::OrderDetails.new
     po.order_details.stock_lines = [line1]
-    binding.pry
     
     syspro_po = po.call(user_id.guid)
     

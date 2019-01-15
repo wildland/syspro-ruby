@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<Query xmlns:xsd="http://www.w3.org/2000/10/XMLSchema-instance" xsd:noNamespaceSchemaLocation="INVQRY.XSD">
+  <% if @key_stock_code %>
+  <Key>
+    <StockCode><%= @key_stock_code%></StockCode>
+  </Key>
+  <% end %>
+  <% if @option %>
+  <Option>
+    <MultiMediaImageType><%= render_xml(@option.multi_media_image_type, "GIF") %></MultiMediaImageType>
+    <IncludeHistory><%= render_xml(@option.include_history, "N") %></IncludeHistory>
+    <IncludeBins><%= render_xml(@option.include_bins, "N") %></IncludeBins>
+    <IncludeLots><%= render_xml(@option.include_lots, "N") %></IncludeLots>
+    <IncludeSerials><%= render_xml(@option.include_serials, "N") %></IncludeSerials>
+    <IncludeMovements><%= render_xml(@option.include_movements, "N") %></IncludeMovements>
+    <MovementDateSequence><%= render_xml(@option.movement_date_sequence, "A") %></MovementDateSequence>
+    <MovementStartDate><%= render_xml(@option.movement_start_date, "2001-01-12") %></MovementStartDate>
+    <MaxNumberMovements><%= render_xml(@option.max_number_movements, "100") %></MaxNumberMovements>
+    <IncludeCustomForms><%= render_xml(@option.include_custom_forms, "N") %></IncludeCustomForms>
+    <IncludeMovementIssues><%= render_xml(@option.include_movement_issues, "N") %></IncludeMovementIssues>
+    <IncludeMovementTransfers><%= render_xml(@option.include_movement_transfers, "N") %></IncludeMovementTransfers>
+    <IncludeMovementReceipts><%= render_xml(@option.include_movement_receipts, "N") %></IncludeMovementReceipts>
+    <IncludeMovementPhysical><%= render_xml(@option.include_movement_physical, "N") %></IncludeMovementPhysical>
+    <IncludeMovementAdjustments><%= render_xml(@option.include_movement_adjustments, "N") %></IncludeMovementAdjustments>
+    <IncludeMovementCostChanges><%= render_xml(@option.include_movement_cost_changes, "N") %></IncludeMovementCostChanges>
+    <IncludeMovementCostMods><%= render_xml(@option.include_movement_cost_mods, "N") %></IncludeMovementCostMods>
+    <IncludeMovementInvoices><%= render_xml(@option.include_movement_invoices, "N") %></IncludeMovementInvoices>
+    <IncludeMovementCreditNotes><%= render_xml(@option.include_movement_credit_notes, "N") %></IncludeMovementCreditNotes>
+    <IncludeMovementDebitNotes><%= render_xml(@option.include_movement_debit_notes, "N") %></IncludeMovementDebitNotes>
+    <IncludeMovementDispatchNotes><%= render_xml(@option.include_movement_dispatch_notes, "N") %></IncludeMovementDispatchNotes>
+    <IncludeEcc><%= render_xml(@option.include_ecc, "N") %></IncludeEcc>
+    <XslStylesheet><%= render_xml(@option.xsl_stylesheet, "") %></XslStylesheet>
+  </Option>
+  <% end %>
+  <Filter>
+    <Warehouse FilterType="L" FilterValue="<%= @filter_warehouse_list %>"/>
+  </Filter>
+</Query>
