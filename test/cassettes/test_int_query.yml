@@ -1,0 +1,180 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://syspro.wildlandlabs.com:90/SYSPROWCFService/Rest/logon?CompanyId=<syspro_company>&CompanyPassword=&Operator=<syspro_username>&OperatorPassword=<syspro_password>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Syspro/7 RubyBindings/1.0.0.alpha.2
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/octet-stream
+      Server:
+      - Microsoft-HTTPAPI/2.0
+      Date:
+      - Wed, 16 Jan 2019 12:31:24 GMT
+      Content-<syspro_company>ength:
+      - '36'
+    body:
+      encoding: UTF-8
+      string: '84301CEF7CD018459F8CF02873A278A000  '
+    http_version: 
+  recorded_at: Wed, 16 Jan 2019 12:31:23 GMT
+- request:
+    method: get
+    uri: http://syspro.wildlandlabs.com:90/SYSPROWCFService/Rest/Query/Query?BusinessObject=INVQRY&UserId=84301CEF7CD018459F8CF02873A278A000%20%20&XmlIn=%3C?xml%20version=%221.0%22%20encoding=%22Windows-1252%22?%3E%0A%3CQuery%20xmlns:xsd=%22http://www.w3.org/2000/10/XM<syspro_company>Schema-instance%22%20xsd:noNamespaceSchema<syspro_company>ocation=%22INVQRY.XSD%22%3E%0A%20%20%0A%20%20%3CKey%3E%0A%20%20%20%20%3CStockCode%3E1003%3C/StockCode%3E%0A%20%20%3C/Key%3E%0A%20%20%0A%20%20%0A%20%20%3COption%3E%0A%20%20%20%20%3CMultiMediaImageType%3EGIF%3C/MultiMediaImageType%3E%0A%20%20%20%20%3CIncludeHistory%3EN%3C/IncludeHistory%3E%0A%20%20%20%20%3CIncludeBins%3EN%3C/IncludeBins%3E%0A%20%20%20%20%3CInclude<syspro_company>ots%3EY%3C/Include<syspro_company>ots%3E%0A%20%20%20%20%3CIncludeSerials%3EN%3C/IncludeSerials%3E%0A%20%20%20%20%3CIncludeMovements%3EN%3C/IncludeMovements%3E%0A%20%20%20%20%3CMovementDateSequence%3EA%3C/MovementDateSequence%3E%0A%20%20%20%20%3CMovementStartDate%3E2001-01-12%3C/MovementStartDate%3E%0A%20%20%20%20%3CMaxNumberMovements%3E100%3C/MaxNumberMovements%3E%0A%20%20%20%20%3CIncludeCustomForms%3EN%3C/IncludeCustomForms%3E%0A%20%20%20%20%3CIncludeMovementIssues%3EN%3C/IncludeMovementIssues%3E%0A%20%20%20%20%3CIncludeMovementTransfers%3EN%3C/IncludeMovementTransfers%3E%0A%20%20%20%20%3CIncludeMovementReceipts%3EN%3C/IncludeMovementReceipts%3E%0A%20%20%20%20%3CIncludeMovementPhysical%3EN%3C/IncludeMovementPhysical%3E%0A%20%20%20%20%3CIncludeMovementAdjustments%3EN%3C/IncludeMovementAdjustments%3E%0A%20%20%20%20%3CIncludeMovementCostChanges%3EN%3C/IncludeMovementCostChanges%3E%0A%20%20%20%20%3CIncludeMovementCostMods%3EN%3C/IncludeMovementCostMods%3E%0A%20%20%20%20%3CIncludeMovementInvoices%3EN%3C/IncludeMovementInvoices%3E%0A%20%20%20%20%3CIncludeMovementCreditNotes%3EN%3C/IncludeMovementCreditNotes%3E%0A%20%20%20%20%3CIncludeMovementDebitNotes%3EN%3C/IncludeMovementDebitNotes%3E%0A%20%20%20%20%3CIncludeMovementDispatchNotes%3EN%3C/IncludeMovementDispatchNotes%3E%0A%20%20%20%20%3CIncludeEcc%3EN%3C/IncludeEcc%3E%0A%20%20%20%20%3CXslStylesheet%3E%3C/XslStylesheet%3E%0A%20%20%3C/Option%3E%0A%20%20%0A%20%20%3CFilter%3E%0A%20%20%20%20%3CWarehouse%20FilterType=%22<syspro_company>%22%20FilterValue=%22P0%22/%3E%0A%20%20%3C/Filter%3E%0A%3C/Query%3E
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Syspro/7 RubyBindings/1.0.0.alpha.2
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/octet-stream
+      Server:
+      - Microsoft-HTTPAPI/2.0
+      Date:
+      - Wed, 16 Jan 2019 12:31:25 GMT
+      Content-<syspro_company>ength:
+      - '13919'
+    body:
+      encoding: UTF-8
+      string: "<?xml version=\"1.0\" encoding=\"Windows-1252\"?>\n<InvQuery <syspro_company>anguage='05'
+        <syspro_company>anguage2='EN' CssStyle='' DecFormat='1' DateFormat='01' Role='01'
+        Version='7.0.042' OperatorPrimaryRole='   '>\n<StockItem>\n<StockCode>1003</StockCode>\n<Description>MWN
+        MIX</Description>\n<<syspro_company>ongDesc>MIDWEST NATIVE SPEARMINT MIX</<syspro_company>ongDesc>\n<Decimals>
+        \             3</Decimals>\n<AlternateKey1/>\n<AlternateKey2/>\n<Version/>\n<Release/>\n<StockUom><syspro_company>B</StockUom>\n<AlternateUom>KG</AlternateUom>\n<ConvFactAltUom>
+        \    2.204620</ConvFactAltUom>\n<ConvMulDiv>M</ConvMulDiv>\n<OtherUom>DR</OtherUom>\n<ConvFactOthUom>
+        \  400.000000</ConvFactOthUom>\n<MulDiv>M</MulDiv>\n<ManufactureUom><syspro_company>B</ManufactureUom>\n<ConvFactMuM>
+        \    1.000000</ConvFactMuM>\n<ManMulDiv>M</ManMulDiv>\n<StockAndAltUm>N</StockAndAltUm>\n<PartCategory>M</PartCategory>\n<PartCategoryDesc>Made-in</PartCategoryDesc>\n<Supplier/>\n<ProductClass>SMWN</ProductClass>\n<ProductClassDesc>MIDWEST
+        NATIVE SPEARMINT</ProductClassDesc>\n<Buyer/>\n<BuyerDesc/>\n<Planner/>\n<PlannerDesc/>\n<TraceableType>T</TraceableType>\n<TraceableTypeDesc>Traceable
+        item</TraceableTypeDesc>\n<MpsFlag>N</MpsFlag>\n<MpsFlagDesc>Non-MPS item</MpsFlagDesc>\n<SupercessionDate/>\n<ResourceCode/>\n<ResourceCodeDesc/>\n<ComponentCount>00000</ComponentCount>\n<InclInStrValid>Yes</InclInStrValid>\n<<syspro_company>abourCost>
+        \         0.00000</<syspro_company>abourCost>\n<Edited_<syspro_company>abourCost>0.000</Edited_<syspro_company>abourCost>\n<MaterialCost>
+        \         0.00000</MaterialCost>\n<Edited_MaterialCost>0.000</Edited_MaterialCost>\n<FixedOverhead>
+        \         0.00000</FixedOverhead>\n<Edited_FixedOverhead>0.000</Edited_FixedOverhead>\n<VariableOverhead>
+        \         0.00000</VariableOverhead>\n<Edited_VariableOverhead>0.000</Edited_VariableOverhead>\n<SubContractCost>
+        \         0.00000</SubContractCost>\n<Edited_SubContractCost>0.000</Edited_SubContractCost>\n<TotalCost>
+        \           0.00000</TotalCost>\n<Edited_TotalCost>0.000</Edited_TotalCost>\n<CostPriceCurrency>$</CostPriceCurrency>\n<EbqNumeric>
+        \         400.000000</EbqNumeric>\n<GrossReqRule>I</GrossReqRule>\n<GrossReqRuleDesc>Included</GrossReqRuleDesc>\n<DrawOfficeNum/>\n<Ebq>
+        \         400.000000</Ebq>\n<Edited_Ebq>400.000</Edited_Ebq>\n<DockToStock>
+        \        0</DockToStock>\n<Manuf<syspro_company>eadTime>         0</Manuf<syspro_company>eadTime>\n<TariffCode/>\n<UserField1/>\n<UserField2>
+        \           0.00000</UserField2>\n<UserField3/>\n<UserField4/>\n<UserField5/>\n<<syspro_company>eadTime>
+        \        0</<syspro_company>eadTime>\n<WarehouseToUse>H1</WarehouseToUse>\n<WarehouseToUseDesc>HARRAH-<syspro_company>ABBEEMINT
+        OWNED</WarehouseToUseDesc>\n<MinimumPricePctAboveCost>  0.00</MinimumPricePctAboveCost>\n<Edited_MinimumPricePctAboveCost>0.00</Edited_MinimumPricePctAboveCost>\n<GstTaxCode>A</GstTaxCode>\n<GstTaxCodeDesc>NO
+        TAX</GstTaxCodeDesc>\n<GstIncludedInPrice>N</GstIncludedInPrice>\n<DemandTimeFenceInDays>
+        \         0</DemandTimeFenceInDays>\n<Shelf<syspro_company>ifeInDays>    0</Shelf<syspro_company>ifeInDays>\n<MakeToOrderFlag>N</MakeToOrderFlag>\n<DistributionWarehouseToUse/>\n<DistributionWarehouseToUseDesc/>\n<CountryOfOrigin/>\n<CountryOfOriginDesc/>\n<EccUser/>\n<EccUserDesc/>\n<BuyingRule>A</BuyingRule>\n<BuyingRuleDesc><syspro_company>ot
+        for lot</BuyingRuleDesc>\n<FixedTimeDaysForRuleC> 1</FixedTimeDaysForRuleC>\n<EbqPan>EBQ
+        Quantity</EbqPan>\n<PanSize>            0.000000</PanSize>\n<Edited_PanSize>0.000</Edited_PanSize>\n<PercentageYield>100</PercentageYield>\n<<syspro_company>ow<syspro_company>evelCode>
+        0</<syspro_company>ow<syspro_company>evelCode>\n<WipCtlGlCode/>\n<DateStockAdded>2006-03-21</DateStockAdded>\n<AbcPreProd>
+        \         0.00000</AbcPreProd>\n<Edited_AbcPreProd>0.000</Edited_AbcPreProd>\n<AbcManufacturing>
+        \         0.00000</AbcManufacturing>\n<Edited_AbcManufacturing>0.000</Edited_AbcManufacturing>\n<AbcSales>
+        \         0.00000</AbcSales>\n<Edited_AbcSales>0.000</Edited_AbcSales>\n<AbcCumPreProd>
+        \         0.00000</AbcCumPreProd>\n<Edited_AbcCumPreProd>0.000</Edited_AbcCumPreProd>\n<AbcCumManuf>
+        \         0.00000</AbcCumManuf>\n<Edited_AbcCumManuf>0.000</Edited_AbcCumManuf>\n<SpecificGravity>
+        0.0000</SpecificGravity>\n<Edited_SpecificGravity>0.00</Edited_SpecificGravity>\n<Mass>
+        \           1.000000</Mass>\n<Volume>            0.000000</Volume>\n<PriceCategory>A</PriceCategory>\n<PriceMethod>C</PriceMethod>\n<PriceMethodDesc>Coded</PriceMethodDesc>\n<CycleCount>
+        0</CycleCount>\n<TaxCode>A</TaxCode>\n<TaxCodeDesc>NO TAX</TaxCodeDesc>\n<OtherTaxCode/>\n<OtherTaxCodeDesc/>\n<<syspro_company>istPriceCode>A</<syspro_company>istPriceCode>\n<SerialMethod>N</SerialMethod>\n<SerialMethodDesc>None</SerialMethodDesc>\n<KitType>N</KitType>\n<KitTypeDesc>Not
+        applicable</KitTypeDesc>\n<BulkIssueFlag>N</BulkIssueFlag>\n<BulkIssueFlagDesc>None</BulkIssueFlagDesc>\n<AbcClass/>\n<StockMovementReq>Y</StockMovementReq>\n<ClearingFlag>N</ClearingFlag>\n<AbcAnalysisReq>Y</AbcAnalysisReq>\n<AbcCostingReq>N</AbcCostingReq>\n<CostUom><syspro_company>B</CostUom>\n<SellingPrice>
+        \         0.00000</SellingPrice>\n<PriceBasis/>\n<PriceBasisDesc/>\n<Edited_SellingPrice>0.000</Edited_SellingPrice>\n<SellingPriceCurrency>$</SellingPriceCurrency>\n<GrossProfitPct>
+        \ 0.000</GrossProfitPct>\n<StockOnHold/>\n<StockOnHoldDesc/>\n<StockOnHoldReason/>\n<StockOnHoldReasonDesc/>\n<ApprovedManufactures>\n</ApprovedManufactures>\n<Narrations>\n</Narrations>\n</StockItem>\n<WarehouseItem>\n<Warehouse>P0</Warehouse>\n<Description>PORTAGE-GROWER
+        OWNED</Description>\n<QtyOnHand>          747.800000</QtyOnHand>\n<Edited_QtyOnHand>747.800</Edited_QtyOnHand>\n<AvailableQty>
+        \         747.800000</AvailableQty>\n<Edited_AvailableQty>747.800</Edited_AvailableQty>\n<QtyOnOrder>
+        \         806.730000</QtyOnOrder>\n<Edited_QtyOnOrder>806.730</Edited_QtyOnOrder>\n<QtyInInspection>
+        \           0.000000</QtyInInspection>\n<Edited_QtyInInspection>0.000</Edited_QtyInInspection>\n<MinimumQty>
+        \           0.000000</MinimumQty>\n<Edited_MinimumQty>0.000</Edited_MinimumQty>\n<MaximumQty>
+        \           0.000000</MaximumQty>\n<Edited_MaximumQty>0.000</Edited_MaximumQty>\n<QtyOnBackOrder>
+        \           0.000000</QtyOnBackOrder>\n<Edited_QtyOnBackOrder>0.000</Edited_QtyOnBackOrder>\n<QtyAllocated>
+        \           0.000000</QtyAllocated>\n<Edited_QtyAllocated>0.000</Edited_QtyAllocated>\n<MtdQtyReceived>
+        \           0.000000</MtdQtyReceived>\n<Edited_MtdQtyReceived>0.000</Edited_MtdQtyReceived>\n<MtdQtyAdjusted>
+        \           0.000000</MtdQtyAdjusted>\n<Edited_MtdQtyAdjusted>0.000</Edited_MtdQtyAdjusted>\n<MtdQtyIssued>
+        \           0.000000</MtdQtyIssued>\n<Edited_MtdQtyIssued>0.000</Edited_MtdQtyIssued>\n<YtdQtySold>
+        \           0.000000</YtdQtySold>\n<Edited_YtdQtySold>0.000</Edited_YtdQtySold>\n<PrevYearQtySold>
+        \           0.000000</PrevYearQtySold>\n<Edited_PrevYearQtySold>0.000</Edited_PrevYearQtySold>\n<QtyInTransit>
+        \           0.000000</QtyInTransit>\n<Edited_QtyInTransit>0.000</Edited_QtyInTransit>\n<QtyAllocatedWip>
+        \           0.000000</QtyAllocatedWip>\n<Edited_QtyAllocatedWip>0.000</Edited_QtyAllocatedWip>\n<Edited_WipQtyReserved>0.000</Edited_WipQtyReserved>\n<MtdQtySold>
+        \           0.000000</MtdQtySold>\n<Edited_MtdQtySold>0.000</Edited_MtdQtySold>\n<MtdQtyTrf>
+        \           0.000000</MtdQtyTrf>\n<Edited_MtdQtyTrf>0.000</Edited_MtdQtyTrf>\n<Date<syspro_company>astSale/>\n<Date<syspro_company>astCostChange/>\n<Date<syspro_company>astCostEntered/>\n<UserField1/>\n<UserField2/>\n<UserField3/>\n<DefaultBin>P0</DefaultBin>\n<UnitCost>
+        \         0.00000</UnitCost>\n<FutureFree>         1554.530000</FutureFree>\n<Edited_FutureFree>1,554.530</Edited_FutureFree>\n<QuantityDispatchNotInvoiced>
+        \           0.000000</QuantityDispatchNotInvoiced>\n<Edited_QuantityDispatchNotInvoiced>0.000</Edited_QuantityDispatchNotInvoiced>\n<Parameters>\n<SafetyStock<syspro_company>evel>
+        \           0.000000</SafetyStock<syspro_company>evel>\n<Edited_SafetyStock<syspro_company>evel>0.000</Edited_SafetyStock<syspro_company>evel>\n<ReOrderQuantity>
+        \           0.000000</ReOrderQuantity>\n<Edited_ReOrderQuantity>0.000</Edited_ReOrderQuantity>\n<PalletQuantity>
+        \           0.000000</PalletQuantity>\n<Edited_PalletQuantity>0.000</Edited_PalletQuantity>\n<DefaultBin<syspro_company>ocation>P0</DefaultBin<syspro_company>ocation>\n<ABCclassification/>\n<RequisitionsInProgress/>\n<<syspro_company>andedCostMultiplier>
+        \           1.000000</<syspro_company>andedCostMultiplier>\n<Edited_<syspro_company>andedCostMultiplier>1.000</Edited_<syspro_company>andedCostMultiplier>\n</Parameters>\n<Costs>\n<Method>FIFO</Method>\n<<syspro_company>astCostEntered>
+        \         0.00000</<syspro_company>astCostEntered>\n<Current>          0.00000</Current>\n<<syspro_company>astNonMerchandise>
+        \         0.00000</<syspro_company>astNonMerchandise>\n</Costs>\n<MTDValues>\n<MTDSalesValue>
+        \           0.00</MTDSalesValue>\n</MTDValues>\n<YTDValues>\n<YTDQtyIssued>
+        \           0.00</YTDQtyIssued>\n<YTDSalesValue>            0.00</YTDSalesValue>\n<YTDUsageValue>
+        \           0.00</YTDUsageValue>\n<PYSalesValue>            0.00</PYSalesValue>\n</YTDValues>\n<<syspro_company>astActivityDates>\n<Date<syspro_company>astStockMovement>2017/08/02</Date<syspro_company>astStockMovement>\n<DateOf<syspro_company>astPurchase>2017/08/02</DateOf<syspro_company>astPurchase>\n<DateOf<syspro_company>astCount/>\n<DateWarehouseAdded>2006/03/21</DateWarehouseAdded>\n</<syspro_company>astActivityDates>\n<<syspro_company>otItem>\n<<syspro_company>otJob>064017</<syspro_company>otJob>\n<DrawingNum/>\n<DrawingNumDesc/>\n<Bin>064017</Bin>\n<Version/>\n<Release/>\n<QtyOnHand>
+        \         283.200000</QtyOnHand>\n<Edited_QtyOnHand>283.200</Edited_QtyOnHand>\n<AvailableQty>
+        \         283.200000</AvailableQty>\n<Edited_AvailableQty>283.200</Edited_AvailableQty>\n<Note/>\n<<syspro_company>otHoldFlag/>\n<ExpiryDate/>\n</<syspro_company>otItem>\n<<syspro_company>otItem>\n<<syspro_company>otJob>064020</<syspro_company>otJob>\n<DrawingNum/>\n<DrawingNumDesc/>\n<Bin>064020</Bin>\n<Version/>\n<Release/>\n<QtyOnHand>
+        \         148.000000</QtyOnHand>\n<Edited_QtyOnHand>148.000</Edited_QtyOnHand>\n<AvailableQty>
+        \         148.000000</AvailableQty>\n<Edited_AvailableQty>148.000</Edited_AvailableQty>\n<Note/>\n<<syspro_company>otHoldFlag/>\n<ExpiryDate/>\n</<syspro_company>otItem>\n<<syspro_company>otItem>\n<<syspro_company>otJob>064042</<syspro_company>otJob>\n<DrawingNum/>\n<DrawingNumDesc/>\n<Bin>064042</Bin>\n<Version/>\n<Release/>\n<QtyOnHand>
+        \          25.600000</QtyOnHand>\n<Edited_QtyOnHand>25.600</Edited_QtyOnHand>\n<AvailableQty>
+        \          25.600000</AvailableQty>\n<Edited_AvailableQty>25.600</Edited_AvailableQty>\n<Note/>\n<<syspro_company>otHoldFlag/>\n<ExpiryDate/>\n</<syspro_company>otItem>\n<<syspro_company>otItem>\n<<syspro_company>otJob>064064</<syspro_company>otJob>\n<DrawingNum/>\n<DrawingNumDesc/>\n<Bin>064064</Bin>\n<Version/>\n<Release/>\n<QtyOnHand>
+        \         291.000000</QtyOnHand>\n<Edited_QtyOnHand>291.000</Edited_QtyOnHand>\n<AvailableQty>
+        \         291.000000</AvailableQty>\n<Edited_AvailableQty>291.000</Edited_AvailableQty>\n<Note/>\n<<syspro_company>otHoldFlag/>\n<ExpiryDate/>\n</<syspro_company>otItem>\n</WarehouseItem>\n<WarehouseTotals>\n<QtyOnHand>
+        \         747.800000</QtyOnHand>\n<Edited_QtyOnHand>747.800</Edited_QtyOnHand>\n<AvailableQty>
+        \         747.800000</AvailableQty>\n<Edited_AvailableQty>747.800</Edited_AvailableQty>\n<QtyOnOrder>
+        \         806.730000</QtyOnOrder>\n<Edited_QtyOnOrder>806.730</Edited_QtyOnOrder>\n<QtyInInspection>
+        \           0.000000</QtyInInspection>\n<Edited_QtyInInspection>0.000</Edited_QtyInInspection>\n<MinimumQty>
+        \           0.000000</MinimumQty>\n<Edited_MinimumQty>0.000</Edited_MinimumQty>\n<MaximumQty>
+        \           0.000000</MaximumQty>\n<Edited_MaximumQty>0.000</Edited_MaximumQty>\n<QtyOnBackOrder>
+        \           0.000000</QtyOnBackOrder>\n<Edited_QtyOnBackOrder>0.000</Edited_QtyOnBackOrder>\n<QtyAllocated>
+        \           0.000000</QtyAllocated>\n<Edited_QtyAllocated>0.000</Edited_QtyAllocated>\n<MtdQtyReceived>
+        \           0.000000</MtdQtyReceived>\n<Edited_MtdQtyReceived>0.000</Edited_MtdQtyReceived>\n<MtdQtyAdjusted>
+        \           0.000000</MtdQtyAdjusted>\n<Edited_MtdQtyAdjusted>0.000</Edited_MtdQtyAdjusted>\n<MtdQtyIssued>
+        \           0.000000</MtdQtyIssued>\n<Edited_MtdQtyIssued>0.000</Edited_MtdQtyIssued>\n<MtdQtySold>
+        \           0.000000</MtdQtySold>\n<Edited_MtdQtySold>0.000</Edited_MtdQtySold>\n<YtdQtySold>
+        \           0.000000</YtdQtySold>\n<Edited_YtdQtySold>0.000</Edited_YtdQtySold>\n<PrevYearQtySold>
+        \           0.000000</PrevYearQtySold>\n<Edited_PrevYearQtySold>0.000</Edited_PrevYearQtySold>\n<QtyInTransit>
+        \           0.000000</QtyInTransit>\n<Edited_QtyInTransit>0.000</Edited_QtyInTransit>\n<QtyAllocatedWip>
+        \           0.000000</QtyAllocatedWip>\n<Edited_QtyAllocatedWip>0.000</Edited_QtyAllocatedWip>\n<MtdQtyTrf>
+        \           0.000000</MtdQtyTrf>\n<Edited_MtdQtyTrf>0.000</Edited_MtdQtyTrf>\n<UnitCost>
+        \         0.00000</UnitCost>\n<SalesQtyTot1>            0.000000</SalesQtyTot1>\n<Edited_SalesQtyTot1>0.000</Edited_SalesQtyTot1>\n<SalesQtyTot2>
+        \           0.000000</SalesQtyTot2>\n<Edited_SalesQtyTot2>0.000</Edited_SalesQtyTot2>\n<SalesQtyTot3>
+        \           0.000000</SalesQtyTot3>\n<Edited_SalesQtyTot3>0.000</Edited_SalesQtyTot3>\n<SalesQtyTot4>
+        \           0.000000</SalesQtyTot4>\n<Edited_SalesQtyTot4>0.000</Edited_SalesQtyTot4>\n<SalesQtyTot5>
+        \           0.000000</SalesQtyTot5>\n<Edited_SalesQtyTot5>0.000</Edited_SalesQtyTot5>\n<SalesQtyTot6>
+        \           0.000000</SalesQtyTot6>\n<Edited_SalesQtyTot6>0.000</Edited_SalesQtyTot6>\n<SalesQtyTot7>
+        \           0.000000</SalesQtyTot7>\n<Edited_SalesQtyTot7>0.000</Edited_SalesQtyTot7>\n<SalesQtyTot8>
+        \           0.000000</SalesQtyTot8>\n<Edited_SalesQtyTot8>0.000</Edited_SalesQtyTot8>\n<SalesQtyTot9>
+        \           0.000000</SalesQtyTot9>\n<Edited_SalesQtyTot9>0.000</Edited_SalesQtyTot9>\n<SalesQtyTot10>
+        \           0.000000</SalesQtyTot10>\n<Edited_SalesQtyTot10>0.000</Edited_SalesQtyTot10>\n<SalesQtyTot11>
+        \           0.000000</SalesQtyTot11>\n<Edited_SalesQtyTot11>0.000</Edited_SalesQtyTot11>\n<SalesQtyTot12>
+        \           0.000000</SalesQtyTot12>\n<Edited_SalesQtyTot12>0.000</Edited_SalesQtyTot12>\n<Parameters>\n<SafetyStock<syspro_company>evel>
+        \           0.000000</SafetyStock<syspro_company>evel>\n<Edited_SafetyStock<syspro_company>evel>0.000</Edited_SafetyStock<syspro_company>evel>\n<ReOrderQuantity>
+        \           0.000000</ReOrderQuantity>\n<Edited_ReOrderQuantity>0.000</Edited_ReOrderQuantity>\n<PalletQuantity>
+        \           0.000000</PalletQuantity>\n<Edited_PalletQuantity>0.000</Edited_PalletQuantity>\n<DefaultBin<syspro_company>ocation>P0</DefaultBin<syspro_company>ocation>\n<ABCclassification/>\n<RequisitionsInProgress/>\n<<syspro_company>andedCostMultiplier>
+        \           1.000000</<syspro_company>andedCostMultiplier>\n<Edited_<syspro_company>andedCostMultiplier>1.000</Edited_<syspro_company>andedCostMultiplier>\n</Parameters>\n<Costs>\n<Method>FIFO</Method>\n<<syspro_company>astCostEntered>
+        \         0.00000</<syspro_company>astCostEntered>\n<Current>          0.00000</Current>\n<<syspro_company>astNonMerchandise>
+        \         0.00000</<syspro_company>astNonMerchandise>\n</Costs>\n<MTDValues>\n<MTDSalesValue>
+        \           0.00</MTDSalesValue>\n</MTDValues>\n<YTDValues>\n<YTDQtyIssued>
+        \           0.00</YTDQtyIssued>\n<YTDSalesValue>            0.00</YTDSalesValue>\n<YTDUsageValue>
+        \           0.00</YTDUsageValue>\n<PYSalesValue>            0.00</PYSalesValue>\n</YTDValues>\n</WarehouseTotals>\n</InvQuery>\n "
+    http_version: 
+  recorded_at: Wed, 16 Jan 2019 12:31:24 GMT
+recorded_with: VCR 4.0.0
