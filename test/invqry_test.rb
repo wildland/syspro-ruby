@@ -4,8 +4,8 @@ require 'test_helper'
 
 class InvQryTest < Minitest::Test
   extend Minitest::Spec::DSL
-  # before { VCR.insert_cassette name }
-  # after { VCR.eject_cassette }
+  before { VCR.insert_cassette name }
+  after { VCR.eject_cassette }
 
   let(:username) { ENV['SYSPRO_USERNAME'] }
   let(:password) { ENV['SYSPRO_PASSWORD'] }
@@ -19,15 +19,13 @@ class InvQryTest < Minitest::Test
   def test_int_query
     invqry_req = Syspro::BusinessObjects::InvQry.new
 
-    invqry_req.key_stock_code = 'YKMCNTF'
-    invqry_req.filter_warehouse_list = 'H1'
+    invqry_req.key_stock_code = '1003'
+    invqry_req.filter_warehouse_list = 'P0'
     invqry_req.option = Syspro::BusinessObjects::Models::InvQryOptions.new
     invqry_req.option.include_lots = "Y"
     
     invqry_rsp = invqry_req.call(user_id.guid)
-    binding.pry
 
-    assert_equal 1, 1
-    # assert_kind_of Syspro::BusinessObjects::Models::SorDetail, sor_result
+    assert_kind_of Syspro::BusinessObjects::Models::Inv, invqry_rsp
   end
 end
