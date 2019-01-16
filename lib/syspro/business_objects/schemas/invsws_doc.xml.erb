@@ -1,0 +1,43 @@
+<SetupInvWarehouse xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" xsd:noNamespaceSchemaLocation="INVSWSDOC.XSD">
+  <Item>
+    <Key>
+      <StockCode><%= render_xml(@item.key_stock_code) %></StockCode>
+      <Warehouse><%= render_xml(@item.key_warehouse) %></Warehouse>
+    </Key>
+    <CostMultiplier><%= render_xml(@item.cost_multiplier, "1.0") %></CostMultiplier>
+    <MinimumQty><%= render_xml(@item.minimum_qty) %></MinimumQty>
+    <MaximumQty><%= render_xml(@item.maximum_qty) %></MaximumQty>
+    <UnitCost><%= render_xml(@item.unit_cost) %></UnitCost>
+    <DefaultBin><%= render_xml(@item.default_bin, "FG") %></DefaultBin>
+    <SafetyStockQty><%= render_xml(@item.safety_stock_qty) %></SafetyStockQty>
+    <ReOrderQty><%= render_xml(@item.re_order_qty) %></ReOrderQty>
+    <PalletQty><%= render_xml(@item.pallet_qty) %></PalletQty>
+    <UserField1><%= render_xml(@item.user_field1) %></UserField1>
+    <UserField2><%= render_xml(@item.user_field2) %></UserField2>
+    <UserField3><%= render_xml(@item.user_field3) %></UserField3>
+    <OrderPolicy><%= render_xml(@item.order_policy, "C") %></OrderPolicy>
+    <MajorOrderMult><%= render_xml(@item.major_order_mult) %></MajorOrderMult>
+    <MinorOrderMult><%= render_xml(@item.minor_order_mult) %></MinorOrderMult>
+    <OrderMinimum><%= render_xml(@item.order_minimum) %></OrderMinimum>
+    <OrderMaximum><%= render_xml(@item.order_maximum) %></OrderMaximum>
+    <OrderFixPeriod><%= render_xml(@item.order_fix_period, "01") %></OrderFixPeriod>
+    <TrfSuppliedItem><%= render_xml(@item.trf_supplied_item, "N") %></TrfSuppliedItem>
+    <DefaultSourceWh><%= render_xml(@item.default_source_wh) %></DefaultSourceWh>
+    <TrfLeadTime><%= render_xml(@item.trf_lead_time, "0") %></TrfLeadTime>
+    <TrfCostGlCode><%= render_xml(@item.trf_cost_gl_code) %></TrfCostGlCode>
+    <TrfCostMultiply><%= render_xml(@item.trf_cost_multiply) %></TrfCostMultiply>
+    <TrfReplenishWh><%= render_xml(@item.trf_replenish_wh, "0") %></TrfReplenishWh>
+    <TrfBuyingRule><%= render_xml(@item.trf_buying_rule, "A") %></TrfBuyingRule>
+    <TrfDockToStock><%= render_xml(@item.trf_dock_to_stock) %></TrfDockToStock>
+    <TrfFixTimePeriod><%= render_xml(@item.trf_fix_time_period) %></TrfFixTimePeriod>
+    <LabourCost><%= render_xml(@item.labour_cost) %></LabourCost>
+    <MaterialCost><%= render_xml(@item.material_cost) %></MaterialCost>
+    <FixedOverhead><%= render_xml(@item.fixed_overhead) %></FixedOverhead>
+    <VariableOverhead><%= render_xml(@item.variable_overhead) %></VariableOverhead>
+    <SubContractCost><%= render_xml(@item.sub_contract_cost) %></SubContractCost>
+    <ManualCostFlag><%= render_xml(@item.manual_cost_flag, "N") %></ManualCostFlag>
+    <% if @item.e_signature %>
+    <eSignature><%= render_xml(@item.e_signature) %></eSignature>
+    <% end %>
+  </Item>
+</SetupInvWarehouse>

@@ -1,0 +1,8 @@
+<SetupInvWarehouse xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" xsd:noNamespaceSchemaLocation="INVSWS.XSD">
+  <Parameters>
+    <ApplyProductClassDefault><%= render_xml(@apply_product_class_default, "BA") %></ApplyProductClassDefault>
+    <IgnoreWarnings><%= render_xml(@ignore_warnings, "N") %></IgnoreWarnings>
+    <ApplyIfEntireDocumentValid><%= render_xml(@apply_if_entire_document_valid, "Y") %></ApplyIfEntireDocumentValid>
+    <ValidateOnly><%= render_xml(@validate_only, "N") %></ValidateOnly>
+  </Parameters>
+</SetupInvWarehouse>

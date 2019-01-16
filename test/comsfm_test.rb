@@ -24,7 +24,7 @@ class ComsFmTest < Minitest::Test
     cust_form.validate_only = "Y"
     cust_form.items = [cust_item]
 
-    errors = cust_form.call(user_id.guid)
+    errors = cust_form.add(user_id.guid)
 
     assert_equal errors.length, 0
   end

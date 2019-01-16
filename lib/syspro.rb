@@ -34,6 +34,7 @@ require 'syspro/business_objects/portor'
 require 'syspro/business_objects/portoi'
 require 'syspro/business_objects/porqry'
 require 'syspro/business_objects/comsfm'
+require 'syspro/business_objects/invsws'
 require 'syspro/business_objects/invqry'
 
 require 'syspro/business_objects/models/sor'
@@ -48,6 +49,7 @@ require 'syspro/business_objects/models/purchase_orders/freight_line'
 require 'syspro/business_objects/models/purchase_orders/misc_charge_line'
 require 'syspro/business_objects/models/purchase_orders/comment_line'
 require 'syspro/business_objects/models/comsfm_item'
+require 'syspro/business_objects/models/invsws_item'
 require 'syspro/business_objects/models/inv'
 
 require 'syspro/business_objects/parsers/combrw_parser'
@@ -57,6 +59,7 @@ require 'syspro/business_objects/parsers/sorqry_parser'
 require 'syspro/business_objects/parsers/portor_parser'
 require 'syspro/business_objects/parsers/portoi_parser'
 require 'syspro/business_objects/parsers/comsfm_parser'
+require 'syspro/business_objects/parsers/invsws_parser'
 require 'syspro/business_objects/parsers/invqry_parser'
 
 # Main Module
