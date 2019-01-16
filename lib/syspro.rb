@@ -51,6 +51,7 @@ require 'syspro/business_objects/models/purchase_orders/comment_line'
 require 'syspro/business_objects/models/comsfm_item'
 require 'syspro/business_objects/models/invsws_item'
 require 'syspro/business_objects/models/inv'
+require 'syspro/business_objects/models/receipt_interospection'
 
 require 'syspro/business_objects/parsers/combrw_parser'
 require 'syspro/business_objects/parsers/comfch_parser'
