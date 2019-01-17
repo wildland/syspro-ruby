@@ -9,6 +9,7 @@ module Syspro
                       :counted_quantity_complete,
                       :delivery_note,
                       :certificate,
+                      :narration,
                       :lot,
                       :grn_number,
                       :concession,
