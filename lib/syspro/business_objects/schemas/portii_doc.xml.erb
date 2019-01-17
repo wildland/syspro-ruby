@@ -1,0 +1,11 @@
+<PostInspections xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" xsd:noNamespaceSchemaLocation="PORTIIDOC.XSD">
+  <Item>
+    <GRNNumber><%= render_xml(@item_inspected.grn_number)%></GRNNumber>
+    <Quantity><%= render_xml(@item_inspected.quantity)%></Quantity>
+    <UnitOfMeasure><%= render_xml(@item_inspected.unit_of_measure)%></UnitOfMeasure>
+    <Units><%= render_xml(@item_inspected.units)%></Units>
+    <Pieces><%= render_xml(@item_inspected.pieces)%></Pieces>
+    <Document><%= render_xml(@item_inspected.document)%></Document>
+    <InspectionCompleted><%= render_xml(@item_inspected.inspection_completed)%></InspectionCompleted>
+  </Item>
+</PostInspections>

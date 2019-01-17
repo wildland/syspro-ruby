@@ -36,6 +36,7 @@ require 'syspro/business_objects/porqry'
 require 'syspro/business_objects/comsfm'
 require 'syspro/business_objects/invsws'
 require 'syspro/business_objects/invqry'
+require 'syspro/business_objects/portii'
 
 require 'syspro/business_objects/models/sor'
 require 'syspro/business_objects/models/sor_detail'
@@ -52,6 +53,7 @@ require 'syspro/business_objects/models/comsfm_item'
 require 'syspro/business_objects/models/invsws_item'
 require 'syspro/business_objects/models/inv'
 require 'syspro/business_objects/models/receipt_interospection'
+require 'syspro/business_objects/models/inventory_inspection'
 
 require 'syspro/business_objects/parsers/combrw_parser'
 require 'syspro/business_objects/parsers/comfch_parser'
@@ -62,6 +64,7 @@ require 'syspro/business_objects/parsers/portoi_parser'
 require 'syspro/business_objects/parsers/comsfm_parser'
 require 'syspro/business_objects/parsers/invsws_parser'
 require 'syspro/business_objects/parsers/invqry_parser'
+require 'syspro/business_objects/parsers/portii_parser'
 
 # Main Module
 module Syspro
