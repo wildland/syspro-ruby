@@ -21,7 +21,7 @@
       <Notation><%= render_xml(interospection_item.notation) %></Notation>
       <Reference><%= render_xml(interospection_item.reference) %></Reference>
       <GRNSource><%= render_xml(interospection_item.grn_source) %></GRNSource>
-      <% @receipt_interospections.bins.each do |bin| %>
+      <% interospection_item.bins.each do |bin| %>
       <Bins>
         <BinLocation><%= render_xml(bin.bin_location) %></BinLocation>
         <BinQuantity><%= render_xml(bin.bin_quantity) %></BinQuantity>
