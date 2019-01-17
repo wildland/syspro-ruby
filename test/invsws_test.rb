@@ -13,7 +13,7 @@ class ComsFmTest < Minitest::Test
     Syspro::Logon.logon(username, password, company, company_password)
   end
 
-  def test_comsfm
+  def test_invsws
     invsws_item = Syspro::BusinessObjects::Models::InvSwsItem.new
     invsws_item.key_stock_code = "1003"
     invsws_item.key_warehouse = "P0"

@@ -11,6 +11,8 @@ module Syspro
         end
 
         def parse
+          error_numbers = doc.xpath("//ErrorNumber").map{|e| e.text}
+          
           gl_journal = doc.first_element_child.xpath('GlJournal')
           gl_journal_obj = gl_journal.children.map do |el|
             next if el.name == 'text'
@@ -27,7 +29,7 @@ module Syspro
           key[:entry_number] = doc.first_element_child.xpath('EntryNumber')
           key[:warehouse] = doc.first_element_child.xpath('Warehouse')
           key[:gl_journal] = gl_journal_obj
-
+          
           receipts = doc.first_element_child.xpath('Receipt')
           receipts_obj = receipts.flat_map do |el|
             el.elements.map do |inner|
@@ -45,13 +47,15 @@ module Syspro
             )
           end
 
-          PorTorObject.new(
-            key,
-            receipt_models
-          )
+          grns = doc.xpath("//Grn").map{|e| e.text}
+          
+          {
+            error_numbers: error_numbers,
+            key: key,
+            receipt: receipt_models,
+            grns: grns
+          }
         end
-
-        PorTorObject = Struct.new(:key, :receipts)
       end
     end
   end
