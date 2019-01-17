@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="Windows-1252"?>
 <PostPurchaseOrderReceipts xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" xsd:noNamespaceSchemaLocation="portordoc.xsd">
   <%
-  if receipt_interospections
+  if @receipt_interospections
     @receipt_interospections.each do |interospection_item|
       %>
   <Item>
@@ -13,7 +13,20 @@
       <CountedQuantityComplete><%= render_xml(interospection_item.counted_quantity_complete, "Y")%></CountedQuantityComplete>
       <DeliveryNote><%= render_xml(interospection_item.delivery_note)%></DeliveryNote>
       <Certificate><%= render_xml(interospection_item.certificate)%></Certificate>
+      <Narration><%= render_xml(interospection_item.narration)%></Narration>
       <Lot><%= render_xml(interospection_item.lot)%></Lot>
+      <GRNNumber><%= render_xml(interospection_item.grn_number) %></GRNNumber>
+      <Concession><%= render_xml(interospection_item.concession) %></Concession>
+      <CostBasis><%= render_xml(interospection_item.cost_basis) %></CostBasis>
+      <Notation><%= render_xml(interospection_item.notation) %></Notation>
+      <Reference><%= render_xml(interospection_item.reference) %></Reference>
+      <GRNSource><%= render_xml(interospection_item.grn_source) %></GRNSource>
+      <% @receipt_interospections.bins.each do |bin| %>
+      <Bins>
+        <BinLocation><%= render_xml(bin.bin_location) %></BinLocation>
+        <BinQuantity><%= render_xml(bin.bin_quantity) %></BinQuantity>
+      </Bins>
+      <% end %>
     </ReceiptIntoInspection>
   </Item>
       <%
