@@ -25,12 +25,12 @@ http_interactions:
       Server:
       - Microsoft-HTTPAPI/2.0
       Date:
-      - Mon, 14 Jan 2019 22:56:14 GMT
+      - Wed, 22 May 2019 22:36:13 GMT
       Content-<syspro_company>ength:
-      - '32'
+      - '36'
     body:
       encoding: UTF-8
-      string: 'ERROR: Invalid operator password'
+      string: '3EA613166FE4BF47925DF1CEA14E910100  '
     http_version: 
-  recorded_at: Mon, 14 Jan 2019 22:56:14 GMT
+  recorded_at: Wed, 22 May 2019 22:36:12 GMT
 recorded_with: VCR 4.0.0
