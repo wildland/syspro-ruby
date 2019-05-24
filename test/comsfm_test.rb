@@ -5,6 +5,9 @@ require 'test_helper'
 class ComsFmTest < Minitest::Test
   extend Minitest::Spec::DSL
 
+  before { VCR.insert_cassette name }
+  after { VCR.eject_cassette }
+
   let(:username) { ENV['SYSPRO_USERNAME'] }
   let(:password) { ENV['SYSPRO_PASSWORD'] }
   let(:company) { ENV['SYSPRO_COMPANY'] }
@@ -16,7 +19,7 @@ class ComsFmTest < Minitest::Test
   def test_comsfm
     cust_item = Syspro::BusinessObjects::Models::ComsFmItem.new
     cust_item.form_type = "POR"
-    cust_item.key_field = "U03421"
+    cust_item.key_field = "U03679"
     cust_item.field_name = "TempPO"
     cust_item.alpha_value = "Y"
 

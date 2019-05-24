@@ -11,10 +11,9 @@ module Syspro
         end
 
         def parse
-          error_numbers = doc.xpath("//ErrorNumber").map{|e| e.text}
+          doc.xpath('//ErrorNumber').map(&:text)
         end
       end
     end
   end
 end
-

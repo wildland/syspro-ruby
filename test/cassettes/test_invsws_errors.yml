@@ -1,0 +1,72 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://syspro.wildlandlabs.com:90/SYSPROWCFService/Rest/logon?CompanyId=<syspro_company>&CompanyPassword=&Operator=<syspro_username>&OperatorPassword=<syspro_password>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Syspro/7 RubyBindings/1.0.0.alpha.2
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/octet-stream
+      Server:
+      - Microsoft-HTTPAPI/2.0
+      Date:
+      - Fri, 24 May 2019 17:23:24 GMT
+      Content-<syspro_company>ength:
+      - '36'
+    body:
+      encoding: UTF-8
+      string: '0EDDFCFC88E5674AA78DD1C24F3CEEBE00  '
+    http_version: 
+  recorded_at: Fri, 24 May 2019 17:23:23 GMT
+- request:
+    method: get
+    uri: http://syspro.wildlandlabs.com:90/SYSPROWCFService/Rest/Setup/Add?BusinessObject=INVSWS&UserId=0EDDFCFC88E5674AA78DD1C24F3CEEBE00%20%20&XmlIn=%3CSetupInvWarehouse%20xmlns:xsd=%22http://www.w3.org/2001/XM<syspro_company>Schema-instance%22%20xsd:noNamespaceSchema<syspro_company>ocation=%22INVSWSDOC.XSD%22%3E%0A%20%20%3CItem%3E%0A%20%20%20%20%3CKey%3E%0A%20%20%20%20%20%20%3CStockCode%3E1004%3C/StockCode%3E%0A%20%20%20%20%20%20%3CWarehouse%3EP0%3C/Warehouse%3E%0A%20%20%20%20%3C/Key%3E%0A%20%20%20%20%3CCostMultiplier%3E1.0%3C/CostMultiplier%3E%0A%20%20%20%20%3CMinimumQty%3E%3C/MinimumQty%3E%0A%20%20%20%20%3CMaximumQty%3E%3C/MaximumQty%3E%0A%20%20%20%20%3CUnitCost%3E%3C/UnitCost%3E%0A%20%20%20%20%3CDefaultBin%3EP0%3C/DefaultBin%3E%0A%20%20%20%20%3CSafetyStockQty%3E%3C/SafetyStockQty%3E%0A%20%20%20%20%3CReOrderQty%3E%3C/ReOrderQty%3E%0A%20%20%20%20%3CPalletQty%3E%3C/PalletQty%3E%0A%20%20%20%20%3CUserField1%3E%3C/UserField1%3E%0A%20%20%20%20%3CUserField2%3E%3C/UserField2%3E%0A%20%20%20%20%3CUserField3%3E%3C/UserField3%3E%0A%20%20%20%20%3COrderPolicy%3EC%3C/OrderPolicy%3E%0A%20%20%20%20%3CMajorOrderMult%3E%3C/MajorOrderMult%3E%0A%20%20%20%20%3CMinorOrderMult%3E%3C/MinorOrderMult%3E%0A%20%20%20%20%3COrderMinimum%3E%3C/OrderMinimum%3E%0A%20%20%20%20%3COrderMaximum%3E%3C/OrderMaximum%3E%0A%20%20%20%20%3COrderFixPeriod%3E01%3C/OrderFixPeriod%3E%0A%20%20%20%20%3CTrfSuppliedItem%3EN%3C/TrfSuppliedItem%3E%0A%20%20%20%20%3CDefaultSourceWh%3E%3C/DefaultSourceWh%3E%0A%20%20%20%20%3CTrf<syspro_company>eadTime%3E0%3C/Trf<syspro_company>eadTime%3E%0A%20%20%20%20%3CTrfCostGlCode%3E%3C/TrfCostGlCode%3E%0A%20%20%20%20%3CTrfCostMultiply%3E%3C/TrfCostMultiply%3E%0A%20%20%20%20%3CTrfReplenishWh%3E0%3C/TrfReplenishWh%3E%0A%20%20%20%20%3CTrfBuyingRule%3EA%3C/TrfBuyingRule%3E%0A%20%20%20%20%3CTrfDockToStock%3E%3C/TrfDockToStock%3E%0A%20%20%20%20%3CTrfFixTimePeriod%3E%3C/TrfFixTimePeriod%3E%0A%20%20%20%20%3C<syspro_company>abourCost%3E%3C/<syspro_company>abourCost%3E%0A%20%20%20%20%3CMaterialCost%3E%3C/MaterialCost%3E%0A%20%20%20%20%3CFixedOverhead%3E%3C/FixedOverhead%3E%0A%20%20%20%20%3CVariableOverhead%3E%3C/VariableOverhead%3E%0A%20%20%20%20%3CSubContractCost%3E%3C/SubContractCost%3E%0A%20%20%20%20%3CManualCostFlag%3EN%3C/ManualCostFlag%3E%0A%20%20%20%20%0A%20%20%3C/Item%3E%0A%3C/SetupInvWarehouse%3E&XmlParameters=%3CSetupInvWarehouse%20xmlns:xsd=%22http://www.w3.org/2001/XM<syspro_company>Schema-instance%22%20xsd:noNamespaceSchema<syspro_company>ocation=%22INVSWS.XSD%22%3E%0A%20%20%3CParameters%3E%0A%20%20%20%20%3CApplyProductClassDefault%3EBA%3C/ApplyProductClassDefault%3E%0A%20%20%20%20%3CIgnoreWarnings%3EN%3C/IgnoreWarnings%3E%0A%20%20%20%20%3CApplyIfEntireDocumentValid%3EY%3C/ApplyIfEntireDocumentValid%3E%0A%20%20%20%20%3CValidateOnly%3EY%3C/ValidateOnly%3E%0A%20%20%3C/Parameters%3E%0A%3C/SetupInvWarehouse%3E%0A
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Syspro/7 RubyBindings/1.0.0.alpha.2
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/octet-stream
+      Server:
+      - Microsoft-HTTPAPI/2.0
+      Date:
+      - Fri, 24 May 2019 17:23:24 GMT
+      Content-<syspro_company>ength:
+      - '536'
+    body:
+      encoding: UTF-8
+      string: "<?xml version=\"1.0\" encoding=\"Windows-1252\"?>\n<setupinvwarehouse
+        <syspro_company>anguage='05' <syspro_company>anguage2='EN' CssStyle='' DecFormat='1'
+        DateFormat='01' Role='01' Version='7.0.026' OperatorPrimaryRole='   '>\n<item>\n<key>\n<stockcode>1004</stockcode>\n<warehouse>P0</warehouse>\n</key>\n<stockcode>\n<Value>1004</Value>\n<ErrorNumber>240004</ErrorNumber>\n<ErrorDescription>Stock
+        code '1004' not found</ErrorDescription>\n</stockcode>\n</item>\n<StatusOfItems>\n<RecordsRead>1</RecordsRead>\n<RecordsInvalid>1</RecordsInvalid>\n</StatusOfItems>\n</setupinvwarehouse>\n "
+    http_version: 
+  recorded_at: Fri, 24 May 2019 17:23:24 GMT
+recorded_with: VCR 4.0.0

@@ -71,7 +71,7 @@ DEPENDENCIES
   pry-byebug
   rake (~> 10.0)
   rb-readline
-  rubocop (~> 0.54.0)
+  rubocop
   syspro-ruby!
   webmock (~> 3.3.0)
 

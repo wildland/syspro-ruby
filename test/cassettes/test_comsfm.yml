@@ -1,0 +1,71 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://syspro.wildlandlabs.com:90/SYSPROWCFService/Rest/logon?CompanyId=<syspro_company>&CompanyPassword=&Operator=<syspro_username>&OperatorPassword=<syspro_password>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Syspro/7 RubyBindings/1.0.0.alpha.2
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/octet-stream
+      Server:
+      - Microsoft-HTTPAPI/2.0
+      Date:
+      - Thu, 23 May 2019 17:59:57 GMT
+      Content-<syspro_company>ength:
+      - '36'
+    body:
+      encoding: UTF-8
+      string: '12E6D0C3129AAC4D940E264688A7D31500  '
+    http_version: 
+  recorded_at: Thu, 23 May 2019 17:59:55 GMT
+- request:
+    method: get
+    uri: http://syspro.wildlandlabs.com:90/SYSPROWCFService/Rest/Setup/Add?BusinessObject=COMSFM&UserId=12E6D0C3129AAC4D940E264688A7D31500%20%20&XmlIn=%3CSetupCustomForm%20xmlns:xsd=%22http://www.w3.org/2001/XM<syspro_company>Schema-instance%22%20xsd:noNamespaceSchema<syspro_company>ocation=%22COMSFMDOC.XSD%22%3E%0A%0A%20%20%3CItem%3E%0A%20%20%20%20%3CKey%3E%0A%20%20%20%20%20%20%3CFormType%3EPOR%3C/FormType%3E%0A%20%20%20%20%20%20%3CKeyField%3EU03679%3C/KeyField%3E%0A%20%20%20%20%20%20%3CFieldName%3ETempPO%3C/FieldName%3E%0A%20%20%20%20%3C/Key%3E%0A%20%20%20%20%3CAlphaValue%3EY%3C/AlphaValue%3E%0A%20%20%3C/Item%3E%0A%0A%3C/SetupCustomForm%3E&XmlParameters=%3CSetupCustomForm%20xmlns:xsd=%22http://www.w3.org/2001/XM<syspro_company>Schema-instance%22%20xsd:noNamespaceSchema<syspro_company>ocation=%22COMSFM.XSD%22%3E%0A%20%20%3CParameters%3E%0A%20%20%20%20%3CValidateOnly%3EY%3C/ValidateOnly%3E%0A%20%20%3C/Parameters%3E%0A%3C/SetupCustomForm%3E
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Syspro/7 RubyBindings/1.0.0.alpha.2
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/octet-stream
+      Server:
+      - Microsoft-HTTPAPI/2.0
+      Date:
+      - Thu, 23 May 2019 17:59:58 GMT
+      Content-<syspro_company>ength:
+      - '417'
+    body:
+      encoding: UTF-8
+      string: "<?xml version=\"1.0\" encoding=\"Windows-1252\"?>\n<setupcustomform
+        <syspro_company>anguage='05' <syspro_company>anguage2='EN' CssStyle='' DecFormat='1'
+        DateFormat='01' Role='01' Version='7.0.008' OperatorPrimaryRole='   '>\n<item>\n<key>\n<formtype>POR</formtype>\n<keyfield>U03679</keyfield>\n<fieldname>TempPO</fieldname>\n</key>\n</item>\n<StatusOfItems>\n<RecordsRead>1</RecordsRead>\n<RecordsInvalid>0</RecordsInvalid>\n</StatusOfItems>\n</setupcustomform>\n "
+    http_version: 
+  recorded_at: Thu, 23 May 2019 17:59:55 GMT
+recorded_with: VCR 4.0.0

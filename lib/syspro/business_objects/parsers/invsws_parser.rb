@@ -18,7 +18,23 @@ module Syspro
             },
             "reacords_read": doc.xpath("//StatusOfItems/RecordsRead").map{|e| e.text}.first,
             "reacords_invalid": doc.xpath("//StatusOfItems/RecordsInvalid").map{|e| e.text}.first,
-            "error_numbers": doc.xpath("//ErrorNumber").map{|e| e.text}
+            "error_numbers": doc.xpath("//ErrorNumber").map{|e| e.text},
+            "errors": map_errors
+          }
+        end
+
+        def map_errors
+          doc.xpath('//ErrorNumber/..').map do |error_parent_node|
+            map_error_parent(error_parent_node)
+          end
+        end
+
+        def map_error_parent(error_parent_node)
+          {
+            node_name: error_parent_node.name,
+            error_number: error_parent_node.xpath('//ErrorNumber').text,
+            error_desc: error_parent_node.xpath('//ErrorDescription').text,
+            value: error_parent_node.xpath('//Value').text
           }
         end
       end

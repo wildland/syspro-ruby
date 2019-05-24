@@ -6,7 +6,8 @@ git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
 
 gemspec
 
-group :test do
+group :development, :test do
+  gem 'rubocop', require: false
   gem 'pry-byebug'
   gem 'rb-readline'
 end
