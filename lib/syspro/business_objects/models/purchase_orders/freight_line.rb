@@ -8,7 +8,7 @@ module Syspro
                         :freight_value,
                         :freight_tax_code,
                         :freight_taxable
-                        :freight_f_loc
+          :freight_f_loc
         end
       end
     end

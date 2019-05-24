@@ -11,10 +11,10 @@ module Syspro
 
       # input params
       attr_accessor :transaction_date,
-        :ignore_warnings,
-        :apply_if_entire_document_valid,
-        :validate_only,
-        :item_inspected
+                    :ignore_warnings,
+                    :apply_if_entire_document_valid,
+                    :validate_only,
+                    :item_inspected
 
       def call(user_id)
         xml_parameters = params_template.result(binding)
@@ -43,10 +43,9 @@ module Syspro
         parser.parse
       end
 
-      def render_xml(inner_text, dflt_value = "")
+      def render_xml(inner_text, dflt_value = '')
         inner_text ? inner_text.to_s : dflt_value
       end
     end
   end
 end
-

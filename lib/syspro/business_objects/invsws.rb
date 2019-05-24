@@ -20,9 +20,9 @@ module Syspro
         xml_in = template.result(binding)
         business_object = 'INVSWS'
         params = { 'UserId' => user_id,
-          'BusinessObject' => business_object,
-          'XmlParameters' => xml_parameters,
-          'XmlIn' => xml_in }
+                   'BusinessObject' => business_object,
+                   'XmlParameters' => xml_parameters,
+                   'XmlIn' => xml_in }
         resp = InvSws.add(params)
 
         parse_response(resp)
@@ -42,7 +42,7 @@ module Syspro
         parser.parse
       end
 
-      def render_xml(inner_text, dflt_value = "")
+      def render_xml(inner_text, dflt_value = '')
         inner_text ? inner_text.to_s : dflt_value
       end
     end

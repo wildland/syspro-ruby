@@ -9,7 +9,7 @@ module Syspro
 
         def initialize
           @warehouse_totals = WarehouseTotals.new
-          @warehouse_items = [] 
+          @warehouse_items = []
           @stock_item = StockItem.new
           @system_information = SystemInformation.new
         end
@@ -19,7 +19,7 @@ module Syspro
 
           # copy hash items that match into new warehouse item
           new_hash.keys.each do |k|
-            w.send("#{k.to_s}=", new_hash[k]) if w.methods.include? k
+            w.send("#{k}=", new_hash[k]) if w.methods.include? k
           end
 
           @warehouse_items.push(w)
@@ -29,7 +29,7 @@ module Syspro
       class WarehouseTotals
         attr_accessor :qty_on_hand,
                       :available_qty
-                      
+
         # Not all xml parsed, see https://infozone.syspro.com/Support/businessobjectslibrary/INVQRYOUT.XML
       end
 
@@ -80,4 +80,3 @@ module Syspro
     end
   end
 end
-

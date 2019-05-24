@@ -18,13 +18,13 @@ class ComsFmTest < Minitest::Test
 
   def test_comsfm
     cust_item = Syspro::BusinessObjects::Models::ComsFmItem.new
-    cust_item.form_type = "POR"
-    cust_item.key_field = "U03679"
-    cust_item.field_name = "TempPO"
-    cust_item.alpha_value = "Y"
+    cust_item.form_type = 'POR'
+    cust_item.key_field = 'U03679'
+    cust_item.field_name = 'TempPO'
+    cust_item.alpha_value = 'Y'
 
     cust_form = Syspro::BusinessObjects::ComsFm.new
-    cust_form.validate_only = "Y"
+    cust_form.validate_only = 'Y'
     cust_form.items = [cust_item]
 
     errors = cust_form.add(user_id.guid)

@@ -10,10 +10,10 @@ module Syspro
       include Syspro::BusinessObjects::Parsers
 
       attr_accessor :purchase_order, :include_stocked_lines, :include_non_stocked_lines,
-        :include_freight_lines, :include_miscellaneous_lines, :include_comment_lines,
-        :include_completed_lines, :include_grns, :include_history, :include_lct_details,
-        :include_requisition_details, :include_requisition_routing, :include_sales_orders,
-        :include_custom_forms, :filter_type, :filter_value
+                    :include_freight_lines, :include_miscellaneous_lines, :include_comment_lines,
+                    :include_completed_lines, :include_grns, :include_history, :include_lct_details,
+                    :include_requisition_details, :include_requisition_routing, :include_sales_orders,
+                    :include_custom_forms, :filter_type, :filter_value
 
       def call(user_id)
         xml_in = template.result(binding)

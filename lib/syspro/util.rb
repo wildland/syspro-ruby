@@ -207,7 +207,6 @@ module Syspro
         end
       end
 
-
       def logger
         Syspro.configuration.logger
       end

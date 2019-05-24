@@ -11,22 +11,22 @@ module Syspro
 
       # input params
       attr_accessor :purchase_order_header,
-        :order_details,
-        :validate_only,
-        :ignore_warnings,
-        :allow_non_stock_items,
-        :allow_zero_price,
-        :validate_working_days,
-        :allow_po_when_blanket_po,
-        :default_memo_code,
-        :fixed_exchange_rate,
-        :default_memo_days,
-        :allow_blank_ledger_code,
-        :calc_due_date,
-        :default_delivery_address,
-        :insert_dangerous_goods_text,
-        :insert_additional_po_text,
-        :status
+                    :order_details,
+                    :validate_only,
+                    :ignore_warnings,
+                    :allow_non_stock_items,
+                    :allow_zero_price,
+                    :validate_working_days,
+                    :allow_po_when_blanket_po,
+                    :default_memo_code,
+                    :fixed_exchange_rate,
+                    :default_memo_days,
+                    :allow_blank_ledger_code,
+                    :calc_due_date,
+                    :default_delivery_address,
+                    :insert_dangerous_goods_text,
+                    :insert_additional_po_text,
+                    :status
 
       def call(user_id)
         xml_parameters = params_template.result(binding)
@@ -61,4 +61,3 @@ module Syspro
     end
   end
 end
-

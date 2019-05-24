@@ -25,11 +25,7 @@ module Syspro
                       :include_movement_dispatch_notes,
                       :include_ecc,
                       :xsl_stylesheet
-
       end
     end
   end
 end
-
-
-

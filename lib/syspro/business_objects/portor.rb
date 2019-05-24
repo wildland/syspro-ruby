@@ -47,10 +47,9 @@ module Syspro
         parser.parse
       end
 
-      def render_xml(inner_text, dflt_value = "")
+      def render_xml(inner_text, dflt_value = '')
         inner_text ? inner_text.to_s : dflt_value
       end
     end
   end
 end
-

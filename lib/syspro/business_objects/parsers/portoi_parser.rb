@@ -11,15 +11,15 @@ module Syspro
         end
 
         def parse
-          po = Syspro::BusinessObjects::Models::PurchaseOrder.new()
-          
-          po.error_numbers = doc.xpath("//ErrorNumber").map{|e| e.text}
+          po = Syspro::BusinessObjects::Models::PurchaseOrder.new
+
+          po.error_numbers = doc.xpath('//ErrorNumber').map(&:text)
 
           po.purchase_order = doc.first_element_child.xpath('Order/Key/PurchaseOrder').text
           po.item_number = doc.first_element_child.xpath('Order/ItemNumber').text
           po.order_action_type = doc.first_element_child.xpath('Order/OrderActionType').text
           po.supplier = doc.first_element_child.xpath('Order/Supplier').text
-          
+
           po
         end
 
@@ -28,4 +28,3 @@ module Syspro
     end
   end
 end
-

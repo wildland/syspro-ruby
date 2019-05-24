@@ -43,7 +43,7 @@ module Syspro
     private
 
     def deprecated_default_server_url
-      warn "[DEPRECATION] the default server url of `http://syspro.wildlandlabs.com:90` will be removed. Please update your application to configure this server url (see README for details)."
+      warn '[DEPRECATION] the default server url of `http://syspro.wildlandlabs.com:90` will be removed. Please update your application to configure this server url (see README for details).'
       'http://syspro.wildlandlabs.com:90'
     end
 

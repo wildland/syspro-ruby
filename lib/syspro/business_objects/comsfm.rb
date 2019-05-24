@@ -17,9 +17,9 @@ module Syspro
         xml_in = template.result(binding)
         business_object = 'COMSFM'
         params = { 'UserId' => user_id,
-          'BusinessObject' => business_object,
-          'XmlParameters' => xml_parameters,
-          'XmlIn' => xml_in }
+                   'BusinessObject' => business_object,
+                   'XmlParameters' => xml_parameters,
+                   'XmlIn' => xml_in }
         resp = ComsFm.add(params)
 
         parse_response(resp)
