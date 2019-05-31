@@ -22,8 +22,8 @@ class InvQryTest < Minitest::Test
     invqry_req.key_stock_code = '1003'
     invqry_req.filter_warehouse_list = 'P0'
     invqry_req.option = Syspro::BusinessObjects::Models::InvQryOptions.new
-    invqry_req.option.include_lots = "Y"
-    
+    invqry_req.option.include_lots = 'Y'
+
     invqry_rsp = invqry_req.call(user_id.guid)
 
     assert_kind_of Syspro::BusinessObjects::Models::Inv, invqry_rsp

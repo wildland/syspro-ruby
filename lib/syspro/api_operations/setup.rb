@@ -33,11 +33,10 @@ module Syspro
 
       protected
 
-      def request(method, url, params = {}, opts ={})
+      def request(method, url, params = {}, opts = {})
         opts = @opts.merge(Util.normalize_opts(opts))
         Request.request(method, url, params, opts)
       end
     end
   end
 end
-

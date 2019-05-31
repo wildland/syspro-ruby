@@ -15,16 +15,16 @@ class PorTiiTest < Minitest::Test
 
   def test_portii
     req = Syspro::BusinessObjects::PorTii.new
-    
+
     req.item_inspected = Syspro::BusinessObjects::Models::InventoryInspection.new
-    req.item_inspected.grn_number = "P00012509"
+    req.item_inspected.grn_number = 'P00012509'
     req.item_inspected.quantity = 12.312
-    req.item_inspected.inspection_completed = "Y"
-  
+    req.item_inspected.inspection_completed = 'Y'
+
     resp = req.call(user_id.guid)
-    
-    assert_equal resp.has_key?(:grn_numbers), true
-    assert_equal resp.has_key?(:items_processed), true
-    assert_equal resp.has_key?(:items_invalid), true
+
+    assert_equal resp.key?(:grn_numbers), true
+    assert_equal resp.key?(:items_processed), true
+    assert_equal resp.key?(:items_invalid), true
   end
 end

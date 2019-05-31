@@ -16,10 +16,10 @@ module Syspro
         xml_in = template.result(binding)
         params = { 'UserId' => user_id, 'XmlIn' => xml_in }
         resp = ComBrw.browse(params)
-        unless raw
-          parse_response(resp)
-        else
+        if raw
           resp
+        else
+          parse_response(resp)
         end
       end
 

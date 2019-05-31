@@ -94,7 +94,7 @@ module Syspro
     end
 
     def api_base=(url)
-      warn "[DEPRECATION] `api_base=` is deprecated. Please use `configuration.server_url=` instead."
+      warn '[DEPRECATION] `api_base=` is deprecated. Please use `configuration.server_url=` instead.'
       @api_base = url
     end
 

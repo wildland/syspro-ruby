@@ -39,9 +39,9 @@ module Syspro
                       :e_signature
         end
 
-        class InvSwsItemKey
-          attr_accessor
-        end
+      class InvSwsItemKey
+        attr_accessor
+      end
     end
   end
 end

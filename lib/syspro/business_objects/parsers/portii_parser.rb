@@ -12,10 +12,10 @@ module Syspro
 
         def parse
           {
-            error_numbers: doc.xpath("//ErrorNumber").map{|e| e.text},
-            grn_numbers: doc.xpath("//Item/Key/GRNNumber").map{|e| e.text},
-            items_processed: doc.xpath("//StatusOfItems/ItemsProcessed").first.text,
-            items_invalid: doc.xpath("//StatusOfItems/ItemsInvalid").first.text
+            error_numbers: doc.xpath('//ErrorNumber').map(&:text),
+            grn_numbers: doc.xpath('//Item/Key/GRNNumber').map(&:text),
+            items_processed: doc.xpath('//StatusOfItems/ItemsProcessed').first.text,
+            items_invalid: doc.xpath('//StatusOfItems/ItemsInvalid').first.text
           }
         end
 
@@ -24,4 +24,3 @@ module Syspro
     end
   end
 end
-

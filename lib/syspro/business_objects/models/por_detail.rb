@@ -94,35 +94,33 @@ module Syspro
                         :edit_default_price,
                         :default_prum,
                         :costing_methods_available
-
         end # end of class MerchandiseDetail
 
         class CostingMethodsAvailable
           attr_accessor :manual_method_code,
-            :manual_method_desc,
-            :manual_method_price,
-            :edit__manual_method_price,
-            :manual_method_costing_prum,
-            :total_cost_method_code,
-            :total_cost_method_desc,
-            :total_cost_method_price,
-            :edit__total_cost_method_price,
-            :total_cost_costing_prum,
-            :purchase_price_method_code,
-            :purchase_price_method_desc,
-            :purchase_price_method_price,
-            :edit__purchase_price_method_price,
-            :purchase_price_costing_prum,
-            :price_tax_method_code,
-            :price_tax_method_desc,
-            :price_tax_method_price,
-            :edit__price_tax_method_price,
-            :price_tax_costing_prum
+                        :manual_method_desc,
+                        :manual_method_price,
+                        :edit__manual_method_price,
+                        :manual_method_costing_prum,
+                        :total_cost_method_code,
+                        :total_cost_method_desc,
+                        :total_cost_method_price,
+                        :edit__total_cost_method_price,
+                        :total_cost_costing_prum,
+                        :purchase_price_method_code,
+                        :purchase_price_method_desc,
+                        :purchase_price_method_price,
+                        :edit__purchase_price_method_price,
+                        :purchase_price_costing_prum,
+                        :price_tax_method_code,
+                        :price_tax_method_desc,
+                        :price_tax_method_price,
+                        :edit__price_tax_method_price,
+                        :price_tax_costing_prum
         end # end of class CostingMethodsAvailable
 
         class PurchaseOrderTotals
           attr_accessor :local_values, :current_values, :first_receipt_date, :order_complete_date
-
         end
 
         class PurchaseOrderTotalsLocalValues
@@ -136,7 +134,6 @@ module Syspro
                         :edited_current_order_value, :edited_current_received_to_date_value,
                         :edited_current_outstanding_value
         end
-
       end
     end
   end

@@ -7,8 +7,8 @@ require 'syspro/version'
 Gem::Specification.new do |spec|
   spec.name          = 'syspro-ruby'
   spec.version       = Syspro::VERSION
-  spec.authors       = ['Isaac Lewis']
-  spec.email         = ['isaac@ike.io']
+  spec.authors       = ['Sam Clopton', 'Nathan Ockerman']
+  spec.email         = ['sam@wild.land', 'nathan@wild.land']
 
   spec.summary       = 'SYSPRO 7 Api Ruby adapter'
   spec.license       = 'MIT'

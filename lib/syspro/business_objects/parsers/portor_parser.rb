@@ -11,8 +11,8 @@ module Syspro
         end
 
         def parse
-          error_numbers = doc.xpath("//ErrorNumber").map{|e| e.text}
-          
+          error_numbers = doc.xpath('//ErrorNumber').map(&:text)
+
           gl_journal = doc.first_element_child.xpath('GlJournal')
           gl_journal_obj = gl_journal.children.map do |el|
             next if el.name == 'text'
@@ -29,12 +29,12 @@ module Syspro
           key[:entry_number] = doc.first_element_child.xpath('EntryNumber')
           key[:warehouse] = doc.first_element_child.xpath('Warehouse')
           key[:gl_journal] = gl_journal_obj
-          
+
           receipts = doc.first_element_child.xpath('Receipt')
           receipts_obj = receipts.flat_map do |el|
             el.elements.map do |inner|
               [inner.name,
-              inner.value]
+               inner.value]
             end
           end.compact.to_h
 
@@ -47,8 +47,8 @@ module Syspro
             )
           end
 
-          grns = doc.xpath("//Grn").map{|e| e.text}
-          
+          grns = doc.xpath('//Grn').map(&:text)
+
           {
             error_numbers: error_numbers,
             key: key,
@@ -60,4 +60,3 @@ module Syspro
     end
   end
 end
-
