@@ -16,7 +16,7 @@ module Syspro
       def call(user_id, raw = false)
         xml_in = template.result(binding)
         params = { 'UserId' => user_id, 'XmlIn' => xml_in }
-        resp = ComBrw.browse(params)
+        resp = self.class.browse(params)
         if raw
           resp
         else
