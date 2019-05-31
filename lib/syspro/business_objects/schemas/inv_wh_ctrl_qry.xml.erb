@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<Browse xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" xsd:noNamespaceSchemaLocation="COMBRW.XSD">
+  <BrowseName>LabbeeInvWhControl</BrowseName>
+  <StartAtKey><%= @start_at_key %></StartAtKey>
+  <StartCondition><%= @start_condition %></StartCondition>
+  <ReturnRows><%= @return_rows %></ReturnRows>
+  <% for @filter in filters %>
+    <Filter>
+      <ColumnFilterName><%= @filter[:name] %></ColumnFilterName>
+      <ColumnFilterValue><%= @filter[:value] %></ColumnFilterValue>
+    </Filter>
+  <% end %>
+</Browse>
+

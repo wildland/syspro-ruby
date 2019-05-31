@@ -1,16 +1,17 @@
 # frozen_string_literal: true
 
-require 'syspro/business_objects/parsers/combrw_parser'
 require 'erb'
 
 module Syspro
   module BusinessObjects
-    class ComBrw < ApiResource
+    # This class provides the ability to
+    # query inventory warehouses from syspro
+    class InvWhCtrlQry < ApiResource
       include Syspro::ApiOperations::Query
       include Syspro::BusinessObjects::Parsers
 
-      attr_accessor :browse_name, :start_at_key, :start_condition, :return_rows,
-                    :filters, :table_name, :title, :columns
+      attr_accessor :start_at_key, :start_condition, :return_rows,
+                    :table_name, :title, :columns
 
       def call(user_id, raw = false)
         xml_in = template.result(binding)
@@ -26,7 +27,10 @@ module Syspro
       def template
         ERB.new(
           File.read(
-            File.expand_path('schemas/combrw.xml.erb', File.dirname(__FILE__))
+            File.expand_path(
+              'schemas/inv_wh_ctrl_qry.xml.erb',
+              File.dirname(__FILE__)
+            )
           ),
           nil,
           '%'
@@ -35,8 +39,12 @@ module Syspro
 
       def parse_response(resp)
         handle_errors(resp)
-        parser = ComBrwParser.new(resp[0].data)
+        parser = InvWhCtrlQryParser.new(resp[0].data)
         parser.parse
+      end
+
+      def filters
+        @filters || []
       end
     end
   end

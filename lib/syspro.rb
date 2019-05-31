@@ -37,11 +37,13 @@ require 'syspro/business_objects/comsfm'
 require 'syspro/business_objects/invsws'
 require 'syspro/business_objects/invqry'
 require 'syspro/business_objects/portii'
+require 'syspro/business_objects/inv_wh_ctrl_qry'
 
 require 'syspro/business_objects/models/sor'
 require 'syspro/business_objects/models/sor_detail'
 require 'syspro/business_objects/models/por_detail'
 require 'syspro/business_objects/models/inv_qry_options'
+require 'syspro/business_objects/models/inv_wh_qry'
 require 'syspro/business_objects/models/purchase_order'
 require 'syspro/business_objects/models/purchase_orders/header'
 require 'syspro/business_objects/models/purchase_orders/order_details'
@@ -65,6 +67,7 @@ require 'syspro/business_objects/parsers/comsfm_parser'
 require 'syspro/business_objects/parsers/invsws_parser'
 require 'syspro/business_objects/parsers/invqry_parser'
 require 'syspro/business_objects/parsers/portii_parser'
+require 'syspro/business_objects/parsers/inv_wh_ctrl_qry_parser'
 
 # Main Module
 module Syspro
