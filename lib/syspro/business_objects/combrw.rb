@@ -9,13 +9,16 @@ module Syspro
       include Syspro::ApiOperations::Query
       include Syspro::BusinessObjects::Parsers
 
-      attr_accessor :browse_name, :start_at_key, :start_condition, :return_rows, :filters,
-                    :table_name, :title, :columns
+      attr_accessor :browse_name, :start_at_key, :start_condition, :return_rows,
+                    :filters, :table_name, :title, :columns
+
+      attr_writer :filters
 
       def call(user_id, raw = false)
         xml_in = template.result(binding)
         params = { 'UserId' => user_id, 'XmlIn' => xml_in }
         resp = ComBrw.browse(params)
+
         if raw
           resp
         else
@@ -37,6 +40,10 @@ module Syspro
         handle_errors(resp)
         parser = ComBrwParser.new(resp[0].data)
         parser.parse
+      end
+
+      def filters
+        @filters || []
       end
     end
   end

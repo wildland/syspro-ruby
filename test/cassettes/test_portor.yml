@@ -25,17 +25,17 @@ http_interactions:
       Server:
       - Microsoft-HTTPAPI/2.0
       Date:
-      - Thu, 23 May 2019 16:43:21 GMT
+      - Wed, 19 Jun 2019 21:18:47 GMT
       Content-<syspro_company>ength:
       - '36'
     body:
       encoding: UTF-8
-      string: '6D8139C868FDD74487FB2B80F8CC4EBD00  '
+      string: '2088C39D9FF2C34281100962D8D28EC100  '
     http_version: 
-  recorded_at: Thu, 23 May 2019 16:43:18 GMT
+  recorded_at: Wed, 19 Jun 2019 21:18:45 GMT
 - request:
     method: get
-    uri: http://syspro.wildlandlabs.com:90/SYSPROWCFService/Rest/Transaction/Post?BusinessObject=PORTOR&UserId=6D8139C868FDD74487FB2B80F8CC4EBD00%20%20&XmlIn=%3C?xml%20version=%221.0%22%20encoding=%22Windows-1252%22?%3E%0A%3CPostPurchaseOrderReceipts%20xmlns:xsd=%22http://www.w3.org/2001/XM<syspro_company>Schema-instance%22%20xsd:noNamespaceSchema<syspro_company>ocation=%22portordoc.xsd%22%3E%0A%20%20%0A%20%20%3CItem%3E%0A%20%20%20%20%3CReceiptIntoInspection%3E%0A%20%20%20%20%20%20%3CPurchaseOrder%3EZ01308%3C/PurchaseOrder%3E%0A%20%20%20%20%20%20%3CWarehouse%3EP0%3C/Warehouse%3E%0A%20%20%20%20%20%20%3CStockCode%3E8801%3C/StockCode%3E%0A%20%20%20%20%20%20%3CQuantity%3E0.01%3C/Quantity%3E%0A%20%20%20%20%20%20%3CCountedQuantityComplete%3EY%3C/CountedQuantityComplete%3E%0A%20%20%20%20%20%20%3CDeliveryNote%3EDE<syspro_company>IVER%20NOTE%20HERE-W<syspro_company>%3C/DeliveryNote%3E%0A%20%20%20%20%20%20%3CCertificate%3E8/45-3%3C/Certificate%3E%0A%20%20%20%20%20%20%3CNarration%3E%3C/Narration%3E%0A%20%20%20%20%20%20%3C<syspro_company>ot%3E7097505%3C/<syspro_company>ot%3E%0A%20%20%20%20%20%20%3CGRNNumber%3E%3C/GRNNumber%3E%0A%20%20%20%20%20%20%3CConcession%3E%3C/Concession%3E%0A%20%20%20%20%20%20%3CCostBasis%3E%3C/CostBasis%3E%0A%20%20%20%20%20%20%3CNotation%3E%3C/Notation%3E%0A%20%20%20%20%20%20%3CReference%3E%3C/Reference%3E%0A%20%20%20%20%20%20%3CGRNSource%3E%3C/GRNSource%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%3C/ReceiptIntoInspection%3E%0A%20%20%3C/Item%3E%0A%20%20%20%20%20%20%0A%3C/PostPurchaseOrderReceipts%3E&XmlParameters=%3C?xml%20version=%221.0%22%20encoding=%22Windows-1252%22?%3E%0A%3CPostPurchaseOrderReceipts%20xmlns:xsd=%22http://www.w3.org/2001/XM<syspro_company>Schema-instance%22%20xsd:noNamespaceSchema<syspro_company>ocation=%22portor.xsd%22%3E%0A%20%20%3CParameters%3E%0A%20%20%20%20%3CTransactionDate%3E2019-05-23%3C/TransactionDate%3E%0A%20%20%20%20%3CIgnoreWarnings%3EN%3C/IgnoreWarnings%3E%0A%20%20%20%20%3CNonStockedWhToUse%3E%3C/NonStockedWhToUse%3E%0A%20%20%20%20%3CGRNMatchingAction%3EA%3C/GRNMatchingAction%3E%0A%20%20%20%20%3CAllowBlankSupplier%3EN%3C/AllowBlankSupplier%3E%0A%20%20%20%20%3CApplyIfEntireDocumentValid%3EN%3C/ApplyIfEntireDocumentValid%3E%0A%20%20%20%20%3CValidateOnly%3EN%3C/ValidateOnly%3E%0A%20%20%20%20%3CManualSerialTransfersAllowed%3EN%3C/ManualSerialTransfersAllowed%3E%0A%20%20%20%20%3CIgnoreAnalysis%3EN%3C/IgnoreAnalysis%3E%0A%20%20%3C/Parameters%3E%0A%3C/PostPurchaseOrderReceipts%3E
+    uri: http://syspro.wildlandlabs.com:90/SYSPROWCFService/Rest/Transaction/Post?BusinessObject=PORTOR&UserId=2088C39D9FF2C34281100962D8D28EC100%20%20&XmlIn=%3C?xml%20version=%221.0%22%20encoding=%22Windows-1252%22?%3E%0A%3CPostPurchaseOrderReceipts%20xmlns:xsd=%22http://www.w3.org/2001/XM<syspro_company>Schema-instance%22%20xsd:noNamespaceSchema<syspro_company>ocation=%22portordoc.xsd%22%3E%0A%20%20%0A%20%20%3CItem%3E%0A%20%20%20%20%3CReceiptIntoInspection%3E%0A%20%20%20%20%20%20%3CPurchaseOrder%3EZ01308%3C/PurchaseOrder%3E%0A%20%20%20%20%20%20%3CWarehouse%3EP0%3C/Warehouse%3E%0A%20%20%20%20%20%20%3CStockCode%3E8801%3C/StockCode%3E%0A%20%20%20%20%20%20%3CQuantity%3E0.01%3C/Quantity%3E%0A%20%20%20%20%20%20%3CCountedQuantityComplete%3EY%3C/CountedQuantityComplete%3E%0A%20%20%20%20%20%20%3CDeliveryNote%3EDE<syspro_company>IVER%20NOTE%20HERE-W<syspro_company>%3C/DeliveryNote%3E%0A%20%20%20%20%20%20%3CCertificate%3E8/45-3%3C/Certificate%3E%0A%20%20%20%20%20%20%3CNarration%3E%3C/Narration%3E%0A%20%20%20%20%20%20%3C<syspro_company>ot%3E7097505%3C/<syspro_company>ot%3E%0A%20%20%20%20%20%20%3CGRNNumber%3E%3C/GRNNumber%3E%0A%20%20%20%20%20%20%3CConcession%3E%3C/Concession%3E%0A%20%20%20%20%20%20%3CCostBasis%3E%3C/CostBasis%3E%0A%20%20%20%20%20%20%3CNotation%3E%3C/Notation%3E%0A%20%20%20%20%20%20%3CReference%3E%3C/Reference%3E%0A%20%20%20%20%20%20%3CGRNSource%3E%3C/GRNSource%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%3C/ReceiptIntoInspection%3E%0A%20%20%3C/Item%3E%0A%20%20%20%20%20%20%0A%3C/PostPurchaseOrderReceipts%3E&XmlParameters=%3C?xml%20version=%221.0%22%20encoding=%22Windows-1252%22?%3E%0A%3CPostPurchaseOrderReceipts%20xmlns:xsd=%22http://www.w3.org/2001/XM<syspro_company>Schema-instance%22%20xsd:noNamespaceSchema<syspro_company>ocation=%22portor.xsd%22%3E%0A%20%20%3CParameters%3E%0A%20%20%20%20%3CTransactionDate%3E2019-06-19%3C/TransactionDate%3E%0A%20%20%20%20%3CIgnoreWarnings%3EN%3C/IgnoreWarnings%3E%0A%20%20%20%20%3CNonStockedWhToUse%3E%3C/NonStockedWhToUse%3E%0A%20%20%20%20%3CGRNMatchingAction%3EA%3C/GRNMatchingAction%3E%0A%20%20%20%20%3CAllowBlankSupplier%3EN%3C/AllowBlankSupplier%3E%0A%20%20%20%20%3CApplyIfEntireDocumentValid%3EN%3C/ApplyIfEntireDocumentValid%3E%0A%20%20%20%20%3CValidateOnly%3EN%3C/ValidateOnly%3E%0A%20%20%20%20%3CManualSerialTransfersAllowed%3EN%3C/ManualSerialTransfersAllowed%3E%0A%20%20%20%20%3CIgnoreAnalysis%3EN%3C/IgnoreAnalysis%3E%0A%20%20%3C/Parameters%3E%0A%3C/PostPurchaseOrderReceipts%3E
     body:
       encoding: US-ASCII
       string: ''
@@ -58,14 +58,14 @@ http_interactions:
       Server:
       - Microsoft-HTTPAPI/2.0
       Date:
-      - Thu, 23 May 2019 16:43:23 GMT
+      - Wed, 19 Jun 2019 21:18:47 GMT
       Content-<syspro_company>ength:
       - '397'
     body:
       encoding: UTF-8
       string: "<?xml version=\"1.0\" encoding=\"Windows-1252\"?>\n<postpurchaseorderreceipts
         <syspro_company>anguage='05' <syspro_company>anguage2='EN' CssStyle='' DecFormat='1'
-        DateFormat='01' Role='01' Version='7.0.111' OperatorPrimaryRole='   '>\n<Item>\n<Key>\n<PurchaseOrder>Z01308</PurchaseOrder>\n<<syspro_company>ine>0002</<syspro_company>ine>\n<Grn>P00013152</Grn>\n<<syspro_company>otNumber>7097505</<syspro_company>otNumber>\n</Key>\n<ItemNumber>000001</ItemNumber>\n</Item>\n</postpurchaseorderreceipts>\n "
+        DateFormat='01' Role='01' Version='7.0.111' OperatorPrimaryRole='   '>\n<Item>\n<Key>\n<PurchaseOrder>Z01308</PurchaseOrder>\n<<syspro_company>ine>0002</<syspro_company>ine>\n<Grn>P00013151</Grn>\n<<syspro_company>otNumber>7097505</<syspro_company>otNumber>\n</Key>\n<ItemNumber>000001</ItemNumber>\n</Item>\n</postpurchaseorderreceipts>\n "
     http_version: 
-  recorded_at: Thu, 23 May 2019 16:43:20 GMT
+  recorded_at: Wed, 19 Jun 2019 21:18:46 GMT
 recorded_with: VCR 4.0.0

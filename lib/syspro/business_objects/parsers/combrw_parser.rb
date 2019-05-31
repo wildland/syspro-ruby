@@ -4,6 +4,8 @@ module Syspro
   module BusinessObjects
     module Parsers
       class ComBrwParser
+        BrowseObject = Struct.new(:headers, :rows, :next_key, :prev_key, :fwd, :back, :key)
+
         attr_reader :doc
 
         def initialize(doc)
@@ -11,44 +13,32 @@ module Syspro
         end
 
         def parse
-          next_prev_key = doc.first_element_child.xpath('NextPrevKey')
-          next_prev_key_obj = next_prev_key.children.map do |el|
-            next if el.name == 'text'
-            {
-              name: el.name,
-              text: el.text
-            }
-          end.compact
+          prev_key = doc.xpath('//NextPrevKey/PrevKey').text
+          next_key = doc.xpath('//NextPrevKey/NextKey').text
+          fwd = doc.xpath('//NextPrevKey/Fwd').text.casecmp('true').zero?
+          back = doc.xpath('//NextPrevKey/Back').text.casecmp('true').zero?
+          headers = doc.xpath('//HeaderDetails/Header').map { |h| h.text }
+          key = doc.xpath('//HeaderDetails/Key').text
 
-          header_details = doc.first_element_child.xpath('HeaderDetails')
-          header_details_obj = header_details.children.map do |el|
-            next if el.name == 'text'
-            {
-              name: el.name,
-              text: el.text
-            }
-          end.compact
-
-          rows = doc.first_element_child.xpath('Row')
-          rows_obj = rows.flat_map do |el|
-            el.elements.map do |inner|
-              {
-                name: inner.name,
-                value: inner.xpath('Value').text,
-                data_type: inner.xpath('DataType').text
-              }
+          rows = doc.xpath('//Row').map do |row|
+            columns = row.children.select { |n| n.node_type == Nokogiri::XML::Reader::TYPE_ELEMENT }
+            columns.each_with_object({}) do |column, hash|
+              hash[column.name] = column.children
+                                        .find { |child| child.name == 'Value' }
+                                        .text
             end
-          end.compact
+          end
 
           BrowseObject.new(
-            doc.first_element_child.xpath('Title').text,
-            rows_obj,
-            next_prev_key_obj,
-            header_details_obj
+            headers,
+            rows,
+            next_key,
+            prev_key,
+            fwd,
+            back,
+            key
           )
         end
-
-        BrowseObject = Struct.new(:title, :rows, :next_prev_key, :header_details)
       end
     end
   end
