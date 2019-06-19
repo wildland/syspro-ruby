@@ -4,11 +4,11 @@
   <StartAtKey><%= @start_at_key %></StartAtKey>
   <StartCondition><%= @start_condition %></StartCondition>
   <ReturnRows><%= @return_rows %></ReturnRows>
-  <% for @filter in @filters %>
+  <% for filter in filters %>
     <Filter>
-      <ColumnFilterName><%= @filter[:name] %></ColumnFilterName>
-      <ColumnFilterValue><%= @filter[:value] %></ColumnFilterValue>
-    </Filter> 
+      <ColumnFilterName><%= filter[:name] %></ColumnFilterName>
+      <ColumnFilterValue><%= filter[:value] %></ColumnFilterValue>
+    </Filter>
   <% end %>
 </Browse>
 

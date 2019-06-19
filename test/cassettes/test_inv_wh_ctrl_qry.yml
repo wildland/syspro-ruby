@@ -1,0 +1,104 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://syspro.wildlandlabs.com:90/SYSPROWCFService/Rest/logon?CompanyId=<syspro_company>&CompanyPassword=&Operator=<syspro_username>&OperatorPassword=<syspro_password>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Syspro/7 RubyBindings/1.0.0.alpha.2
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/octet-stream
+      Server:
+      - Microsoft-HTTPAPI/2.0
+      Date:
+      - Thu, 30 May 2019 23:45:30 GMT
+      Content-<syspro_company>ength:
+      - '36'
+    body:
+      encoding: UTF-8
+      string: '919BB8178D221E4F92299528B68B597000  '
+    http_version: 
+  recorded_at: Thu, 30 May 2019 23:45:29 GMT
+- request:
+    method: get
+    uri: http://syspro.wildlandlabs.com:90/SYSPROWCFService/Rest/Query/Browse?UserId=919BB8178D221E4F92299528B68B597000%20%20&XmlIn=%3C?xml%20version=%221.0%22%20encoding=%22Windows-1252%22?%3E%0A%3CBrowse%20xmlns:xsd=%22http://www.w3.org/2001/XM<syspro_company>Schema-instance%22%20xsd:noNamespaceSchema<syspro_company>ocation=%22COMBRW.XSD%22%3E%0A%20%20%3CBrowseName%3E<syspro_company>abbeeInvWhControl%3C/BrowseName%3E%0A%20%20%3CStartAtKey%3E%3C/StartAtKey%3E%0A%20%20%3CStartCondition%3E%3C/StartCondition%3E%0A%20%20%3CReturnRows%3E30%3C/ReturnRows%3E%0A%20%20%0A%3C/Browse%3E%0A%0A
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Syspro/7 RubyBindings/1.0.0.alpha.2
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/octet-stream
+      Server:
+      - Microsoft-HTTPAPI/2.0
+      Date:
+      - Thu, 30 May 2019 23:45:57 GMT
+      Content-<syspro_company>ength:
+      - '7988'
+    body:
+      encoding: UTF-8
+      string: "<?xml version=\"1.0\" encoding=\"Windows-1252\"?>\n<InvWhControl <syspro_company>anguage='05'
+        <syspro_company>anguage2='EN' CssStyle='' DecFormat='1' DateFormat='01' Role='01'
+        Version='7.0.038' OperatorPrimaryRole='   '>\n<Title>Warehouses</Title>\n<Row>\n<Warehouse>\n<Value>BJ</Value>\n<DataType>AlphaNumeric</DataType>\n</Warehouse>\n<Description>\n<Value>BRONSON
+        &amp; JACOBS</Value>\n<DataType>AlphaNumeric</DataType>\n</Description>\n</Row>\n<Row>\n<Warehouse>\n<Value>CB</Value>\n<DataType>AlphaNumeric</DataType>\n</Warehouse>\n<Description>\n<Value>CO<syspro_company>GATE
+        @ BE<syspro_company>GIUM</Value>\n<DataType>AlphaNumeric</DataType>\n</Description>\n</Row>\n<Row>\n<Warehouse>\n<Value>CG</Value>\n<DataType>AlphaNumeric</DataType>\n</Warehouse>\n<Description>\n<Value>CO<syspro_company>GATE
+        @ harrah</Value>\n<DataType>AlphaNumeric</DataType>\n</Description>\n</Row>\n<Row>\n<Warehouse>\n<Value>DR</Value>\n<DataType>AlphaNumeric</DataType>\n</Warehouse>\n<Description>\n<Value>HARRAH-<syspro_company>ABBEEMINT
+        OWNED</Value>\n<DataType>AlphaNumeric</DataType>\n</Description>\n</Row>\n<Row>\n<Warehouse>\n<Value>EX</Value>\n<DataType>AlphaNumeric</DataType>\n</Warehouse>\n<Description>\n<Value>ESSEX
+        <syspro_company>ABS</Value>\n<DataType>AlphaNumeric</DataType>\n</Description>\n</Row>\n<Row>\n<Warehouse>\n<Value>F9</Value>\n<DataType>AlphaNumeric</DataType>\n</Warehouse>\n<Description>\n<Value>FIRMENICH
+        HE<syspro_company>D INVENTORY</Value>\n<DataType>AlphaNumeric</DataType>\n</Description>\n</Row>\n<Row>\n<Warehouse>\n<Value>FI</Value>\n<DataType>AlphaNumeric</DataType>\n</Warehouse>\n<Description>\n<Value>FIRMENICH</Value>\n<DataType>AlphaNumeric</DataType>\n</Description>\n</Row>\n<Row>\n<Warehouse>\n<Value>GV</Value>\n<DataType>AlphaNumeric</DataType>\n</Warehouse>\n<Description>\n<Value>GIVAUDAN</Value>\n<DataType>AlphaNumeric</DataType>\n</Description>\n</Row>\n<Row>\n<Warehouse>\n<Value>H0</Value>\n<DataType>AlphaNumeric</DataType>\n</Warehouse>\n<Description>\n<Value>HARRAH-GROWER
+        OWNED</Value>\n<DataType>AlphaNumeric</DataType>\n</Description>\n</Row>\n<Row>\n<Warehouse>\n<Value>H1</Value>\n<DataType>AlphaNumeric</DataType>\n</Warehouse>\n<Description>\n<Value>HARRAH-<syspro_company>ABBEEMINT
+        OWNED</Value>\n<DataType>AlphaNumeric</DataType>\n</Description>\n</Row>\n<Row>\n<Warehouse>\n<Value>H8</Value>\n<DataType>AlphaNumeric</DataType>\n</Warehouse>\n<Description>\n<Value>HARRAH-CUSTOMER
+        OWNED</Value>\n<DataType>AlphaNumeric</DataType>\n</Description>\n</Row>\n<Row>\n<Warehouse>\n<Value>H9</Value>\n<DataType>AlphaNumeric</DataType>\n</Warehouse>\n<Description>\n<Value>HARRAH-CUSTOMER
+        SET ASIDE</Value>\n<DataType>AlphaNumeric</DataType>\n</Description>\n</Row>\n<Row>\n<Warehouse>\n<Value>HD</Value>\n<DataType>AlphaNumeric</DataType>\n</Warehouse>\n<Description>\n<Value>HRF(D)</Value>\n<DataType>AlphaNumeric</DataType>\n</Description>\n</Row>\n<Row>\n<Warehouse>\n<Value>HQ</Value>\n<DataType>AlphaNumeric</DataType>\n</Warehouse>\n<Description>\n<Value>MAIN-11793
+        FORT ROAD</Value>\n<DataType>AlphaNumeric</DataType>\n</Description>\n</Row>\n<Row>\n<Warehouse>\n<Value>HR</Value>\n<DataType>AlphaNumeric</DataType>\n</Warehouse>\n<Description>\n<Value>HAARMANN
+        &amp; RIEMER</Value>\n<DataType>AlphaNumeric</DataType>\n</Description>\n</Row>\n<Row>\n<Warehouse>\n<Value>I9</Value>\n<DataType>AlphaNumeric</DataType>\n</Warehouse>\n<Description>\n<Value>IFF
+        HE<syspro_company>D INVENTORY</Value>\n<DataType>AlphaNumeric</DataType>\n</Description>\n</Row>\n<Row>\n<Warehouse>\n<Value>IF</Value>\n<DataType>AlphaNumeric</DataType>\n</Warehouse>\n<Description>\n<Value>IFF</Value>\n<DataType>AlphaNumeric</DataType>\n</Description>\n</Row>\n<Row>\n<Warehouse>\n<Value>J9</Value>\n<DataType>AlphaNumeric</DataType>\n</Warehouse>\n<Description>\n<Value>JC
+        BUCK HE<syspro_company>D INVENTORY</Value>\n<DataType>AlphaNumeric</DataType>\n</Description>\n</Row>\n<Row>\n<Warehouse>\n<Value>JC</Value>\n<DataType>AlphaNumeric</DataType>\n</Warehouse>\n<Description>\n<Value>JCBUCK
+        <syspro_company>TD HE<syspro_company>D INVENTORY</Value>\n<DataType>AlphaNumeric</DataType>\n</Description>\n</Row>\n<Row>\n<Warehouse>\n<Value>K9</Value>\n<DataType>AlphaNumeric</DataType>\n</Warehouse>\n<Description>\n<Value>KAR<syspro_company>
+        RAPP HE<syspro_company>D INVENTORY</Value>\n<DataType>AlphaNumeric</DataType>\n</Description>\n</Row>\n<Row>\n<Warehouse>\n<Value>M0</Value>\n<DataType>AlphaNumeric</DataType>\n</Warehouse>\n<Description>\n<Value>MADRAS-GROWER
+        OWNED</Value>\n<DataType>AlphaNumeric</DataType>\n</Description>\n</Row>\n<Row>\n<Warehouse>\n<Value>M1</Value>\n<DataType>AlphaNumeric</DataType>\n</Warehouse>\n<Description>\n<Value>MADRAS-<syspro_company>ABBEEMINT
+        OWNED</Value>\n<DataType>AlphaNumeric</DataType>\n</Description>\n</Row>\n<Row>\n<Warehouse>\n<Value>MD</Value>\n<DataType>AlphaNumeric</DataType>\n</Warehouse>\n<Description>\n<Value>MADRAS
+        OREGON</Value>\n<DataType>AlphaNumeric</DataType>\n</Description>\n</Row>\n<Row>\n<Warehouse>\n<Value>MS</Value>\n<DataType>AlphaNumeric</DataType>\n</Warehouse>\n<Description>\n<Value>MATAS</Value>\n<DataType>AlphaNumeric</DataType>\n</Description>\n</Row>\n<Row>\n<Warehouse>\n<Value>MW</Value>\n<DataType>AlphaNumeric</DataType>\n</Warehouse>\n<Description>\n<Value>PORTAGE
+        WISCONSIN</Value>\n<DataType>AlphaNumeric</DataType>\n</Description>\n</Row>\n<Row>\n<Warehouse>\n<Value>N0</Value>\n<DataType>AlphaNumeric</DataType>\n</Warehouse>\n<Description>\n<Value>NAMPA-GROWER
+        OWNED</Value>\n<DataType>AlphaNumeric</DataType>\n</Description>\n</Row>\n<Row>\n<Warehouse>\n<Value>N1</Value>\n<DataType>AlphaNumeric</DataType>\n</Warehouse>\n<Description>\n<Value>NAMPA-<syspro_company>ABBEEMINT
+        OWNED</Value>\n<DataType>AlphaNumeric</DataType>\n</Description>\n</Row>\n<Row>\n<Warehouse>\n<Value>NV</Value>\n<DataType>AlphaNumeric</DataType>\n</Warehouse>\n<Description>\n<Value>NOVI<syspro_company><syspro_company>E</Value>\n<DataType>AlphaNumeric</DataType>\n</Description>\n</Row>\n<Row>\n<Warehouse>\n<Value>P0</Value>\n<DataType>AlphaNumeric</DataType>\n</Warehouse>\n<Description>\n<Value>PORTAGE-GROWER
+        OWNED</Value>\n<DataType>AlphaNumeric</DataType>\n</Description>\n</Row>\n<Row>\n<Warehouse>\n<Value>P1</Value>\n<DataType>AlphaNumeric</DataType>\n</Warehouse>\n<Description>\n<Value>PORTAGE-<syspro_company>ABBEEMINT
+        OWNED</Value>\n<DataType>AlphaNumeric</DataType>\n</Description>\n</Row>\n<Row>\n<Warehouse>\n<Value>P8</Value>\n<DataType>AlphaNumeric</DataType>\n</Warehouse>\n<Description>\n<Value>PORTAGE-CUSTOMER
+        OWNED</Value>\n<DataType>AlphaNumeric</DataType>\n</Description>\n</Row>\n<Row>\n<Warehouse>\n<Value>P9</Value>\n<DataType>AlphaNumeric</DataType>\n</Warehouse>\n<Description>\n<Value>PORTAGE-CUSTOMER
+        SETASIDE</Value>\n<DataType>AlphaNumeric</DataType>\n</Description>\n</Row>\n<Row>\n<Warehouse>\n<Value>PG</Value>\n<DataType>AlphaNumeric</DataType>\n</Warehouse>\n<Description>\n<Value>PROCTER&amp;GAMB<syspro_company>E</Value>\n<DataType>AlphaNumeric</DataType>\n</Description>\n</Row>\n<Row>\n<Warehouse>\n<Value>PO</Value>\n<DataType>AlphaNumeric</DataType>\n</Warehouse>\n<Description>\n<Value>PO<syspro_company>AROME</Value>\n<DataType>AlphaNumeric</DataType>\n</Description>\n</Row>\n<Row>\n<Warehouse>\n<Value>QI</Value>\n<DataType>AlphaNumeric</DataType>\n</Warehouse>\n<Description>\n<Value>QUEST
+        INTRNTN<syspro_company></Value>\n<DataType>AlphaNumeric</DataType>\n</Description>\n</Row>\n<Row>\n<Warehouse>\n<Value>RE</Value>\n<DataType>AlphaNumeric</DataType>\n</Warehouse>\n<Description>\n<Value>REYNAUD@St.
+        Didier</Value>\n<DataType>AlphaNumeric</DataType>\n</Description>\n</Row>\n<Row>\n<Warehouse>\n<Value>T9</Value>\n<DataType>AlphaNumeric</DataType>\n</Warehouse>\n<Description>\n<Value><syspro_company>MT
+        OWNED INV AT PDI</Value>\n<DataType>AlphaNumeric</DataType>\n</Description>\n</Row>\n<Row>\n<Warehouse>\n<Value>T<syspro_company></Value>\n<DataType>AlphaNumeric</DataType>\n</Warehouse>\n<Description>\n<Value>TI<syspro_company><syspro_company>OTS
+        WAREHOUSE</Value>\n<DataType>AlphaNumeric</DataType>\n</Description>\n</Row>\n<Row>\n<Warehouse>\n<Value>U8</Value>\n<DataType>AlphaNumeric</DataType>\n</Warehouse>\n<Description>\n<Value>U<syspro_company><syspro_company>
+        OWNED @ PDI</Value>\n<DataType>AlphaNumeric</DataType>\n</Description>\n</Row>\n<Row>\n<Warehouse>\n<Value>WY</Value>\n<DataType>AlphaNumeric</DataType>\n</Warehouse>\n<Description>\n<Value>WRIG<syspro_company>EY</Value>\n<DataType>AlphaNumeric</DataType>\n</Description>\n</Row>\n<NextPrevKey>\n<PrevKey>BJ</PrevKey>\n<NextKey>WY</NextKey>\n<Fwd>False</Fwd>\n<Back>False</Back>\n</NextPrevKey>\n<HeaderDetails>\n<Header>Warehouse</Header>\n<Header>Description
+        \                .</Header>\n<Key>Warehouse</Key>\n<KeyDescription>Warehouse
+        code</KeyDescription>\n<Table>InvWhControl</Table>\n</HeaderDetails>\n</InvWhControl>\n "
+    http_version: 
+  recorded_at: Thu, 30 May 2019 23:45:56 GMT
+recorded_with: VCR 4.0.0
