@@ -6,8 +6,8 @@
   <ReturnRows><%= @return_rows %></ReturnRows>
   <% for filter in filters %>
     <Filter>
-      <ColumnFilterName><%= @filter[:name] %></ColumnFilterName>
-      <ColumnFilterValue><%= @filter[:value] %></ColumnFilterValue>
+      <ColumnFilterName><%= filter[:name] %></ColumnFilterName>
+      <ColumnFilterValue><%= filter[:value] %></ColumnFilterValue>
     </Filter>
   <% end %>
 </Browse>
