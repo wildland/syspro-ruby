@@ -8,8 +8,8 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
-    addressable (2.5.2)
-      public_suffix (>= 2.0.2, < 4.0)
+    addressable (2.8.0)
+      public_suffix (>= 2.0.2, < 5.0)
     ast (2.4.0)
     byebug (11.0.1)
     coderay (1.1.2)
@@ -40,7 +40,7 @@ GEM
     pry-byebug (3.7.0)
       byebug (~> 11.0)
       pry (~> 0.10)
-    public_suffix (3.0.2)
+    public_suffix (4.0.6)
     rainbow (3.0.0)
     rake (10.5.0)
     rb-readline (0.5.5)
