@@ -3,7 +3,7 @@ PATH
   specs:
     syspro-ruby (1.0.0.alpha.2)
       faraday (~> 0.10)
-      nokogiri (~> 1.8.2)
+      nokogiri (>= 1.8.2, < 1.14.0)
 
 GEM
   remote: https://rubygems.org/
@@ -15,11 +15,11 @@ GEM
     coderay (1.1.2)
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
-    faraday (0.15.4)
+    faraday (0.17.5)
       multipart-post (>= 1.2, < 3)
     hashdiff (0.3.7)
     method_source (0.9.0)
-    mini_portile2 (2.3.0)
+    mini_portile2 (2.8.0)
     minispec-metadata (2.0.0)
       minitest
     minitest (5.11.3)
@@ -27,9 +27,10 @@ GEM
       minispec-metadata (~> 2.0)
       minitest (>= 4.7.5)
       vcr (>= 2.9)
-    multipart-post (2.0.0)
-    nokogiri (1.8.5)
-      mini_portile2 (~> 2.3.0)
+    multipart-post (2.1.1)
+    nokogiri (1.13.3)
+      mini_portile2 (~> 2.8.0)
+      racc (~> 1.4)
     parallel (1.12.1)
     parser (2.5.0.5)
       ast (~> 2.4.0)
@@ -41,6 +42,7 @@ GEM
       byebug (~> 11.0)
       pry (~> 0.10)
     public_suffix (3.0.2)
+    racc (1.6.0)
     rainbow (3.0.0)
     rake (10.5.0)
     rb-readline (0.5.5)
